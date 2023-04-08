@@ -1,0 +1,93 @@
+.sobrenosotros {
+    max-height: 800px;
+    overflow: hidden;
+    /* position: relative; */
+}
+
+.sobrenosotros__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.sobrenosotros__title {
+    position: absolute;
+    top: 110px;
+    z-index: 10;
+    color: white;
+    /* background-color: red; */
+    font-size: 48px;
+    margin-left: 176px;
+    margin-right: 622px;
+    margin-top: 286px;
+    margin-bottom: 437px;
+}
+
+.sobrenosotros__info {
+    display: flex;
+    gap: 30px
+
+}
+.sobrenosotros__info--text{
+    background-color: #EDEDED;
+    margin-left: 150px;
+    max-width: 415px;
+    max-height: 450px;
+    padding: 0 20px;
+}
+.sobrenosotros__info--text h2{
+    margin-top: 150px;
+    color: #FE5A09;
+    size: 48px;
+}
+.sobrenosotros__info--about1 {
+    width: 270px;
+    height: 360px;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+.sobrenosotros__info--about2 {
+    width: 270px;
+    height: 360px;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+
+.sobrenosotros__info--about3 {
+    width: 270px;
+    height: 360px;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+.sobrenosotros__proveedores{
+    text-align: center;
+    background-color: #F6F6F6;
+    margin-top: 20px;
+}
+.sobrenosotros__proveedores h2{
+    font-size: 36px;
+}
+.sobrenosotros__proveedores--testimonios{
+    
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 300px;
+}
+.sobrenosotros__proveedores--cards{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+.sobrenosotros__proveedores--cards img{
+    border-radius: 50%;
+    width: 111px;
+    height: 111px;
+}
