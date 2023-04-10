@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SobreNosotros from '../Pages/SobreNosotros/SobreNosotros'
-import Tours from '../Pages/Tours'
+import Tours from '../Pages/Tours/Tours'
 import Circuitos from '../Pages/Circuitos'
 import Mice from '../Pages/Mice'
 import Noticias from '../Pages/Noticias'

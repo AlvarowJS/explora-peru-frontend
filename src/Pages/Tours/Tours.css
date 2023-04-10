@@ -1,0 +1,10 @@
+.tours {
+    max-height: 400px;
+    overflow: hidden;
+}
+.tours__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
