@@ -1,0 +1,18 @@
+.contacto__datos{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.contacto__datos--input {
+    width: 220px;
+    border: none;
+    background-color: #D9D9D9;
+    height: 23px;
+    outline: none;
+    margin-left: 30px;
+    padding-left: 30px;
+}
+.contacto__datos--mensaje{
+    max-width: 900px;
+    min-width: 400px;
+}

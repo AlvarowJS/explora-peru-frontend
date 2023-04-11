@@ -1,13 +1,15 @@
 import React from 'react'
 import portada from './../../assets/carril/about_3.png'
 import './Tours.css'
+import CardsTours from '../../Components/Tours/CardsTours'
+import Contactenos from '../../Components/Contactanos/Contactenos'
 const Tours = () => {
   return (
     <>
       <div className='tours'>
         <img src={portada} alt="" className='tours__img' />
       </div>
-      <div>
+      <div className='tours__body'>
         <h2>Tours</h2>
 
         <div className='tours__filters'>
@@ -23,15 +25,13 @@ const Tours = () => {
           </div>
         </div>
         <div className='tours__catalogo'>
-          <img src="" alt="" />
-          <h3>Title</h3>
-          <p>Descripcion</p>
-          <div>
-            <p>hora</p>
-            <p>dolar</p>
-          </div>
+          <CardsTours/>
+          <CardsTours/>
+          <CardsTours/>
+          <CardsTours/>
+      
         </div>
-
+        <Contactenos/>
       </div>
     </>
 
