@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 import logo from './../assets/logo/logo.png'
 const Navbar = () => {
+    
+    const navbar = useRef()
+    const clickMenuHam = () => {
+        navbar.current.classList.toggle('navbar-open')
+    }
     return (
         <>
             <header className='header'>
                 <Link to="/">
                     <img className='header__logo' src={logo} alt="" />
                 </Link>
-                <nav className='header__navbar'>
+                <div onClick={clickMenuHam} className='header__menuham'>
+                    <i className='bx bx-menu'></i>
+                </div>
+                <nav ref={navbar} className='header__navbar'>
                     <ul>
                         <li>
                             <NavLink to='/'>Sobre Nosotros</NavLink>

@@ -7,6 +7,9 @@ import foto1 from './../../assets/testimonios/foto1.png'
 
 import './SobreNosotros.css'
 import StarRating from '../../Components/StarRating'
+import Footer from '../../Components/Footer/Footer'
+import Contactenos from '../Contactenos/Contactenos'
+
 const SobreNosotros = () => {
   return (
     <>
@@ -27,52 +30,9 @@ const SobreNosotros = () => {
         <img className='sobrenosotros__info--about2' src={about2} alt="" />
         <img className='sobrenosotros__info--about3' src={about3} alt="" />
       </div>
-      <div className='sobrenosotros__proveedores'>
-        <h2>Proveedores</h2>
-        <div className='sobrenosotros__proveedores--testimonios'>
-          <div className='sobrenosotros__proveedores--cards'>
-            <img src={foto1} alt="" />
-            <p>Maria</p>
-            <StarRating rating={2.5} />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium erat ex, sagittis aliquet magna pretium id.</p>
-          </div>
-          <div className='sobrenosotros__proveedores--cards'>
-            <img src={foto1} alt="" />
-            <p>Maria</p>
-            <StarRating rating={2.5} />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium erat ex, sagittis aliquet magna pretium id.</p>
-          </div>
-          <div className='sobrenosotros__proveedores--cards'>
-            <img src={foto1} alt="" />
-            <p>Maria</p>
-            <StarRating rating={2.5} />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pretium erat ex, sagittis aliquet magna pretium id.</p>
-          </div>
-        </div>
-      </div>
-      <div className='sobrenosotros__contacto'>
-        <div className='sobrenosotros__contacto--form'>
-
-          <h2>Contáctanos</h2>
-          <b>¿Estas interesado en nuestros servicios? Escribenos</b>
-          <label>Nombres</label>
-          <input type="text" />
-          <label>Email</label>
-          <input type="text" />
-          <label>celular</label>
-          <input type="text" />
-          <label>Mensaje</label>
-          <input type="text" />
-          <button>
-            Enviar
-          </button>
-        </div>
-        <div className='sobrenosotros__contacto--info'>
-          <div className='sobrenosotros__contacto--icons'>
-            
-          </div>
-        </div>
-      </div>
+      {/*   */}
+      <Contactenos/>
+      <Footer/>
     </>
   )
 }

@@ -5,7 +5,7 @@ import Tours from '../Pages/Tours/Tours'
 import Circuitos from '../Pages/Circuitos'
 import Mice from '../Pages/Mice'
 import Noticias from '../Pages/Noticias'
-import Contactenos from '../Pages/Contactenos'
+import Contactenos from '../Pages/Contactenos/Contactenos'
 import Navbar from '../Components/Navbar'
 
 
