@@ -1,12 +1,16 @@
 import React from 'react'
 import book from './../../assets/carril/libro.png'
 import './Footer.css'
-const Footer = () => {
+const Footer = ({ idioma }) => {
+    console.log(idioma, "footer")
     return (
         <footer className='footer'>
             <div className='footer__icon'>
                 <div className='footer__icon--book'>
-                    <h3>Libro de <br></br> Reclamaciones</h3>
+                    {idioma == 'spanish' ?
+                        <h3>Libro de <br></br> Reclamaciones</h3> : <h3>complaints<br></br> book</h3>
+                    }
+
                     <img src={book} alt="" />
                 </div>
                 <div className='footer__icon--social'>
@@ -16,7 +20,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className='footer__derechos'>
-                <p>Lima 2023 | Todos los derechos reservados</p>
+                {idioma == 'spanish' ?
+                    <p>Lima 2023 | Todos los derechos reservados</p> :
+                    <p>Lima 2023 | All rights reserved</p>
+                }
             </div>
         </footer>
     )

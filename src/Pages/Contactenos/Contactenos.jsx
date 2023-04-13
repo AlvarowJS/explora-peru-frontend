@@ -1,36 +1,60 @@
 import React from 'react'
 import './Contactenos.css'
-const Contactenos = () => {
+const Contactenos = ({ idioma }) => {
   return (
     <div className='sobrenosotros__contacto'>
       <div className='sobrenosotros__contacto--form'>
-        <h2>Contáctanos</h2>
-        <b>¿Estas interesado en nuestros servicios? Escribenos</b>
+        <h2>
+          {idioma == 'spanish' ? 'Contáctanos' : 'About us'}
+
+        </h2>
+        <b>
+          {
+            idioma == 'spanish' ? '¿Estas interesado en nuestros servicios? Escribenos' : 'Are you interested in our service? Let us know'
+          }
+
+
+        </b>
         <div className='sobrenosotros__contacto--input'>
-          <label>Nombres</label>
+          <label>
+            {idioma == 'spanish' ?
+              'Nombres :' : 'Name :'}
+          </label>
           <input type="text" />
         </div>
         <div className='sobrenosotros__contacto--input'>
-          <label>Email</label>
+          <label>
+            Email :
+          </label>
           <input type="text" />
         </div>
         <div className='sobrenosotros__contacto--input'>
-          <label>celular</label>
+          <label>
+            {idioma == 'spanish' ?
+              'Celular :' : 'Phone :'}
+          </label>
           <input type="text" />
         </div>
         <div className='sobrenosotros__contacto--input'>
-          <label>Mensaje</label>
+          <label>
+            {idioma == 'spanish' ?
+              'Mensaje :' : 'Message :'}
+          </label>
           <input type="text" />
         </div>
         <button className='sobrenosotros__contacto--button'>
-          Enviar
+          {idioma == 'spanish' ?
+            'Enviar' : 'Send'}
         </button>
       </div>
       <div className='sobrenosotros__contacto--info'>
         <div className='sobrenosotros__contacto--dato'>
           <i className='bx bx-time-five'></i>
           <div>
-            <p>lunes a Viernes</p>
+            <p>
+              {idioma == 'spanish' ?
+              'lunes a Viernes ' : 'Monday to Friday' }
+            </p>
             <p>8:00 am - 6:00 pm</p>
           </div>
         </div>

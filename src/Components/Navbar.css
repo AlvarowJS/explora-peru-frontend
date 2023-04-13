@@ -46,6 +46,7 @@
     flex-direction: column;
     margin-left: 30px;
     gap: 30px;
+    /* padding: 20px; */
 }
 .header__navbar li{
     color: black;
@@ -54,7 +55,16 @@
     transition: transform 400ms ease;
     transform: translateX(0);
 }
-
+.header__navbar ul li {
+    padding: 20px 10px;
+   
+  }
+.header__navbar ul li:hover {
+    padding: 20px 10px;
+    background-color: #FE5A09; /* Cambia el color de fondo cuando el usuario pasa el ratón por encima */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que el elemento es clickeable */
+  }
+  
 @media screen and (min-width: 900px){
     .header{
         background: rgba(0, 0, 0, 0.35);
@@ -81,8 +91,9 @@
         display: flex;
         flex-direction: row;
         gap: 36px;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        
+        /* margin-top: 30px;
+        margin-bottom: 20px; */
     }
     .navbar-open{
         transform: translateX(0);

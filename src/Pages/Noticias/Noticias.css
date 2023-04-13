@@ -1,0 +1,15 @@
+.noticias {
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.noticias__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+.noticias__cuerpo h2{
+    font-size: 48px;
+    text-align: center;
+}

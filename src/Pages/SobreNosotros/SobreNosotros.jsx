@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import portada from './../../assets/carril/home.png'
 import about1 from './../../assets/carril/about_1.png'
 import about2 from './../../assets/carril/about_2.png'
@@ -9,30 +9,62 @@ import './SobreNosotros.css'
 import StarRating from '../../Components/StarRating'
 import Footer from '../../Components/Footer/Footer'
 import Contactenos from '../Contactenos/Contactenos'
+import Responsable from '../../Components/Responsable/Responsable'
 
-const SobreNosotros = () => {
+const SobreNosotros = ({ idioma, setIdioma }) => {
+
   return (
     <>
       <div className='sobrenosotros'>
         <img className='sobrenosotros__img' src={portada} alt="" />
-        <h2 className='sobrenosotros__title'>Haz memorable tus viajes <br />con Nosotros</h2>
+        <h2 className='sobrenosotros__title'>
+          {
+            idioma == 'spanish' ? `Haz memorable tus viajes con Nosotros` : 'Make your trips memorable with us'
+          }
+
+
+        </h2>
       </div>
       <div className='sobrenosotros__info'>
         <div className='sobrenosotros__info--text'>
-          <h2>Sobre Nosotros</h2>
-          <b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b>
-          <p>Proin ac bibendum justo. Sed consectetur, risus non luctusondimentum, urna massa porttitor ipsum, in facilisis lectus mi sit amet
-            nibh. Suspendisse finibus malesuada venenatis. In condimentum
-            neque eu porta lacinia. Donec diam purus, eleifend eu bibendum non,
-            dapibus ut arcu.</p>
+          <h2>
+            {
+              idioma == 'spanish' ? 'Sobre Nosotros' : 'About us'
+            }
+          </h2>
+          {
+            idioma == 'spanish' ?
+              <b> Perú exploring es un operador turístico del Perú.</b>
+              :
+              <b> Peru explore is a tour operator in Peru.</b>
+          }
+          {
+            idioma == 'spanish' ?
+              <p>
+                Actualmente contamos con 10 años de experiencia, además tenemos servicios únicos que nos diferencian de los otros operadores, asi como también servicios compartidos en un solo idioma y tenemos experiencia en lo que hacemos.
+                <br />
+                Trabajamos con agencias de viajes mayoristas, buscando ser su aliado y fomentar nuestra cultura peruana, orientándonos a la calidad de nuestros servicios, lo que nos ayuda a crecer como operadores.
+                <br />
+                También trabajamos con agencias de distintos paises, recibiendo los pasajeros FIT o grupos, representándolos con bastante esfuerzo y compromiso.
+              </p>
+              :
+              <p>
+                We currently have 10 years of experience, we also have unique services that differentiate us from other operators, as well as shared services in a single language and we have experience in what we do.
+                <br />
+                We work with wholesale travel agencies, seeking to be their ally and promote our Peruvian culture, focusing on the quality of our services, which helps us grow as operators.
+                <br />
+                We also work with agencies from different countries, receiving FIT passengers or groups, representing them with a lot of effort and commitment.
+              </p>
+          }
         </div>
         <img className='sobrenosotros__info--about1' src={about1} alt="" />
         <img className='sobrenosotros__info--about2' src={about2} alt="" />
         <img className='sobrenosotros__info--about3' src={about3} alt="" />
       </div>
+      <Responsable idioma={idioma} />
       {/*   */}
-      <Contactenos/>
-      <Footer/>
+      <Contactenos idioma={idioma} />
+      {/* <Footer /> */}
     </>
   )
 }

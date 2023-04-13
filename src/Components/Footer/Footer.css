@@ -1,6 +1,6 @@
 .footer {
     background-color: #181616;
-    
+    padding: 10px 40px;
 }
 
 .footer__icon {
@@ -31,4 +31,5 @@
 }
 .footer__derechos p {    
     color: white;
+    padding-bottom: 20px;
 }

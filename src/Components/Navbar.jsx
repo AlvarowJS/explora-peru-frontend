@@ -1,12 +1,19 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 import logo from './../assets/logo/logo.png'
-const Navbar = () => {
+const Navbar = ({setIdioma, idioma}) => {
     
+    // const [idioma, setIdioma] = useState('spanish')
     const navbar = useRef()
     const clickMenuHam = () => {
         navbar.current.classList.toggle('navbar-open')
+    }
+    // useEffect(() => {
+    //     console.log(idioma, "idioma?")
+    // }, [idioma])
+    const handleChange = (event) => {
+        setIdioma(event.target.value);
     }
     return (
         <>
@@ -19,30 +26,52 @@ const Navbar = () => {
                 </div>
                 <nav ref={navbar} className='header__navbar'>
                     <ul>
-                        <li>
-                            <NavLink to='/'>Sobre Nosotros</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/tours'>Tours</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/circuitos'>Circuitos</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/mice'>MICE</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/noticias'>Noticias</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='contactenos'>Contactanos</NavLink>
-                        </li>
+                        <NavLink to='/'>
+                            <li>
+
+                                {
+                                    idioma == 'spanish' ? 'Sobre Nosotros' : 'About us'
+                                }
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/tours'>
+                            <li>
+
+                                Tours
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/circuitos'>
+                            <li>
+
+                                {idioma == 'spanish' ? 'Circuitos' : 'Circuits'}
+                            </li>
+                        </NavLink>
+                        <NavLink to='/mice'>
+
+                            <li>
+                                MICE
+                            </li>
+                        </NavLink>
+                        <NavLink to='/noticias'>
+
+                            <li>
+                                {idioma == 'spanish' ? 'Noticias' : 'News'}
+                            </li>
+                        </NavLink>
+                        <NavLink to='contactenos'>
+
+                            <li>
+                                {idioma == 'spanish' ? 'Contactanos' : 'Contact us'}
+                            </li>
+                        </NavLink>
+
                     </ul>
                 </nav>
                 <div>
-                    <select className='header__languaje'>
-
-                        <option value="spanish" selected>Spanish</option>
+                    <select className='header__languaje' value={idioma} onChange={handleChange}>
+                        <option value="spanish" selected>Español</option>
                         <option value="english">English</option>
                     </select>
 

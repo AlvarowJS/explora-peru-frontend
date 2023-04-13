@@ -7,17 +7,17 @@ const Contactenos = () => {
                 <p> Planea tu viaje con nosotros </p>
                 <h2>Contáctanos</h2>
                 <div className='contacto__datos'>
-                    <div>
+                    <div className='contacto__datos--input'>
                         <label htmlFor=""> Nombre: </label>
-                        <input className='contacto__datos--input' type="text" />
+                        <input type="text" />
                     </div>
-                    <div>
+                    <div className='contacto__datos--input'>
                         <label htmlFor=""> Email: </label>
-                        <input className='contacto__datos--input' type="text" />
+                        <input type="text" />
                     </div>
-                    <div>
+                    <div className='contacto__datos--input'>
                         <label htmlFor="">Celular: </label>
-                        <input className='contacto__datos--input' type="text" />
+                        <input type="text" />
                     </div>
                 </div>
                 <div className=''>
