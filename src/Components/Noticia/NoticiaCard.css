@@ -1,0 +1,22 @@
+.noticias__card--component {
+    width: 313px;
+    text-align: center;
+}
+
+.noticias__img p {
+    font-size: 14px;
+    text-align: center;
+}
+
+.noticias__card--component img {
+    width: 313px;
+    height: 182px;
+}
+
+.noticias__card--component button {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #FE5A09;
+}

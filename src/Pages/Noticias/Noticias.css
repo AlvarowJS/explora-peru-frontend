@@ -13,3 +13,10 @@
     font-size: 48px;
     text-align: center;
 }
+.noticias__cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;    
+    gap: 30px;
+    padding: 30px 179px;
+}
