@@ -65,15 +65,25 @@
     gap: 35px;
     justify-content: center;
 }
-.tours__catalogo--img {
+.tours__card {
+    width: 360px;
+}
+.tours__card img {
     width: 360px;
     height: 180px;
 }
-.tours__catalogo--info {
+.tours__card--info {
     display: flex;    
     justify-content: space-between;
     margin-top: 25px;
 }
-.tours__catalogo--info p{
+.tours__card--info p{
     color: #FE5A09;
+}
+.tours__card--info button{
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #FE5A09;
 }

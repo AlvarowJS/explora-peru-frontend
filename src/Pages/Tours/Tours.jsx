@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import portada from './../../assets/carril/about_3.png'
 import './Tours.css'
 import CardsTours from '../../Components/Tours/CardsTours'
 import Contactenos from '../../Components/Contactanos/Contactenos'
+import toursBD from '../../apis/tours'
 const Tours = () => {
+  const [tours, setTours] = useState()
+  useEffect(() => {
+    toursBD.get()
+      .then(res => setTours(res.data))
+      .catch(err => console.log(err))
+  }, [])
+  
   return (
     <>
       <div className='tours'>
@@ -25,10 +33,13 @@ const Tours = () => {
           </div>
         </div>
         <div className='tours__catalogo'>
-          <CardsTours/>
-          <CardsTours/>
-          <CardsTours/>
-          <CardsTours/>
+        {tours?.map(tour => (
+            <CardsTours
+              key={tour.id}
+              tour={tour}
+            />
+          ))}
+      
       
         </div>
         <Contactenos/>

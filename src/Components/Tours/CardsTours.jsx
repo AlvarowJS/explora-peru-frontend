@@ -1,15 +1,25 @@
 import React from 'react'
 import './../../Pages/Tours/Tours.css'
 import tour from './../../assets/carril/tours.png'
-const CardsTours = () => {
+import { useNavigate } from 'react-router-dom'
+const CardsTours = ({ tour }) => {
+    const navigate = useNavigate()
+    
+    let img = tour.img
+    img = `http://127.0.0.1:8000/storage/tours/${img}`
+    const verTour = (id) => {
+        navigate(`/tours/${id}`)
+      }
     return (
-        <div className=''>
-            <img className='tours__catalogo--img' src={tour} alt="" />
-            <h3>Title</h3>
-            <p>Descripcion</p>
-            <div className='tours__catalogo--info'>
-                <p>hora</p>                
-                <p>dolar</p>
+        <div className='tours__card'>
+            <img src={img} alt="" />
+            <h3>{tour.titulo}</h3>
+            <p>{(tour.descripcion_spanish).substring(0, 100) + "..."}</p>
+            <div className='tours__card--info'>
+                <p>{tour.duracion}</p>
+                <button onClick={() => verTour(tour.id)}>
+                    Ver mas
+                </button>
             </div>
         </div>
     )

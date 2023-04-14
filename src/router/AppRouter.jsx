@@ -10,6 +10,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer/Footer'
 import './whatsapp.css'
 import NoticiaNota from '../Pages/Noticias/NoticiasNota/NoticiaNota'
+import ToursInfo from '../Pages/Tours/ToursInfo/ToursInfo'
 
 const AppRouter = () => {
   const [idioma, setIdioma] = useState('spanish')
@@ -23,6 +24,7 @@ const AppRouter = () => {
         <Routes>
           <Route path='/' element={<SobreNosotros idioma={idioma} setIdioma={setIdioma} />} />
           <Route path='/tours' element={<Tours />} />
+          <Route path='/tours/:id' element={<ToursInfo />} />
           <Route path='/circuitos' element={<Circuitos />} />
           <Route path='/mice' element={<Mice />} />
           <Route path='/noticias' element={<Noticias />} />
