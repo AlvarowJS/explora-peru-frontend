@@ -9,6 +9,7 @@ import Contactenos from '../Pages/Contactenos/Contactenos'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer/Footer'
 import './whatsapp.css'
+import NoticiaNota from '../Pages/Noticias/NoticiasNota/NoticiaNota'
 
 const AppRouter = () => {
   const [idioma, setIdioma] = useState('spanish')
@@ -25,6 +26,7 @@ const AppRouter = () => {
           <Route path='/circuitos' element={<Circuitos />} />
           <Route path='/mice' element={<Mice />} />
           <Route path='/noticias' element={<Noticias />} />
+          <Route path='/noticias/:id' element={<NoticiaNota/>} />
           <Route path='/contactenos' element={<Contactenos />} />
         </Routes>
         <Footer idioma={idioma} />

@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import noticia from './../../assets/carril/mice.png'
 import './Noticias.css'
+import noticiasBD from '../../apis/Noticias'
 import NoticiaCard from '../../Components/Noticia/NoticiaCard'
 const Noticias = () => {
+  const [noticias, setNoticias] = useState()
+  useEffect(() => {
+    noticiasBD.get()
+      .then(res => setNoticias(res.data))
+      .catch(err => console.log(err))
+  }, [])
+  console.log(noticias)
   return (
     <div>
       <div className='noticias'>
@@ -11,11 +19,13 @@ const Noticias = () => {
       <aside className='noticias__cuerpo'>
         <h2>Noticias</h2>
         <div className='noticias__cards'>
-          <NoticiaCard/>
-          <NoticiaCard/>
-          <NoticiaCard/>
-          <NoticiaCard/>
-          <NoticiaCard/>
+          {noticias?.map(noticia => (
+            <NoticiaCard
+              key={noticia.id}
+              noticia={noticia}
+            />
+          ))}
+  
         </div>
       </aside>
     </div>
