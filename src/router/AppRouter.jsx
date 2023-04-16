@@ -14,6 +14,7 @@ import ToursInfo from '../Pages/Tours/ToursInfo/ToursInfo'
 
 const AppRouter = () => {
   const [idioma, setIdioma] = useState('spanish')
+  
   useEffect(() => {
     console.log(idioma, "idioma?")
   }, [idioma])
@@ -23,13 +24,13 @@ const AppRouter = () => {
         <Navbar idioma={idioma} setIdioma={setIdioma} />
         <Routes>
           <Route path='/' element={<SobreNosotros idioma={idioma} setIdioma={setIdioma} />} />
-          <Route path='/tours' element={<Tours />} />
-          <Route path='/tours/:id' element={<ToursInfo />} />
+          <Route path='/tours' element={<Tours idioma={idioma}/>} />
+          <Route path='/tours/:id' element={<ToursInfo idioma={idioma}/>} />
           <Route path='/circuitos' element={<Circuitos />} />
           <Route path='/mice' element={<Mice />} />
           <Route path='/noticias' element={<Noticias />} />
           <Route path='/noticias/:id' element={<NoticiaNota/>} />
-          <Route path='/contactenos' element={<Contactenos />} />
+          <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma}/>} />
         </Routes>
         <Footer idioma={idioma} />
         <a href="https://wa.link/ix9xwp" className="btn-whatsapp" target="_blank">

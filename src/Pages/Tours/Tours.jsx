@@ -4,14 +4,27 @@ import './Tours.css'
 import CardsTours from '../../Components/Tours/CardsTours'
 import Contactenos from '../../Components/Contactanos/Contactenos'
 import toursBD from '../../apis/tours'
-const Tours = () => {
+import lugaresBD from '../../apis/lugares'
+const Tours = ({ idioma }) => {
+  const [filterSelect, setFilterSelect] = useState()
   const [tours, setTours] = useState()
+  const [lugars, setLugars] = useState()
   useEffect(() => {
     toursBD.get()
       .then(res => setTours(res.data))
       .catch(err => console.log(err))
   }, [])
-  
+  useEffect(() => {
+    lugaresBD.get()
+      .then(res => setLugars(res?.data))
+      .catch(err => console.log(err))
+  }, [])
+
+  const handleSelectChange = (event) => {
+    setFilterSelect(event.target.value);
+  }
+  console.log(filterSelect, "fil")
+
   return (
     <>
       <div className='tours'>
@@ -26,23 +39,27 @@ const Tours = () => {
           </div>
           <div className='tours__filters--select'>
             <span>Buscar información en </span>
-            <select name="" id="">
-              <option value="dog">Lima</option>
-              <option value="cat">Huanuco</option>
+            <select onChange={handleSelectChange}>
+              {
+                lugars && lugars.map(lugar => (
+                  <option value={lugar?.id}>{lugar?.nombre}</option>
+                ))
+              }
             </select>
           </div>
         </div>
         <div className='tours__catalogo'>
-        {tours?.map(tour => (
+          {tours?.map(tour => (
             <CardsTours
               key={tour.id}
               tour={tour}
+              idioma={idioma}
             />
           ))}
-      
-      
+
+
         </div>
-        <Contactenos/>
+        <Contactenos />
       </div>
     </>
 

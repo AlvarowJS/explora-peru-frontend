@@ -9,6 +9,14 @@
     height: auto;
     z-index: 0;
 }
+.tours__img--info {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* clip-path: inset(0 0 150px 0); */
+
+    z-index: 0;
+}
 
 .tours__body h2 {
     text-align: center;
@@ -86,4 +94,22 @@
     border: none;
     color: white;
     background-color: #FE5A09;
+}
+.tours__id h2{
+    text-align: center;
+    font-size: 40px;
+    margin: 10px;
+}
+.tours__id--card{
+    display: flex;
+    margin: 20px 100px;
+    gap: 30px;
+}
+.tours__id--card img{
+    width: 700px;
+
+}
+.tours__id--card p{
+    margin: 20px;
+
 }

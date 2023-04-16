@@ -28,7 +28,15 @@ const NoticiaNota = () => {
                 <h2>{noticia?.titulo}</h2>
                 <img src={imgNew} alt="" />
                 <p>
-                    {noticia?.nota}
+                    {
+                        // noticia?.nota
+                        noticia?.nota.split('\n').map((item, index) => (
+                            <div key={index}>
+                                {item}
+                                <br />
+                            </div>
+                        ))
+                    }
                 </p>
             </div>
         </>

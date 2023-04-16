@@ -15,7 +15,7 @@ const Footer = ({ idioma }) => {
                 </div>
                 <div className='footer__icon--social'>
                     <i className='bx bxl-facebook-square' ></i>
-                    <i className='bx bxl-instagram-alt' ></i>
+                   <a href="https://www.instagram.com/peru.exploring/" target="_blank" rel="noopener noreferrer"><i className='bx bxl-instagram-alt' ></i></a> 
                     <i className='bx bxl-youtube' ></i>
                 </div>
             </div>
