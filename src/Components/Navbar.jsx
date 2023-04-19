@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 import logo from './../assets/logo/logo.png'
-const Navbar = ({setIdioma, idioma}) => {
-    
+const Navbar = ({ setIdioma, idioma }) => {
+
     // const [idioma, setIdioma] = useState('spanish')
     const navbar = useRef()
     const clickMenuHam = () => {
@@ -74,8 +74,9 @@ const Navbar = ({setIdioma, idioma}) => {
                         <option value="spanish" selected>Español</option>
                         <option value="english">English</option>
                     </select>
-
-                    <i className='bx bxs-group header__login' ></i>
+                    <NavLink to='login'>
+                        <i className='bx bxs-group header__login' ></i>
+                    </NavLink>
                 </div>
 
             </header>
