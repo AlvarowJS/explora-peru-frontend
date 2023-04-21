@@ -2,6 +2,7 @@ import React from 'react'
 import portada from './../../../assets/carril/about_1.png'
 import logo from './../../../assets/logo/logo.png'
 import './Login.css'
+import { Link } from 'react-router-dom'
 const Login = () => {
     return (
         <>
@@ -11,7 +12,9 @@ const Login = () => {
                     <img src={portada} alt="Imagen de login" />
                 </div>
                 <div class="login-right">
-                    <h2>INTRANET</h2>
+                    <h2>
+                        <b> Intranet</b>
+                    </h2>
                     <p>Solo para agentes asociados a Perú Exploring</p>
                     <form>
                         <label for="username">Usuario:</label>
@@ -22,7 +25,7 @@ const Login = () => {
                         <button type="submit">Iniciar sesión</button>
 
                     </form>
-                    <p className='login-right-create'>Quieres ser un Agente? <span>Rellene este formulario de Inscripción</span></p>
+                    <p className='login-right-create'>Quieres ser un Agente?<span> <Link to='/register'>Rellene este formulario de Inscripción</Link></span></p>
                 </div>
             </div>
 

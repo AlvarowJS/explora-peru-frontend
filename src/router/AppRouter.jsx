@@ -12,6 +12,8 @@ import './whatsapp.css'
 import NoticiaNota from '../Pages/Noticias/NoticiasNota/NoticiaNota'
 import ToursInfo from '../Pages/Tours/ToursInfo/ToursInfo'
 import Login from '../Pages/Intranet/Login/Login'
+import Register from '../Pages/Intranet/Register/Register'
+import Menu from '../Pages/Intranet/Components/Menu'
 
 
 const AppRouter = () => {
@@ -19,10 +21,12 @@ const AppRouter = () => {
   function NavbarRoutes() {
     const location = useLocation();
 
-    if (location.pathname === '/login') {
+    if (location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/home') {
       return (
         <Routes>
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/home' element={<Menu />} />
         </Routes>
       );
     } else {
