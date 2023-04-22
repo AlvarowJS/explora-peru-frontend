@@ -57,9 +57,11 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
               </p>
           }
         </div>
-        <img className='sobrenosotros__info--about1' src={about1} alt="" />
-        <img className='sobrenosotros__info--about2' src={about2} alt="" />
-        <img className='sobrenosotros__info--about3' src={about3} alt="" />
+        <div className='sobrenosotros__info--img'>
+          <img className='sobrenosotros__info--about1' src={about1} alt="" />
+          <img className='sobrenosotros__info--about2' src={about2} alt="" />
+          <img className='sobrenosotros__info--about3' src={about3} alt="" />
+        </div>
       </div>
       <Responsable idioma={idioma} />
       {/*   */}

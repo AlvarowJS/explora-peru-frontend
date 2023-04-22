@@ -11,9 +11,13 @@ const Responsable = ({ idioma }) => {
     };
     return (
         <div className='responsable'>
-            
-            <h3>Turismo Responsable</h3>
-            <h3>Responsable tourism</h3>
+            {
+                idioma == 'spanish' ?
+                    <h3>Turismo Responsable</h3>
+                    :
+                    <h3>Responsable tourism</h3>
+            }
+
             <div className='responsable__cards'>
                 <div className='responsable__cards--info'>
                     <img src={protegeme} alt="" />

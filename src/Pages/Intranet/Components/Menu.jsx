@@ -7,18 +7,20 @@ const Menu = () => {
     return (
         <SideNav
             onSelect={(selected) => {
-                // Add your code here
+                console.log(selected)
             }}
-            style ={{ backgroundColor:'purple'}}
+            style={{
+                backgroundColor: '#5b2491'
+}}
         >
             <SideNav.Toggle />
-            <SideNav.Nav defaultSelected="home">
+            <SideNav.Nav defaultSelected="tourintranet">
                 <NavItem eventKey="perfil" style={{ textAlign: 'center', marginBottom: '70px' }}>
 
                     <i class='bx bxs-user-circle' style={{ fontSize: '4em' }}></i>
                     <p> Alvaro</p>
                 </NavItem>
-                <NavItem eventKey="home">
+                <NavItem eventKey="home-intranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} /> */}
                         <i class='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i>
@@ -29,7 +31,7 @@ const Menu = () => {
                     </NavText>
                 </NavItem>
 
-                <NavItem eventKey="tours">
+                <NavItem eventKey="tourintranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} /> */}
                         {/* <i class='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i> */}
@@ -40,7 +42,7 @@ const Menu = () => {
                     </NavText>
 
                 </NavItem>
-                <NavItem eventKey="circuitos">
+                <NavItem eventKey="circuito-intranet">
                     <NavIcon>
                         <i className='bx bx-bus' style={{ fontSize: '1.75em' }}></i>
                     </NavIcon>
@@ -49,7 +51,7 @@ const Menu = () => {
                     </NavText>
 
                 </NavItem>
-                <NavItem eventKey="mice">
+                <NavItem eventKey="mice-intranet">
                     <NavIcon>
                         <i className='bx bxl-gmail' style={{ fontSize: '1.75em' }}></i>
                     </NavIcon>
@@ -58,7 +60,7 @@ const Menu = () => {
                     </NavText>
 
                 </NavItem>
-                <NavItem eventKey="noticias">
+                <NavItem eventKey="noticia-intranet">
                     <NavIcon>
                         <i className='bx bx-news' style={{ fontSize: '1.75em' }}></i>
                     </NavIcon>
@@ -68,7 +70,7 @@ const Menu = () => {
 
                 </NavItem>
 
-                <NavItem eventKey="contactenos">
+                <NavItem eventKey="contacto-intranet">
                     <NavIcon>
                         <i className='bx bx-chat' style={{ fontSize: '1.75em' }}></i>
                     </NavIcon>
@@ -78,7 +80,7 @@ const Menu = () => {
 
                 </NavItem>
             </SideNav.Nav>
-        </SideNav>
+        </SideNav >
     )
 }
 

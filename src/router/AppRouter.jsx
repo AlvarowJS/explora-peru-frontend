@@ -14,6 +14,7 @@ import ToursInfo from '../Pages/Tours/ToursInfo/ToursInfo'
 import Login from '../Pages/Intranet/Login/Login'
 import Register from '../Pages/Intranet/Register/Register'
 import Menu from '../Pages/Intranet/Components/Menu'
+import TourIntra from '../Pages/Intranet/Admin/TourIntra/TourIntra'
 
 
 const AppRouter = () => {
@@ -21,15 +22,34 @@ const AppRouter = () => {
   function NavbarRoutes() {
     const location = useLocation();
 
-    if (location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/home') {
+    if (
+      location.pathname === '/login' ||
+      location.pathname === '/register'
+
+    ) {
       return (
-        <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/home' element={<Menu />} />
-        </Routes>
+        <>
+          
+          <Routes>
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Routes>
+        </>
       );
-    } else {
+    }
+    if (
+      location.pathname === '/home' ||
+      location.pathname === '/tour-intranet'
+    ) {
+      <>      
+        <Menu />
+        <Routes>
+          {/* <Route path='/home' element={<Menu />} /> */}
+          <Route path='/tour-intranet' element={<TourIntra />} />
+        </Routes>
+      </>
+    }
+    else {
       return (
         <>
           <Navbar idioma={idioma} setIdioma={setIdioma} />

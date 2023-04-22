@@ -19,7 +19,7 @@
 }
 .sobrenosotros__info {
     display: flex;
-    gap: 30px;
+    gap: 30px;    
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -30,8 +30,8 @@
 }
 .sobrenosotros__info--text {
     background-color: #EDEDED;    
-    max-width: 415px;
-    max-height: 450px;
+    max-width: 435px;
+    max-height: 540px;
     padding: 20px 20px;    
 }
 
@@ -51,6 +51,12 @@
     width: 270px;
     height: 360px;
     border-radius: 10px;
+}
+.sobrenosotros__info--img{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 @media screen and (min-width: 700px) {
     .sobrenosotros {
@@ -90,26 +96,8 @@
         max-height: 450px;
         /* padding: 0 20px; */
     }
-    .sobrenosotros__info--about1 {
-        width: 190px;
-        height: 260px;
-        border-radius: 10px;
-        /* margin-top: 150px; */
-    }
-
-    .sobrenosotros__info--about2 {
-        width: 190px;
-        height: 260px;
-        border-radius: 10px;
-        /* margin-top: 80px; */
-    }
-
-    .sobrenosotros__info--about3 {
-        width: 190px;
-        height: 260px;
-        border-radius: 10px;
-        /* margin-top: 150px; */
-    }
+  
+    
 }
 
 @media screen and (min-width: 890px) {
@@ -143,6 +131,7 @@
         display: flex;
         /* gap: 30px; */
         flex-wrap: wrap;
+        justify-content: center;
 
     }
 
@@ -150,7 +139,7 @@
         background-color: #EDEDED;
         margin-left: 150px;
         max-width: 415px;
-        max-height: 450px;
+        max-height: 650px;
         padding: 0 20px;
     }
 
@@ -196,6 +185,31 @@
         width: 111px;
         height: 111px;
     }
+    .sobrenosotros__info--img{
+        display: flex;
+        gap: 20px;
+        
+    }
+      .sobrenosotros__info--about1 {
+        width: 190px;
+        height: 260px;
+        border-radius: 10px;
+        margin-top: 150px;
+    }
+
+    .sobrenosotros__info--about2 {
+        width: 190px;
+        height: 260px;
+        border-radius: 10px;
+        margin-top: 80px;
+    }
+
+    .sobrenosotros__info--about3 {
+        width: 190px;
+        height: 260px;
+        border-radius: 10px;
+        margin-top: 150px;
+    }
 }
 @media screen and (min-width: 1300px) {
     .sobrenosotros__info {
@@ -222,5 +236,9 @@
         height: 360px;
         border-radius: 10px;
         margin-top: 150px;
+    }
+    .sobrenosotros__info--img{
+        display: flex;
+        gap: 20px;
     }
 }
