@@ -3,15 +3,19 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import { useNavigate } from 'react-router-dom';
 const Menu = () => {
+    const navigate = useNavigate()
     return (
         <SideNav
             onSelect={(selected) => {
                 console.log(selected)
+                navigate('/' + selected)
             }}
             style={{
-                backgroundColor: '#5b2491'
-}}
+                backgroundColor: '#5b2491',
+                
+            }}
         >
             <SideNav.Toggle />
             <SideNav.Nav defaultSelected="tourintranet">
@@ -20,6 +24,46 @@ const Menu = () => {
                     <i class='bx bxs-user-circle' style={{ fontSize: '4em' }}></i>
                     <p> Alvaro</p>
                 </NavItem>
+                {/*  */}
+                <NavItem eventKey="admin">
+                    <NavIcon>
+                        <i class='bx bxs-user-detail' style={{ fontSize: '1.75em' }} ></i>
+                    </NavIcon>
+                    <NavText>
+                        Admin
+                    </NavText>
+                    <NavItem eventKey="admin/usuarios">
+                        <NavText>
+                            Usuarios
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="admin/tour">
+                        <NavText>
+                            Tours
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="admin/circuitos">
+                        <NavText>
+                            Circuitos
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="admin/noticias">
+                        <NavText>
+                            Noticias
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="admin/reclamacion">
+                        <NavText>
+                            Libro de Reclamaciones
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="admin/mensajes">
+                        <NavText>
+                            Mensajes
+                        </NavText>
+                    </NavItem>
+                </NavItem>
+                {/*  */}
                 <NavItem eventKey="home-intranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} /> */}
@@ -31,7 +75,7 @@ const Menu = () => {
                     </NavText>
                 </NavItem>
 
-                <NavItem eventKey="tourintranet">
+                <NavItem eventKey="tour-intranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} /> */}
                         {/* <i class='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i> */}
@@ -76,6 +120,15 @@ const Menu = () => {
                     </NavIcon>
                     <NavText>
                         Contactenos
+                    </NavText>
+
+                </NavItem>
+                <NavItem eventKey="logout">
+                    <NavIcon>
+                        <i className='bx bx-exit' style={{ fontSize: '1.75em' }} ></i>
+                    </NavIcon>
+                    <NavText>
+                        Cerrar sesión
                     </NavText>
 
                 </NavItem>

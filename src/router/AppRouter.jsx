@@ -14,7 +14,22 @@ import ToursInfo from '../Pages/Tours/ToursInfo/ToursInfo'
 import Login from '../Pages/Intranet/Login/Login'
 import Register from '../Pages/Intranet/Register/Register'
 import Menu from '../Pages/Intranet/Components/Menu'
-import TourIntra from '../Pages/Intranet/Admin/TourIntra/TourIntra'
+
+// Agente
+import HomeIntra from '../Pages/Intranet/Agente/HomeIntra/HomeIntra'
+import TourIntra from '../Pages/Intranet/Agente/TourIntra/TourIntra'
+import CircuitoIntra from '../Pages/Intranet/Agente/CircuitoIntra/CircuitoIntra'
+import NoticiasIntra from '../Pages/Intranet/Agente/NoticiasIntra/NoticiasIntra'
+import ContactoIntra from '../Pages/Intranet/Agente/ContactoIntra/ContactoIntra'
+
+// Admins
+import UsuariosAdmin from '../Pages/Intranet/Admin/UsuariosAdmin/UsuariosAdmin'
+import TourAdmin from '../Pages/Intranet/Admin/TourAdmin/TourAdmin'
+import CircuitoAdmin from '../Pages/Intranet/Admin/CircuitoAdmin/CircuitoAdmin'
+import NoticiaAdmin from '../Pages/Intranet/Admin/NoticiaAdmin/NoticiaAdmin'
+import ReclamacionAdmin from '../Pages/Intranet/Admin/ReclamacionAdmin/ReclamacionAdmin'
+import ComunicacionAdmin from '../Pages/Intranet/Admin/ComunicacionAdmin/ComunicacionAdmin'
+
 
 
 const AppRouter = () => {
@@ -28,8 +43,7 @@ const AppRouter = () => {
 
     ) {
       return (
-        <>
-          
+        <>          
           <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
@@ -37,17 +51,44 @@ const AppRouter = () => {
         </>
       );
     }
-    if (
-      location.pathname === '/home' ||
-      location.pathname === '/tour-intranet'
+    else if (
+      location.pathname === '/admin/usuarios' ||
+      location.pathname === '/admin/tour' ||
+      location.pathname === '/admin/circuitos' ||
+      location.pathname === '/admin/noticias' ||
+      location.pathname === '/admin/reclamacion' ||
+      location.pathname === '/admin/mensajes' ||
+      location.pathname === '/home-intranet' ||
+      location.pathname === '/tour-intranet' ||
+      location.pathname === '/circuito-intranet' ||
+      location.pathname === '/noticia-intranet' ||
+      location.pathname === '/mice-intranet' ||
+      location.pathname === '/contacto-intranet' 
     ) {
+      return (
       <>      
         <Menu />
         <Routes>
           {/* <Route path='/home' element={<Menu />} /> */}
+          {/* ADMIN */}
+          <Route path='/admin/usuarios' element={<UsuariosAdmin/>} />
+          <Route path='/admin/tour' element={<TourAdmin/>} />
+          <Route path='/admin/circuitos' element={<CircuitoAdmin/>} />
+          <Route path='/admin/noticias' element={<NoticiaAdmin/>} />
+          <Route path='/admin/reclamacion' element={<ReclamacionAdmin/>} />
+          <Route path='/admin/mensajes' element={<ComunicacionAdmin/>} />
+
+          
+          {/* AGENTE */}
+          <Route path='/home-intranet' element={<HomeIntra />} />
           <Route path='/tour-intranet' element={<TourIntra />} />
+          <Route path='/circuito-intranet' element={<CircuitoIntra />} />
+          <Route path='/noticia-intranet' element={<NoticiasIntra />} />
+          <Route path='/mice-intranet' element={<NoticiasIntra />} />
+          <Route path='/contacto-intranet' element={<ContactoIntra />} />
         </Routes>
       </>
+      )
     }
     else {
       return (
