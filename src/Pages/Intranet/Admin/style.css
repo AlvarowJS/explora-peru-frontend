@@ -1,9 +1,12 @@
-.container {    
+.container {
     width: 100%;
     /* background-color: #D9D9D9; */
-    padding-left: 200px;
+    padding-left: 40px;
+    position: relative;
     /* margin-top: 100px; */
     height: 100vh;
-    overflow: auto; /* Habilitar barra de desplazamiento */
+    overflow: auto;
+    /* text-align: center; */
+    /* Habilitar barra de desplazamiento */
 
 }

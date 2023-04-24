@@ -7,15 +7,28 @@ const URL = 'http://127.0.0.1:8000/api/v1/tours'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import TourForm from './TourForm'
+import { useForm } from 'react-hook-form'
 const MySwal = withReactContent(Swal)
 
 const TourAdmin = () => {
     const [tours, setTours] = useState()
+    const [modal, setModal] = useState(false)
     const [estado, setEstado] = useState(false)
     const [showModal, setShowModal] = useState(false);
+    const [image, setImage] = useState()
+    const [imgData, setImgData] = useState()
+    const [prueba, setPrueba] = useState(null)
 
-    const handleCloseModal = () => setShowModal(false);
-    const handleShowModal = () => setShowModal(true);
+    const { handleSubmit, register, reset, watch } = useForm()
+    const [objUpdate, setObjUpdate] = useState()
+
+    const toggle = () => {
+        setModal(!modal)
+        if (objUpdate !== undefined) {
+            reset(defaultValuesForm)
+        }
+    };
+
     useEffect(() => {
         setEstado(false)
         toursBD.get()
@@ -23,10 +36,63 @@ const TourAdmin = () => {
             .catch(err => console.log(err))
     }, [estado])
 
+    const createTour = newUser => {
+        axios.post(URL, newUser)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+        // .finally(() => console.log(res.data))
+    }
+    const defaultValuesForm = {
+        titulo: '',
+        descripcion_spanish: '',
+        descripcion_english: '',
+        incluye_spanish: '',
+        incluye_english: '',
+        duracion: '',
+        img: ''
+    }
+
+    const updateTour = (id, data) => {
+        // console.log(prueba, 'check1')
+        // console.log(imgData, 'check')
+        const formData = new FormData();
+        formData.append('img', imgData);
+        const updatedData = { ...data, img: imgData };
+
+        axios.patch(`${URL}/${id}`, updatedData)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => console.log(err))
+    }
 
     const updateTourById = (id) => {
-        console.log(id)
+
+        toggle.call()
+        toursBD.get(`/${id}`)
+            .then(res => {
+                setObjUpdate(res?.data)
+                const object = res?.data
+                reset(object)
+            })
+            .catch(err => console.log(err))
+
     }
+
+    const submit = data => {
+        if (objUpdate !== undefined) {
+
+            updateTour(objUpdate.id, data)
+            reset(defaultValuesForm)
+            toggle.call()
+
+        } else {
+            reset(defaultValuesForm)
+            createTour(data)
+            toggle.call()
+        }
+    }
+
     const deleteTourById = (id) => {
         return MySwal.fire({
             title: '¿Estás seguro de eliminar?',
@@ -129,7 +195,7 @@ const TourAdmin = () => {
     return (
         <>
             <div className='container'>
-                <button onClick={handleShowModal} className='btn btn-success m-2'>Registrar Tour</button>
+                <button onClick={toggle} className='btn btn-success m-2'>Registrar Tour</button>
                 <DataTable
                     title="Administrar Tours"
                     columns={columns}
@@ -138,11 +204,19 @@ const TourAdmin = () => {
                     selectableRows
                 />
                 <TourForm
-                    show={showModal}
-                    onHide={handleCloseModal}
-                    title="My Modal"
-                    body="This is the body of my modal."
-                    onSubmit={() => console.log('Modal submitted.')}
+                    toggle={toggle}
+                    modal={modal}
+                    setModal={setModal}
+                    handleSubmit={handleSubmit}
+                    submit={submit}
+                    register={register}
+                    reset={reset}
+                    watch={watch}
+                    image={image}
+                    setImgData={setImgData}
+                    imgData={imgData}
+                    setPrueba={setPrueba}
+                    prueba={prueba}
                 />
             </div>
         </>
