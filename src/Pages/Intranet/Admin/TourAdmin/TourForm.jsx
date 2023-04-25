@@ -1,25 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Modal, Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form'
+import lugaresBD from './../../../../apis/lugares'
 
 const TourForm = ({
     modal, image, toggle, handleSubmit, watch,
     setImgData, imgData,
     submit, register, reset,
 }) => {
+    
     const watchImg = watch('img');
+    const [options, setOptions] = useState()
 
     const handleFileChange = (e) => {
         console.log("hola?")
+        setImgData(e.target.files[0])
+
         const file = e.target.files[0];
         const imgUrl = URL.createObjectURL(file);
         document.getElementById('preview-img').src = imgUrl;
 
-        let fileComplete = e.target.files
-        setImgData(e.target.files[0])
-        
 
     };
+    const crearLugar = () => {}
+    useEffect(() => {
+        lugaresBD.get()
+            .then(res => setOptions(res.data))
+            .catch(err => console.log(err))
+    }, [])
 
     // const subirArchivo = e => {
     //     setImgData(e)
@@ -33,7 +41,7 @@ const TourForm = ({
             <Modal.Body>
                 <form onSubmit={handleSubmit(submit)}>
                     <div className="form-group m-4">
-                        <label for="titulo">Titulo</label>
+                        <label htmlFor="titulo">Titulo</label>
                         <input type="text" className="form-control" id="titulo"
                             {...register('titulo')}
                             placeholder="Ingresar el titulo del tour"
@@ -41,27 +49,27 @@ const TourForm = ({
                     </div>
 
                     <div className="form-group m-4">
-                        <label for="descripcion_spanish">Descripcion Español</label>
+                        <label htmlFor="descripcion_spanish">Descripcion Español</label>
                         <textarea className="form-control" id="descripcion_spanish" rows="3" {...register('descripcion_spanish')}></textarea>
                     </div>
 
                     <div className="form-group m-4">
-                        <label for="descripcion_english">Descripcion Ingles</label>
+                        <label htmlFor="descripcion_english">Descripcion Ingles</label>
                         <textarea className="form-control" id="descripcion_english" rows="3" {...register('descripcion_english')}></textarea>
                     </div>
 
                     <div className="form-group m-4">
-                        <label for="incluye_spanish">Incluye Español</label>
+                        <label htmlFor="incluye_spanish">Incluye Español</label>
                         <textarea className="form-control" id="incluye_spanish" rows="3" {...register('incluye_spanish')}></textarea>
                     </div>
 
                     <div className="form-group m-4">
-                        <label for="incluye_english">Incluye Ingles</label>
+                        <label htmlFor="incluye_english">Incluye Ingles</label>
                         <textarea className="form-control" id="incluye_english" rows="3" {...register('incluye_english')}></textarea>
                     </div>
 
                     <div className="form-group m-4">
-                        <label for="duracion">Duración</label>
+                        <label htmlFor="duracion">Duración</label>
                         <input type="text" className="form-control" id="duracion"
                             {...register('duracion')}
                             placeholder="Ingresar la duración"
@@ -69,7 +77,19 @@ const TourForm = ({
                     </div>
 
                     <div className="form-group m-4">
-                        <label for="img">Subir Imagen </label>
+                        <label htmlFor="lugar">Lugar</label>
+                        <select class="form-select" id="lugares" {...register("lugare_id")}>
+                            {
+                                options?.map(option => (
+                                    <option key={option.id} value={option.id}>{option.nombre}</option>
+                                ))
+                            }
+                        </select>
+                        <button className='btn btn-primary my-2' onClick={crearLugar()}>Crear Lugar</button>
+                    </div>
+
+                    <div className="form-group m-4">
+                        <label htmlFor="img">Subir Imagen </label>
                         {/* <input type='file' className="form-control" id="img" {...register('img')} /> */}
                         <input
                             type='file'

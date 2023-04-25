@@ -21,13 +21,13 @@ const Menu = () => {
             <SideNav.Nav defaultSelected="tourintranet">
                 <NavItem eventKey="perfil" style={{ textAlign: 'center', marginBottom: '70px' }}>
 
-                    <i class='bx bxs-user-circle' style={{ fontSize: '4em' }}></i>
+                    <i className='bx bxs-user-circle' style={{ fontSize: '4em' }}></i>
                     <p> Alvaro</p>
                 </NavItem>
                 {/*  */}
                 <NavItem eventKey="admin">
                     <NavIcon>
-                        <i class='bx bxs-user-detail' style={{ fontSize: '1.75em' }} ></i>
+                        <i className='bx bxs-user-detail' style={{ fontSize: '1.75em' }} ></i>
                     </NavIcon>
                     <NavText>
                         Admin
@@ -67,7 +67,7 @@ const Menu = () => {
                 <NavItem eventKey="home-intranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} /> */}
-                        <i class='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i>
+                        <i className='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i>
                     </NavIcon>
 
                     <NavText>
@@ -78,7 +78,7 @@ const Menu = () => {
                 <NavItem eventKey="tour-intranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} /> */}
-                        {/* <i class='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i> */}
+                        {/* <i className='bx bx-home-alt-2' style={{ fontSize: '1.75em' }}  ></i> */}
                         <i className='bx bx-car' style={{ fontSize: '1.75em' }}></i>
                     </NavIcon>
                     <NavText>

@@ -29,6 +29,7 @@ import CircuitoAdmin from '../Pages/Intranet/Admin/CircuitoAdmin/CircuitoAdmin'
 import NoticiaAdmin from '../Pages/Intranet/Admin/NoticiaAdmin/NoticiaAdmin'
 import ReclamacionAdmin from '../Pages/Intranet/Admin/ReclamacionAdmin/ReclamacionAdmin'
 import ComunicacionAdmin from '../Pages/Intranet/Admin/ComunicacionAdmin/ComunicacionAdmin'
+import Reclamaciones from '../Pages/Reclamaciones/Reclamaciones'
 
 
 
@@ -43,7 +44,7 @@ const AppRouter = () => {
 
     ) {
       return (
-        <>          
+        <>
           <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
@@ -63,31 +64,31 @@ const AppRouter = () => {
       location.pathname === '/circuito-intranet' ||
       location.pathname === '/noticia-intranet' ||
       location.pathname === '/mice-intranet' ||
-      location.pathname === '/contacto-intranet' 
+      location.pathname === '/contacto-intranet'
     ) {
       return (
-      <>      
-        <Menu />
-        <Routes>
-          {/* <Route path='/home' element={<Menu />} /> */}
-          {/* ADMIN */}
-          <Route path='/admin/usuarios' element={<UsuariosAdmin/>} />
-          <Route path='/admin/tour' element={<TourAdmin/>} />
-          <Route path='/admin/circuitos' element={<CircuitoAdmin/>} />
-          <Route path='/admin/noticias' element={<NoticiaAdmin/>} />
-          <Route path='/admin/reclamacion' element={<ReclamacionAdmin/>} />
-          <Route path='/admin/mensajes' element={<ComunicacionAdmin/>} />
+        <>
+          <Menu />
+          <Routes>
+            {/* <Route path='/home' element={<Menu />} /> */}
+            {/* ADMIN */}
+            <Route path='/admin/usuarios' element={<UsuariosAdmin />} />
+            <Route path='/admin/tour' element={<TourAdmin />} />
+            <Route path='/admin/circuitos' element={<CircuitoAdmin />} />
+            <Route path='/admin/noticias' element={<NoticiaAdmin />} />
+            <Route path='/admin/reclamacion' element={<ReclamacionAdmin />} />
+            <Route path='/admin/mensajes' element={<ComunicacionAdmin />} />
 
-          
-          {/* AGENTE */}
-          <Route path='/home-intranet' element={<HomeIntra />} />
-          <Route path='/tour-intranet' element={<TourIntra />} />
-          <Route path='/circuito-intranet' element={<CircuitoIntra />} />
-          <Route path='/noticia-intranet' element={<NoticiasIntra />} />
-          <Route path='/mice-intranet' element={<NoticiasIntra />} />
-          <Route path='/contacto-intranet' element={<ContactoIntra />} />
-        </Routes>
-      </>
+
+            {/* AGENTE */}
+            <Route path='/home-intranet' element={<HomeIntra />} />
+            <Route path='/tour-intranet' element={<TourIntra />} />
+            <Route path='/circuito-intranet' element={<CircuitoIntra />} />
+            <Route path='/noticia-intranet' element={<NoticiasIntra />} />
+            <Route path='/mice-intranet' element={<NoticiasIntra />} />
+            <Route path='/contacto-intranet' element={<ContactoIntra />} />
+          </Routes>
+        </>
       )
     }
     else {
@@ -103,7 +104,12 @@ const AppRouter = () => {
             <Route path='/noticias' element={<Noticias />} />
             <Route path='/noticias/:id' element={<NoticiaNota />} />
             <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma} />} />
+            <Route path='/reclamaciones' element={<Reclamaciones idiomaGlobal={idioma} />} />
           </Routes>
+          <Footer idioma={idioma} />
+          <a href="https://wa.link/ix9xwp" className="btn-whatsapp" target="_blank">
+            <i class='bx bxl-whatsapp'></i>
+          </a>
         </>
       );
     }

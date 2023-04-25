@@ -36,8 +36,20 @@ const TourAdmin = () => {
             .catch(err => console.log(err))
     }, [estado])
 
-    const createTour = newUser => {
-        axios.post(URL, newUser)
+    const createTour = data => {
+        
+        console.log(imgData, 'check')
+        const formData = new FormData();
+        formData.append('img', imgData);
+        formData.append('titulo', data.titulo);
+        formData.append('descripcion_spanish', data.descripcion_spanish);
+        formData.append('descripcion_english', data.descripcion_english);
+        formData.append('incluye_english', data.incluye_english);
+        formData.append('incluye_spanish', data.incluye_spanish);
+        formData.append('lugare_id', data.lugare_id);
+        formData.append('duracion', data.duracion);
+
+        axios.post(URL, formData)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
         // .finally(() => console.log(res.data))
@@ -54,12 +66,18 @@ const TourAdmin = () => {
 
     const updateTour = (id, data) => {
         // console.log(prueba, 'check1')
-        // console.log(imgData, 'check')
+        console.log(imgData, 'check')
         const formData = new FormData();
         formData.append('img', imgData);
-        const updatedData = { ...data, img: imgData };
+        formData.append('titulo', data.titulo);
+        formData.append('descripcion_spanish', data.descripcion_spanish);
+        formData.append('descripcion_english', data.descripcion_english);
+        formData.append('incluye_english', data.incluye_english);
+        formData.append('incluye_spanish', data.incluye_spanish);
+        formData.append('lugare_id', data.lugare_id);
+        formData.append('duracion', data.duracion);
 
-        axios.patch(`${URL}/${id}`, updatedData)
+        axios.patch(`${URL}/${id}`, formData)
             .then(res => {
                 console.log(res.data)
             })
@@ -82,7 +100,7 @@ const TourAdmin = () => {
     const submit = data => {
         if (objUpdate !== undefined) {
 
-            updateTour(objUpdate.id, data)
+            updateTour(objUpdate?.id, data)
             reset(defaultValuesForm)
             toggle.call()
 
@@ -127,8 +145,16 @@ const TourAdmin = () => {
     const columns = [
         {
             name: 'Titulo',
-            selector: 'titulo',
             sortable: true,
+            cell: row => {
+                return (
+                    <div style={{margin: '10px'}}>
+                        {
+                            row?.titulo
+                        }
+                    </div>
+                )
+            }
         },
         {
             name: 'Descripcion Español',
@@ -138,7 +164,7 @@ const TourAdmin = () => {
                 return (
                     <div>
                         {
-                            row?.descripcion_spanish
+                            row?.descripcion_spanish.substring(0, 40) + "..."
                         }
                     </div>
                 )
@@ -152,7 +178,7 @@ const TourAdmin = () => {
                 return (
                     <div>
                         {
-                            row?.descripcion_english
+                            row?.descripcion_english.substring(0, 40) + "..."
                         }
                     </div>
                 )
@@ -165,7 +191,7 @@ const TourAdmin = () => {
                 return (
                     <div>
                         {
-                            row?.incluye_spanish
+                            row?.incluye_spanish.substring(0, 40) + "..."
                         }
                     </div>
                 )
@@ -179,10 +205,10 @@ const TourAdmin = () => {
                 return (
                     <div className='local_buttons'>
                         <button className='btn btn-warning mx-2' onClick={() => updateTourById(row?.id)}>
-                            <i class='bx bx-edit-alt' ></i>
+                            <i className='bx bx-edit-alt' ></i>
                         </button>
                         <button className='btn btn-danger' onClick={() => deleteTourById(row?.id)}>
-                            <i class='bx bx-trash' ></i>
+                            <i className='bx bx-trash' ></i>
                         </button>
 
                     </div>
