@@ -29,6 +29,7 @@ const TourForm = ({
             .catch(err => console.log(err))
     }, [])
 
+    
     // const subirArchivo = e => {
     //     setImgData(e)
     // }
