@@ -4,10 +4,11 @@ import DataTable from 'react-data-table-component'
 import axios from 'axios'
 import toursBD from '../../../../apis/tours'
 const URL = 'http://127.0.0.1:8000/api/v1/tours'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+
 import TourForm from './TourForm'
 import { useForm } from 'react-hook-form'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
 
 const TourAdmin = () => {

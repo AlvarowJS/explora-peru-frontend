@@ -22,7 +22,9 @@ const Login = () => {
                         <label for="password">Contraseña:</label>
                         <input type="password" id="password" name="password" />
 
-                        <button type="submit">Iniciar sesión</button>
+                        <Link to='/admin/tour'>
+                            <button type="submit">Iniciar sesión</button>
+                        </Link>
 
                     </form>
                     <p className='login-right-create'>Quieres ser un Agente?<span> <Link to='/register'>Rellene este formulario de Inscripción</Link></span></p>

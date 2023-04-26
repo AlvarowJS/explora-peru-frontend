@@ -30,6 +30,7 @@ import NoticiaAdmin from '../Pages/Intranet/Admin/NoticiaAdmin/NoticiaAdmin'
 import ReclamacionAdmin from '../Pages/Intranet/Admin/ReclamacionAdmin/ReclamacionAdmin'
 import ComunicacionAdmin from '../Pages/Intranet/Admin/ComunicacionAdmin/ComunicacionAdmin'
 import Reclamaciones from '../Pages/Reclamaciones/Reclamaciones'
+import TourIntraCardInfo from '../Pages/Intranet/Agente/TourIntra/TourIntraCardInfo'
 
 
 
@@ -61,6 +62,7 @@ const AppRouter = () => {
       location.pathname === '/admin/mensajes' ||
       location.pathname === '/home-intranet' ||
       location.pathname === '/tour-intranet' ||
+      location.pathname.match(/^\/tour-intranet\/(.+)/) ||
       location.pathname === '/circuito-intranet' ||
       location.pathname === '/noticia-intranet' ||
       location.pathname === '/mice-intranet' ||
@@ -83,6 +85,7 @@ const AppRouter = () => {
             {/* AGENTE */}
             <Route path='/home-intranet' element={<HomeIntra />} />
             <Route path='/tour-intranet' element={<TourIntra />} />
+            <Route path='/tour-intranet/:id' element={<TourIntraCardInfo />} />
             <Route path='/circuito-intranet' element={<CircuitoIntra />} />
             <Route path='/noticia-intranet' element={<NoticiasIntra />} />
             <Route path='/mice-intranet' element={<NoticiasIntra />} />

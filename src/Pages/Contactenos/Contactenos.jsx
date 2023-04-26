@@ -1,5 +1,6 @@
 import React from 'react'
 import './Contactenos.css'
+
 const Contactenos = ({ idioma, idiomaGlobal }) => {
   console.log(idiomaGlobal, 'global')
   return (

@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import './../style.css'
+
+import noticiasBD from '../../../../apis/Noticias'
+import NoticiaCard from '../../../../Components/Noticia/NoticiaCard'
+import NoticiasIntraCard from './NoticiasIntraCard'
 
 const NoticiasIntra = () => {
+  const [noticias, setNoticias] = useState()
+  useEffect(() => {
+    noticiasBD.get()
+      .then(res => setNoticias(res.data))
+      .catch(err => console.log(err))
+  }, [])
+  
   return (
-    <div>NoticiasIntra</div>
+    <div className='container'>
+      <h2>Noticias</h2>
+      {noticias?.map(noticia => (
+        <NoticiasIntraCard
+          key={noticia.id}
+          noticia={noticia}
+        />
+      ))}
+    </div>
   )
 }
 

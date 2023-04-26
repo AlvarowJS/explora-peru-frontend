@@ -95,7 +95,7 @@ const Menu = () => {
                     </NavText>
 
                 </NavItem>
-                <NavItem eventKey="mice-intranet">
+                {/* <NavItem eventKey="mice-intranet">
                     <NavIcon>
                         <i className='bx bxl-gmail' style={{ fontSize: '1.75em' }}></i>
                     </NavIcon>
@@ -103,7 +103,7 @@ const Menu = () => {
                         MICE
                     </NavText>
 
-                </NavItem>
+                </NavItem> */}
                 <NavItem eventKey="noticia-intranet">
                     <NavIcon>
                         <i className='bx bx-news' style={{ fontSize: '1.75em' }}></i>
@@ -123,7 +123,7 @@ const Menu = () => {
                     </NavText>
 
                 </NavItem>
-                <NavItem eventKey="logout">
+                <NavItem eventKey="login">
                     <NavIcon>
                         <i className='bx bx-exit' style={{ fontSize: '1.75em' }} ></i>
                     </NavIcon>

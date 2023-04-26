@@ -43,8 +43,9 @@ const Register = () => {
                             <p> Acepto los terminos y condiciones del servicio</p>
                         </div>
 
+                        <Link to='/login'>
                         <button type="submit">Registrar</button>
-
+                        </Link>
                     </form>
                     <p className='register-right-create'>Eres parte de Perú de Exploring? <span><Link to='/login' > Inicia Sesión</Link></span></p>
                 </div>

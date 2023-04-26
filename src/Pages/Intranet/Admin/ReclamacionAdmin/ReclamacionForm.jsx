@@ -1,81 +1,20 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Modal, Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form'
-import './Reclamaciones.css'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-const MySwal = withReactContent(Swal)
 
-const URL = 'http://127.0.0.1:8000/api/v1/libros'
-const Reclamaciones = () => {
-    let fechaActual = new Date();
-    let dia = fechaActual.getDate();
-    let mes = fechaActual.getMonth() + 1; //Recuerda que los meses empiezan en 0
-    let anio = fechaActual.getFullYear();
-    let today = dia + '/ ' + mes + '/ ' + anio
-    const defaulForm = {
-        accion: '',
-        descripcion: '',
-        detalle: '',
-        dni: '',
-        domicilio: '',
-        email: '',        
-        moneda_tipo: '',
-        monto_reclamado: '',
-        nombre_completo: '',
-        padre: '',
-        pais: '',
-        pedido: '',
-        relacion: '',
-        telefono: ''
-    }
-    const { handleSubmit, register, reset, watch } = useForm()
-    const submit = data => {
-
-        return MySwal.fire({
-            title: '¿Estás seguro de enviar el reclamo?',
-            text: "¡No podrás editar esto!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Si',
-            customClass: {
-                confirmButton: 'btn btn-primary',
-                cancelButton: 'btn btn-outline-danger ms-1'
-            },
-            buttonsStyling: false
-        }).then(function (result) {
-            if (result.value) {
-                MySwal.fire({
-                    icon: 'success',
-                    title: 'Reclamo Enviado!',
-                    text: 'Atenderemos sus sugerencias :)',
-                    customClass: {
-                        confirmButton: 'btn btn-success'
-                    }
-                })
-                axios.post(URL, data)
-                    .then(res => {
-                        console.log(res.data)
-                        reset(defaulForm)
-                    })
-                    .catch(err => console.log(err))
-            }
-        })
-
-        // //////
-
-    }
+const ReclamacionForm = ({
+    modal, image, toggle, handleSubmit, watch,
+    setImgData, imgData,
+    submit, register, reset,
+}) => {
     return (
-        <div>
-            <aside className='recla'>
-
-                <h1>Libro de Reclamaciones</h1>
-                <br />
-                <p>PERU EXPLORA RUC: </p>
-                <p>DIRECCION: </p>
-                <p>Fecha: {today}</p>
-
+        <Modal show={modal} onHide={toggle} size='lg'>
+            <Modal.Header closeButton>
+                <Modal.Title>Ver Reclamo</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
                 <form onSubmit={handleSubmit(submit)} className='reclamacion'>
+              
                     <h3>1. INFORMACIÓN DEL CONSUMIDOR RECLAMANTE</h3>
                     <div class="row">
                         <div class="col-4">
@@ -177,12 +116,18 @@ const Reclamaciones = () => {
 
                     </div>
 
-                    <button className='btn btn-primary m-4'>Enviar</button>
-                    {/* <button className='btn btn-secondary'>Cancelar</button> */}
                 </form>
-            </aside>
-        </div>
+            </Modal.Body>
+            <Modal.Footer>
+                {/* <Button variant="secondary" onClick={onHide}>
+                    Cerrar
+                </Button>
+                <Button variant="primary" onClick={onSubmit}>
+                    Guardar Cambios
+                </Button> */}
+            </Modal.Footer>
+        </Modal>
     )
 }
 
-export default Reclamaciones
+export default ReclamacionForm
