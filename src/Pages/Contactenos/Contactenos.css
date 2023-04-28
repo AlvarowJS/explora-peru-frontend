@@ -52,6 +52,15 @@
     margin-left: 30px;
     padding-left: 30px;
 }
+.sobrenosotros__contacto--input textarea {
+    width: 70%;
+    border: none;
+    background-color: #D9D9D9;
+    /* height: 23px; */
+    outline: none;
+    margin-left: 30px;
+    padding-left: 30px;
+}
 
 .sobrenosotros__contacto--button {
     padding: 10px 20px;

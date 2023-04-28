@@ -2,7 +2,61 @@ import React from 'react'
 import portada from './../../../assets/carril/about_1.png'
 import './Register.css'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import axios from 'axios'
+const MySwal = withReactContent(Swal)
+const URL = 'http://127.0.0.1:8000/api/register'
 const Register = () => {
+
+    const submit = data => {
+        return MySwal.fire({
+            title: '¿Estás seguro de sus datos?',
+            text: "¡No podrás editar esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            customClass: {
+                confirmButton: 'btn btn-primary',
+                cancelButton: 'btn btn-outline-danger ms-1'
+            },
+            buttonsStyling: false
+        }).then(function (result) {
+            if (result.value) {
+
+                axios.post(URL, data)
+                    .then(res => {
+                        console.log(res.data)
+                        reset(defaultForm)
+                        MySwal.fire({
+                            icon: 'success',
+                            title: 'Mensaje Enviado!',
+                            text: 'Activaremos su cuenta pronto :)',
+                            customClass: {
+                                confirmButton: 'btn btn-success'
+                            }
+                        })
+
+                    })
+                    .catch(err => {
+                        console.log(err)
+                        MySwal.fire({
+                            icon: 'error',
+                            title: 'Ocurrio un error',
+                            text: 'talvez el correo o ruc ya se ha registrado',
+                            customClass: {
+                                confirmButton: 'btn btn-success'
+                            }
+                        })
+                    })
+
+            }
+        })
+    }
+
+    const { handleSubmit, register, reset, watch } = useForm()
+
     return (
         <>
             <div className="register-container">
@@ -14,28 +68,36 @@ const Register = () => {
                         <b> Registro</b>
                     </h2>
                     <p>Se uno de nuestros agentes y accede a precios especiales</p>
-                    <form>
-                        <label for="username">Usuario:</label>
-                        <input type="text" id="username" name="username" />
+                    <form onSubmit={handleSubmit(submit)}>
+
+                        <label for="razon_social">Razón Social:</label>
+                        <input type="text" id="razon_social" name="razon_social"
+                            {...register('razon_social')} />
+
 
                         <div className="input-group">
                             <div>
                                 <label for="telefono">Telefono o celular:</label>
-                                <input type="text" id="telefono" name="telefono" />
+                                <input type="text" id="telefono" name="telefono"
+                                    {...register('telefono')} />
                             </div>
                             <div>
                                 <label for="ruc">RUC</label>
-                                <input type="text" id="ruc" name="ruc" />
+                                <input type="text" id="ruc" name="ruc"
+                                    {...register('ruc')} />
                             </div>
                         </div>
                         <div className="input-group">
                             <div>
                                 <label for="direccion">Dirección:</label>
-                                <input type="text" id="direccion" name="direccion" />
+                                <input type="text" id="direccion" name="direccion"
+                                    {...register('direccion')} />
                             </div>
                             <div>
                                 <label for="email">Correo Electronico</label>
-                                <input type="email" id="email" name="email" />
+                                <input type="email" id="email" name="email"
+                                    {...register('email')}
+                                />
                             </div>
                         </div>
                         <div className='input-check'>
@@ -43,9 +105,7 @@ const Register = () => {
                             <p> Acepto los terminos y condiciones del servicio</p>
                         </div>
 
-                        <Link to='/login'>
                         <button type="submit">Registrar</button>
-                        </Link>
                     </form>
                     <p className='register-right-create'>Eres parte de Perú de Exploring? <span><Link to='/login' > Inicia Sesión</Link></span></p>
                 </div>

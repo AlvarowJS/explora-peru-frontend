@@ -13,7 +13,7 @@ const Menu = () => {
         let role = localStorage.getItem('role');
         let razon_social = localStorage.getItem('razon_social');
         let role_name = localStorage.getItem('role_name');
-        setRole({ token, ruc, role, role_name })
+        setRole({ token, ruc, role, role_name, razon_social })
     }, [])
     const logout = () => {
         //    return navigate('/login')
@@ -42,13 +42,12 @@ const Menu = () => {
                 <NavItem eventKey="perfil" style={{ textAlign: 'center', marginBottom: '70px' }}>
 
                     <i className='bx bxs-user-circle' style={{ fontSize: '4em' }}></i>
-                    <p> {role.role_name}</p>
+                    <p> {role.razon_social}</p>
                 </NavItem>
                 {/*  */}
 
                 {
-                    role.id == 1 ?
-
+                    role.role == 1 ?
                         <NavItem eventKey="admin">
                             <NavIcon>
                                 <i className='bx bxs-user-detail' style={{ fontSize: '1.75em' }} ></i>
@@ -71,6 +70,11 @@ const Menu = () => {
                                     Circuitos
                                 </NavText>
                             </NavItem>
+                            <NavItem eventKey="admin/tarifas">
+                                <NavText>
+                                    Tarifas
+                                </NavText>
+                            </NavItem>
                             <NavItem eventKey="admin/noticias">
                                 <NavText>
                                     Noticias
@@ -86,7 +90,8 @@ const Menu = () => {
                                     Mensajes
                                 </NavText>
                             </NavItem>
-                        </NavItem> : null
+                        </NavItem>
+                        : null
                 }
                 {/*  */}
                 <NavItem eventKey="home-intranet">

@@ -1,0 +1,16 @@
+.noticiainfo{
+    display: flex;
+}
+.noticiainfo img{
+    width: 50%;
+    height: 800px;
+    border-radius: 20px;
+}
+.noticiainfo__info h4{
+    font-weight: bold;
+    margin: 40px 50px;
+}
+.noticiainfo__info p{
+    
+    margin: 40px 50px;
+}

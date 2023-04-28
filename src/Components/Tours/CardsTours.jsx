@@ -23,7 +23,7 @@ const CardsTours = ({ tour, idioma }) => {
                 }
             </p>
             <div className='tours__card--info'>
-                <p>{tour.duracion}</p>
+                <p>{tour.duracion} horas</p>
                 <button onClick={() => verTour(tour.id)}>
                     Ver mas
                 </button>

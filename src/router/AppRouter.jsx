@@ -32,11 +32,13 @@ import ComunicacionAdmin from '../Pages/Intranet/Admin/ComunicacionAdmin/Comunic
 import Reclamaciones from '../Pages/Reclamaciones/Reclamaciones'
 import TourIntraCardInfo from '../Pages/Intranet/Agente/TourIntra/TourIntraCardInfo'
 import ProtectedRouter from './ProtectedRouter'
+import NoticiaIntraCardInfo from '../Pages/Intranet/Agente/NoticiasIntra/NoticiaIntraCardInfo'
+import TarifasAdmin from '../Pages/Intranet/Admin/TarifasAdmin/TarifasAdmin'
 
 
 
 const AppRouter = () => {
-  
+
   const [idioma, setIdioma] = useState('spanish')
   const token = localStorage.getItem("token")
 
@@ -64,13 +66,16 @@ const AppRouter = () => {
       location.pathname === '/admin/noticias' ||
       location.pathname === '/admin/reclamacion' ||
       location.pathname === '/admin/mensajes' ||
+      location.pathname === '/admin/tarifas' ||
       location.pathname === '/home-intranet' ||
       location.pathname === '/tour-intranet' ||
       location.pathname.match(/^\/tour-intranet\/(.+)/) ||
       location.pathname === '/circuito-intranet' ||
       location.pathname === '/noticia-intranet' ||
+      location.pathname.match(/^\/noticia-intranet\/(.+)/) ||
       location.pathname === '/mice-intranet' ||
-      location.pathname === '/contacto-intranet'
+      location.pathname === '/contacto-intranet' 
+      
     ) {
       return (
         <>
@@ -78,13 +83,14 @@ const AppRouter = () => {
           <Routes>
             {/* <Route path='/home' element={<Menu />} /> */}
             {/* ADMIN */}
-            <Route element={<ProtectedRouter/>}>
+            <Route element={<ProtectedRouter />}>
               <Route path='/admin/usuarios' element={<UsuariosAdmin />} />
               <Route path='/admin/tour' element={<TourAdmin />} />
               <Route path='/admin/circuitos' element={<CircuitoAdmin />} />
               <Route path='/admin/noticias' element={<NoticiaAdmin />} />
               <Route path='/admin/reclamacion' element={<ReclamacionAdmin />} />
               <Route path='/admin/mensajes' element={<ComunicacionAdmin />} />
+              <Route path='/admin/tarifas' element={<TarifasAdmin />} />
 
 
               {/* AGENTE */}
@@ -93,6 +99,7 @@ const AppRouter = () => {
               <Route path='/tour-intranet/:id' element={<TourIntraCardInfo />} />
               <Route path='/circuito-intranet' element={<CircuitoIntra />} />
               <Route path='/noticia-intranet' element={<NoticiasIntra />} />
+              <Route path='/noticia-intranet/:id' element={<NoticiaIntraCardInfo />} />
               <Route path='/mice-intranet' element={<NoticiasIntra />} />
               <Route path='/contacto-intranet' element={<ContactoIntra />} />
             </Route>
