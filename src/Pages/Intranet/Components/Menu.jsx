@@ -18,6 +18,7 @@ const Menu = () => {
     const logout = () => {
         //    return navigate('/login')
         localStorage.setItem('token', '')
+        localStorage.setItem('id_user', '')
         localStorage.setItem('ruc', '')
         localStorage.setItem('role', '')
         localStorage.setItem('role_name', '')

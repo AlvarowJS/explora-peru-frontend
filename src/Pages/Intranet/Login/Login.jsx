@@ -15,6 +15,7 @@ const Login = () => {
         axios.post(URL, data)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
+                localStorage.setItem('id_user', res.data.id_user)
                 localStorage.setItem('ruc', res.data.ruc)
                 localStorage.setItem('razon_social', res.data.razon_social)
                 localStorage.setItem('role', res.data.role.id)
@@ -23,6 +24,7 @@ const Login = () => {
             })
             .catch( err => {
                 localStorage.setItem('token', '')
+                localStorage.setItem('id_user', '')
                 localStorage.setItem('ruc', '')
                 localStorage.setItem('razon_social', '')
                 localStorage.setItem('role', '')
