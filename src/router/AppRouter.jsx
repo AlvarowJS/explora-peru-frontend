@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation, Outlet } from 'react-router-dom'
 import SobreNosotros from '../Pages/SobreNosotros/SobreNosotros'
 import Tours from '../Pages/Tours/Tours'
 import Circuitos from '../Pages/Circuitos/Circuitos'
@@ -31,11 +31,15 @@ import ReclamacionAdmin from '../Pages/Intranet/Admin/ReclamacionAdmin/Reclamaci
 import ComunicacionAdmin from '../Pages/Intranet/Admin/ComunicacionAdmin/ComunicacionAdmin'
 import Reclamaciones from '../Pages/Reclamaciones/Reclamaciones'
 import TourIntraCardInfo from '../Pages/Intranet/Agente/TourIntra/TourIntraCardInfo'
+import ProtectedRouter from './ProtectedRouter'
 
 
 
 const AppRouter = () => {
+  
   const [idioma, setIdioma] = useState('spanish')
+  const token = localStorage.getItem("token")
+
   function NavbarRoutes() {
     const location = useLocation();
 
@@ -74,22 +78,24 @@ const AppRouter = () => {
           <Routes>
             {/* <Route path='/home' element={<Menu />} /> */}
             {/* ADMIN */}
-            <Route path='/admin/usuarios' element={<UsuariosAdmin />} />
-            <Route path='/admin/tour' element={<TourAdmin />} />
-            <Route path='/admin/circuitos' element={<CircuitoAdmin />} />
-            <Route path='/admin/noticias' element={<NoticiaAdmin />} />
-            <Route path='/admin/reclamacion' element={<ReclamacionAdmin />} />
-            <Route path='/admin/mensajes' element={<ComunicacionAdmin />} />
+            <Route element={<ProtectedRouter/>}>
+              <Route path='/admin/usuarios' element={<UsuariosAdmin />} />
+              <Route path='/admin/tour' element={<TourAdmin />} />
+              <Route path='/admin/circuitos' element={<CircuitoAdmin />} />
+              <Route path='/admin/noticias' element={<NoticiaAdmin />} />
+              <Route path='/admin/reclamacion' element={<ReclamacionAdmin />} />
+              <Route path='/admin/mensajes' element={<ComunicacionAdmin />} />
 
 
-            {/* AGENTE */}
-            <Route path='/home-intranet' element={<HomeIntra />} />
-            <Route path='/tour-intranet' element={<TourIntra />} />
-            <Route path='/tour-intranet/:id' element={<TourIntraCardInfo />} />
-            <Route path='/circuito-intranet' element={<CircuitoIntra />} />
-            <Route path='/noticia-intranet' element={<NoticiasIntra />} />
-            <Route path='/mice-intranet' element={<NoticiasIntra />} />
-            <Route path='/contacto-intranet' element={<ContactoIntra />} />
+              {/* AGENTE */}
+              <Route path='/home-intranet' element={<HomeIntra />} />
+              <Route path='/tour-intranet' element={<TourIntra />} />
+              <Route path='/tour-intranet/:id' element={<TourIntraCardInfo />} />
+              <Route path='/circuito-intranet' element={<CircuitoIntra />} />
+              <Route path='/noticia-intranet' element={<NoticiasIntra />} />
+              <Route path='/mice-intranet' element={<NoticiasIntra />} />
+              <Route path='/contacto-intranet' element={<ContactoIntra />} />
+            </Route>
           </Routes>
         </>
       )
@@ -108,6 +114,7 @@ const AppRouter = () => {
             <Route path='/noticias/:id' element={<NoticiaNota />} />
             <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma} />} />
             <Route path='/reclamaciones' element={<Reclamaciones idiomaGlobal={idioma} />} />
+
           </Routes>
           <Footer idioma={idioma} />
           <a href="https://wa.link/ix9xwp" className="btn-whatsapp" target="_blank">
