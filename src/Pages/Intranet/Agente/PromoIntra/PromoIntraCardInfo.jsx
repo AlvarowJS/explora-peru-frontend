@@ -1,39 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import toursBD from '../../../../apis/tours';
-import './TourInfo.css'
-const TourIntraCardInfo = () => {
+import './PromoIntra.css'
+import promosBD from '../../../../apis/promos';
+const PromoIntraCardInfo = () => {
 
     const id = useParams();
-    const [tour, setTour] = useState()
-    const [tourImg, setTourImg] = useState()
+    const [promo, setPromo] = useState()
+    const [promoImg, setPromoImg] = useState()
     useEffect(() => {
-        toursBD.get(`/${id.id}`)
+        promosBD.get(`/${id.id}`)
             .then(res => {
-                setTour(res.data)
-                setTourImg(`http://127.0.0.1:8000/storage/tours/${res.data.titulo}/${res.data.img}`)
+                setPromo(res.data)
+                setPromoImg(`http://127.0.0.1:8000/storage/promos/${res.data.titulo}/${res.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])
     const descargarItinerarioEspaniol = () => {
         
-        window.open(`http://127.0.0.1:8000/storage/tours/${tour.titulo}/${tour.archivo_spanish}`,'_blank')        
+        window.open(`http://127.0.0.1:8000/storage/promos/${promo.titulo}/${promo.archivo_spanish}`,'_blank')        
     }
     const descargarItinerarioEnglish = () => {
-        window.open(`http://127.0.0.1:8000/storage/tours/${tour.titulo}/${tour.archivo_english}`,'_blank')
+        window.open(`http://127.0.0.1:8000/storage/promos/${promo.titulo}/${promo.archivo_english}`,'_blank')
     }
     return (
         <div className='container'>
-            <Link to='/tour-intranet'>
+            <Link to='/promo-intranet'>
                 <i className='bx bx-left-arrow-alt mt-4'></i>   Regresar
             </Link>
-            <h2>{tour?.titulo}</h2>
+            <h2>{promo?.titulo}</h2>
 
-            <div className='tourinfo'>
-                <img src={tourImg} alt="" />
-                <div className='tourinfo__info'>
-                    <h4>{tour?.titulo}</h4>
-                    <p>{tour?.descripcion_spanish} </p>
+            <div className='promoinfo'>
+                <img src={promoImg} alt="" />
+                <div className='promoinfo__info'>
+                    <h4>{promo?.titulo}</h4>
+                    <p>{promo?.descripcion_spanish} </p>
                     <div className='tour__info-button'>
                         <button
                             className='btn btn-success'
@@ -57,4 +57,4 @@ const TourIntraCardInfo = () => {
     )
 }
 
-export default TourIntraCardInfo
+export default PromoIntraCardInfo

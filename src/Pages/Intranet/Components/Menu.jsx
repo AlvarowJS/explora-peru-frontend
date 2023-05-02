@@ -105,7 +105,15 @@ const Menu = () => {
                         Pagina Principal
                     </NavText>
                 </NavItem>
+                <NavItem eventKey="promo-intranet">
+                    <NavIcon>
+                        <i className='bx bxs-discount' style={{ fontSize: '1.75em' }}></i>
+                    </NavIcon>
+                    <NavText>
+                        Promociones
+                    </NavText>
 
+                </NavItem>
                 <NavItem eventKey="tour-intranet">
                     <NavIcon>
                         {/* <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} /> */}
@@ -126,15 +134,16 @@ const Menu = () => {
                     </NavText>
 
                 </NavItem>
-                {/* <NavItem eventKey="mice-intranet">
+                <NavItem eventKey="tarifa-intranet">
                     <NavIcon>
-                        <i className='bx bxl-gmail' style={{ fontSize: '1.75em' }}></i>
+                        <i class='bx bx-wallet' style={{ fontSize: '1.75em' }}></i>
+
                     </NavIcon>
                     <NavText>
-                        MICE
+                        Tarifas
                     </NavText>
 
-                </NavItem> */}
+                </NavItem>
                 <NavItem eventKey="noticia-intranet">
                     <NavIcon>
                         <i className='bx bx-news' style={{ fontSize: '1.75em' }}></i>

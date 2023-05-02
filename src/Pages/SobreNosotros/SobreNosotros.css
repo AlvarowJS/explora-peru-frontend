@@ -1,10 +1,10 @@
-
 .sobrenosotros__img {
     position: relative;
     width: 100%;
     height: 300px;
     z-index: 0;
 }
+
 .sobrenosotros__title {
     position: absolute;
     top: 20px;
@@ -17,22 +17,52 @@
     margin-top: 66px;
     /* margin-bottom: 437px; */
 }
+
+.sobrenosotros__titlep {
+    display: none;
+    position: absolute;
+    top: 120px;
+    z-index: 10;
+    color: white;
+    /* background-color: blue; */
+    font-size: 18px;
+    margin-left: 76px;
+    margin-right: 222px;
+    margin-top: 66px;
+    /* margin-bottom: 437px; */
+}
+
+.sobrenosotros__titleb {
+    position: absolute;
+    top: 150px;
+    left: 75%;
+    transform: translateX(-50%);
+    z-index: 11;
+    color: white;
+    background-color: #FE5A09;
+    border: none;
+    font-size: 18px;
+    padding: 10px 30px;
+}
+
 .sobrenosotros__info {
     display: flex;
-    gap: 30px;    
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .sobrenosotros__info--text h2 {
     margin-top: 50px;
     color: #FE5A09;
     size: 48px;
 }
+
 .sobrenosotros__info--text {
-    background-color: #EDEDED;    
+    background-color: #EDEDED;
     max-width: 435px;
     max-height: 540px;
-    padding: 20px 20px;    
+    padding: 20px 20px;
 }
 
 .sobrenosotros__info--about1 {
@@ -52,18 +82,21 @@
     height: 360px;
     border-radius: 10px;
 }
-.sobrenosotros__info--img{
+
+.sobrenosotros__info--img {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 @media screen and (min-width: 700px) {
     .sobrenosotros {
         max-height: 500px;
         overflow: hidden;
         /* position: relative; */
     }
+
     .sobrenosotros__title {
         position: absolute;
         top: 20px;
@@ -72,16 +105,32 @@
         /* background-color: red; */
         font-size: 48px;
         margin-left: 176px;
-        margin-right: 622px;
+        /* margin-right: 622px; */
+        margin-top: 96px;
+        /* margin-bottom: 437px; */
+    }
+
+    .sobrenosotros__titlep {
+        display: block;
+        position: absolute;
+        top: 200px;
+        z-index: 10;
+        color: white;
+        /* background-color: red; */
+        font-size: 18px;
+        margin-left: 176px;
+        /* margin-right: 622px; */
         margin-top: 136px;
         /* margin-bottom: 437px; */
     }
+
     .sobrenosotros__img {
         position: relative;
         width: 100%;
         height: auto;
         z-index: 0;
     }
+
     .sobrenosotros__info {
         display: flex;
         gap: 30px;
@@ -96,8 +145,8 @@
         max-height: 450px;
         /* padding: 0 20px; */
     }
-  
-    
+
+
 }
 
 @media screen and (min-width: 890px) {
@@ -122,9 +171,36 @@
         /* background-color: red; */
         font-size: 48px;
         margin-left: 176px;
-        margin-right: 622px;
-        margin-top: 286px;
+        margin-right: 422px;
+        margin-top: 136px;
         margin-bottom: 437px;
+    }
+
+    .sobrenosotros__titlep {
+        display: block;
+        position: absolute;
+        top: 170px;
+        z-index: 10;
+        color: white;
+        /* background-color: green; */
+        font-size: 28px;
+        margin-left: 176px;
+        margin-right: 422px;
+        margin-top: 136px;
+        margin-bottom: 437px;
+    }
+
+    .sobrenosotros__titleb {
+        position: absolute;
+        top: 400px;
+        left: 15%;
+        transform: translateX(-50%);
+        z-index: 11;
+        color: white;
+        background-color: #FE5A09;
+        border: none;
+        font-size: 18px;
+        padding: 10px 30px;
     }
 
     .sobrenosotros__info {
@@ -149,7 +225,7 @@
         size: 48px;
     }
 
-    
+
 
     .sobrenosotros__proveedores {
         text-align: center;
@@ -185,12 +261,14 @@
         width: 111px;
         height: 111px;
     }
-    .sobrenosotros__info--img{
+
+    .sobrenosotros__info--img {
         display: flex;
         gap: 20px;
-        
+
     }
-      .sobrenosotros__info--about1 {
+
+    .sobrenosotros__info--about1 {
         width: 190px;
         height: 260px;
         border-radius: 10px;
@@ -211,12 +289,14 @@
         margin-top: 150px;
     }
 }
+
 @media screen and (min-width: 1300px) {
     .sobrenosotros__info {
         display: flex;
         /* gap: 30px; */
         flex-wrap: nowrap;
     }
+
     .sobrenosotros__info--about1 {
         width: 270px;
         height: 360px;
@@ -237,7 +317,8 @@
         border-radius: 10px;
         margin-top: 150px;
     }
-    .sobrenosotros__info--img{
+
+    .sobrenosotros__info--img {
         display: flex;
         gap: 20px;
     }

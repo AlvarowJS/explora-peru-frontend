@@ -30,6 +30,7 @@ const Login = () => {
                 localStorage.setItem('role', '')
                 localStorage.setItem('role_name', '')
                 console.log(err) 
+                setValidate(true)
             })
     }
     return (
@@ -53,8 +54,11 @@ const Login = () => {
                             {...register('password')} />
 
                         <button type="submit">Iniciar sesión</button>
-                        
-                        <p>Credenciales Incorrectas</p>
+                        {
+                            validate == false ? null :
+                            <p style={{color: 'red'}}>Credenciales Incorrectas</p>
+
+                        }
                     
                     </form>
                     <p className='login-right-create'>Quieres ser un Agente?<span> <Link to='/register'>Rellene este formulario de Inscripción</Link></span></p>

@@ -4,7 +4,7 @@ import about1 from './../../assets/carril/about_1.png'
 import about2 from './../../assets/carril/about_2.png'
 import about3 from './../../assets/carril/about_3.png'
 import foto1 from './../../assets/testimonios/foto1.png'
-
+import { useNavigate } from 'react-router-dom';
 import './SobreNosotros.css'
 import StarRating from '../../Components/StarRating'
 import Footer from '../../Components/Footer/Footer'
@@ -12,18 +12,33 @@ import Contactenos from '../Contactenos/Contactenos'
 import Responsable from '../../Components/Responsable/Responsable'
 
 const SobreNosotros = ({ idioma, setIdioma }) => {
-
+  const navigate = useNavigate()
+  const login = () => {
+    return navigate('/login')
+  }
   return (
     <>
       <div className='sobrenosotros'>
         <img className='sobrenosotros__img' src={portada} alt="" />
         <h2 className='sobrenosotros__title'>
           {
-            idioma == 'spanish' ? `Haz memorable tus viajes con Nosotros` : 'Make your trips memorable with us'
+            idioma == 'spanish' ? `Únete a Nosotros y Accede a
+            las mejores Ofertas de Viaje` : 'Join us and access the best Travel Offers'
           }
-
-
         </h2>
+        {
+          idioma == 'spanish' ?
+            <p className='sobrenosotros__titlep'>Estamos abiertos a nuevas agencias asociadas</p>
+            :
+            <p>We are open to new partner agencies</p>
+        }
+
+        {
+          idioma == 'spanish' ?
+            <button className='sobrenosotros__titleb' onClick={login}>Ingresa aqui</button>
+            :
+            <button className='sobrenosotros__titleb'>enter here</button>
+        }
       </div>
       <div className='sobrenosotros__info'>
         <div className='sobrenosotros__info--text'>

@@ -34,6 +34,11 @@ import TourIntraCardInfo from '../Pages/Intranet/Agente/TourIntra/TourIntraCardI
 import ProtectedRouter from './ProtectedRouter'
 import NoticiaIntraCardInfo from '../Pages/Intranet/Agente/NoticiasIntra/NoticiaIntraCardInfo'
 import TarifasAdmin from '../Pages/Intranet/Admin/TarifasAdmin/TarifasAdmin'
+import TarifaIntra from '../Pages/Intranet/Agente/TarifaIntra/TarifaIntra'
+import PromoIntra from '../Pages/Intranet/Agente/PromoIntra/PromoIntra'
+import PromoIntraCardInfo from '../Pages/Intranet/Agente/PromoIntra/PromoIntraCardInfo'
+import CircuitoIntraCardInfo from '../Pages/Intranet/Agente/CircuitoIntra/CircuitoIntraCardInfo'
+import CircuitosInfo from '../Pages/Circuitos/CircuitosInfo/CircuitosInfo'
 
 
 
@@ -71,11 +76,14 @@ const AppRouter = () => {
       location.pathname === '/tour-intranet' ||
       location.pathname.match(/^\/tour-intranet\/(.+)/) ||
       location.pathname === '/circuito-intranet' ||
+      location.pathname.match(/^\/circuito-intranet\/(.+)/) ||
       location.pathname === '/noticia-intranet' ||
       location.pathname.match(/^\/noticia-intranet\/(.+)/) ||
       location.pathname === '/mice-intranet' ||
-      location.pathname === '/contacto-intranet' 
-      
+      location.pathname === '/contacto-intranet' || 
+      location.pathname === '/tarifa-intranet' ||
+      location.pathname === '/promo-intranet' ||
+      location.pathname.match(/^\/promo-intranet\/(.+)/)
     ) {
       return (
         <>
@@ -98,9 +106,13 @@ const AppRouter = () => {
               <Route path='/tour-intranet' element={<TourIntra />} />
               <Route path='/tour-intranet/:id' element={<TourIntraCardInfo />} />
               <Route path='/circuito-intranet' element={<CircuitoIntra />} />
-              <Route path='/noticia-intranet' element={<NoticiasIntra />} />
+              <Route path='/circuito-intranet/:id' element={<CircuitoIntraCardInfo />} />
+              <Route path='/promo-intranet' element={<PromoIntra />} />
+              <Route path='/promo-intranet/:id' element={<PromoIntraCardInfo />} />
               <Route path='/noticia-intranet/:id' element={<NoticiaIntraCardInfo />} />
+              <Route path='/noticia-intranet' element={<NoticiasIntra />} />
               <Route path='/mice-intranet' element={<NoticiasIntra />} />
+              <Route path='/tarifa-intranet' element={<TarifaIntra />} />
               <Route path='/contacto-intranet' element={<ContactoIntra />} />
             </Route>
           </Routes>
@@ -116,7 +128,8 @@ const AppRouter = () => {
             <Route path='/tours' element={<Tours idioma={idioma} />} />
             <Route path='/tours/:id' element={<ToursInfo idioma={idioma} />} />
             <Route path='/circuitos' element={<Circuitos />} />
-            <Route path='/mice' element={<Mice />} />
+            <Route path='/circuitos/:id' element={<CircuitosInfo />} />
+            <Route path='/mice' element={<Mice />} />            
             <Route path='/noticias' element={<Noticias />} />
             <Route path='/noticias/:id' element={<NoticiaNota />} />
             <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma} />} />

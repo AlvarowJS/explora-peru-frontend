@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import portada from './../../assets/carril/about_3.png'
 import './Circuitos.css'
+import circuitosBD from '../../apis/circuitos'
 import Contactenos from '../../Components/Contactanos/Contactenos'
 import CardCircuito from '../../Components/Circuitos/CardCircuito'
-const Circuitos = () => {
+const Circuitos = ({ idioma }) => {
+  const [circuitos, setCircuitos] = useState()
+
+  useEffect(() => {
+    circuitosBD.get()
+      .then(res => setCircuitos(res.data))
+      .catch(err => console.log(err))
+  }, [])
+
   return (
     <>
       <div className='circuitos'>
@@ -25,10 +34,13 @@ const Circuitos = () => {
           </div>
         </div>
         <div className='circuitos__catalogo'>
-          <CardCircuito/>
-          <CardCircuito/>
-          <CardCircuito/>
-          <CardCircuito/>
+          {circuitos?.map(circuito => (
+            <CardCircuito
+              key={circuito.id}
+              circuito={circuito}
+              idioma={idioma}
+            />
+          ))}
         </div>
         <Contactenos />
       </div>

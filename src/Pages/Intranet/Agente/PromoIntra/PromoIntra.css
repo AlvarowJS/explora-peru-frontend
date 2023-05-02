@@ -1,21 +1,23 @@
-.tourinfo{
+.promoinfo{
     display: flex;
 }
-.tourinfo img{
+.promoinfo img{
     width: 50%;
     height: 800px;
     border-radius: 20px;
+    margin-right: 20px;
 }
-.tourinfo__info h4{
+.promoinfo__info h4{
     font-weight: bold;
     margin: 40px 50px;
 }
-.tourinfo__info p{
+.promoinfo__info p{
     
     margin: 40px 50px;
 }
-.tour__info-button {
+.promo__info-button {
     display: flex;
     justify-content: center;
     gap: 20px;
+    
 }
