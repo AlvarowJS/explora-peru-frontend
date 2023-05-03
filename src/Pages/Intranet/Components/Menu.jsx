@@ -61,11 +61,17 @@ const Menu = () => {
                                     Usuarios
                                 </NavText>
                             </NavItem>
+                            <NavItem eventKey="admin/promocion">
+                                <NavText>
+                                    Promos
+                                </NavText>
+                            </NavItem>
                             <NavItem eventKey="admin/tour">
                                 <NavText>
                                     Tours
                                 </NavText>
                             </NavItem>
+
                             <NavItem eventKey="admin/circuitos">
                                 <NavText>
                                     Circuitos

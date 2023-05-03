@@ -1,11 +1,50 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
+const URL = 'http://127.0.0.1:8000/api/v1/contactenos'
 const ContactoIntra = () => {
   const { handleSubmit, register, reset, watch } = useForm()
+  const defaultValuesForm = {
+    nombre: '',
+    mensaje: '',
+    email: '',
+    celular: '',
+  }
   const submit = data => {
+    return MySwal.fire({
+      title: '¿Estás seguro de enviar esta informacion?',
+      text: "¡No podrás editar esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      customClass: {
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-outline-danger ms-1'
+      },
+      buttonsStyling: false
+    }).then(function (result) {
+      if (result.value) {
+        MySwal.fire({
+          icon: 'success',
+          title: 'Enviado!',
+          text: 'El mensaje a sido enviado.',
+          customClass: {
+            confirmButton: 'btn btn-success'
+          }
+        })
+        axios.post(URL, data)
+          .then(res => {
+            console.log(res.data)
+            reset(defaultValuesForm)
+          })
+          .catch(err => console.log(err))
+      }
+    })
+
+
   }
   return (
 
@@ -15,9 +54,9 @@ const ContactoIntra = () => {
       <form onSubmit={handleSubmit(submit)} className='reclamacion'>
         <div class="row">
           <div class="col-4">
-            <label htmlFor="email">Nombre: </label>
-            <input type="email" class="form-control" id='email'
-              {...register('email')} required />
+            <label htmlFor="nombre">Nombre: </label>
+            <input type="text" class="form-control" id='nombre'
+              {...register('nombre')} required />
           </div>
 
 
@@ -29,21 +68,21 @@ const ContactoIntra = () => {
               {...register('email')} required />
           </div>
           <div class="col-4">
-            <label htmlFor="padre">Celular:</label>
+            <label htmlFor="celular">Celular:</label>
             <input type="text" class="form-control"
-              {...register('padre')} />
+              {...register('celular')} />
           </div>
 
         </div>
         <div class="row">
           <div class="col-12">
-            <label htmlFor="email">Mensaje:</label>
-            <textarea type="email" class="form-control" id='email'
-              {...register('email')} required >
+            <label htmlFor="mensaje">Mensaje:</label>
+            <textarea type="text" class="form-control" id='mensaje'
+              {...register('mensaje')} required >
             </textarea>
-          </div>          
+          </div>
         </div>
-        <button className='btn btn-primary my-4' style={{backgroundColor: '#5B2491', borderColor: '#5B2491'}}>Enviar</button>
+        <button className='btn btn-primary my-4' style={{ backgroundColor: '#5B2491', borderColor: '#5B2491' }}>Enviar</button>
       </form>
 
 

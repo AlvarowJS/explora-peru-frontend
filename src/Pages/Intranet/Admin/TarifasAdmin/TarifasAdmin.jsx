@@ -24,25 +24,78 @@ const TarifasAdmin = () => {
             reset(defaultValuesForm)
         }
     };
+    const updateTarifa = (id, data) => {
+        axios.patch(`${URL}/${id}`, data)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+    const updateTarifaById = (id) => {
 
-    // const create = data => {
-        
-    //     console.log(imgData, 'check')
-    //     const formData = new FormData();
-    //     formData.append('img', imgData);
-    //     formData.append('titulo', data.titulo);
-    //     formData.append('descripcion_spanish', data.descripcion_spanish);
-    //     formData.append('descripcion_english', data.descripcion_english);
-    //     formData.append('incluye_english', data.incluye_english);
-    //     formData.append('incluye_spanish', data.incluye_spanish);
-    //     formData.append('lugare_id', data.lugare_id);
-    //     formData.append('duracion', data.duracion);
+        toggle.call()
+        tarifaBD.get(`/${id}`)
+            .then(res => {
+                setObjUpdate(res?.data)
+                const object = res?.data
+                reset(object)
+            })
+            .catch(err => console.log(err))
 
-    //     axios.post(URL, formData)
-    //         .then(res => console.log(res.data))
-    //         .catch(err => console.log(err))
-    //     // .finally(() => console.log(res.data))
-    // }
+    }
+
+    const createTarifa = data => {
+        axios.post(URL, data)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+        // .finally(() => console.log(res.data))
+    }
+
+    const submit = data => {
+        if (objUpdate !== undefined) {
+
+            updateTarifa(objUpdate?.id, data)
+            reset(defaultValuesForm)
+            toggle.call()
+
+        } else {
+            reset(defaultValuesForm)
+            createTarifa(data)
+            toggle.call()
+        }
+    }
+
+    const deleteTarifaById = (id) => {
+        return MySwal.fire({
+            title: '¿Estás seguro de eliminar?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            customClass: {
+                confirmButton: 'btn btn-primary',
+                cancelButton: 'btn btn-outline-danger ms-1'
+            },
+            buttonsStyling: false
+        }).then(function (result) {
+            setEstado(true)
+            if (result.value) {
+                MySwal.fire({
+                    icon: 'success',
+                    title: 'Eliminado!',
+                    text: 'El registro a sido eliminado.',
+                    customClass: {
+                        confirmButton: 'btn btn-success'
+                    }
+                })
+                axios.delete(`${URL}/${id}/`)
+                    .then(res => {
+                        console.log(res)
+                    })
+                    .catch(err => console.log(err))
+            }
+        })
+    }
 
     useEffect(() => {
         setEstado(false)
@@ -134,11 +187,13 @@ const TarifasAdmin = () => {
             cell: row => {
                 return (
                     <div className='local_buttons'>
-
-                        <button className='btn btn-danger' onClick={() => deleteUserById(row?.id)}>
-                            <i className='bx bx-trash' ></i>
+                        <button className='btn btn-warning mx-2' onClick={() => updateTarifaById(row?.id)}>
+                            <i className='bx bx-edit' ></i>
                         </button>
 
+                        <button className='btn btn-danger' onClick={() => deleteTarifaById(row?.id)}>
+                            <i className='bx bx-trash' ></i>
+                        </button>
                     </div>
                 )
             }
@@ -155,7 +210,7 @@ const TarifasAdmin = () => {
                 pagination
                 selectableRows
             />
-            {/* <TarifasForm
+            <TarifasForm
                 toggle={toggle}
                 modal={modal}
                 setModal={setModal}
@@ -164,12 +219,7 @@ const TarifasAdmin = () => {
                 register={register}
                 reset={reset}
                 watch={watch}
-                image={image}
-                setImgData={setImgData}
-                imgData={imgData}
-                setPrueba={setPrueba}
-                prueba={prueba}
-            /> */}
+            />
         </div>
     )
 }

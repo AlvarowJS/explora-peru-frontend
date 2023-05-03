@@ -19,6 +19,8 @@ const TourAdmin = () => {
     const [image, setImage] = useState()
     const [imgData, setImgData] = useState()
     const [prueba, setPrueba] = useState(null)
+    const [archivoEnglish, setArchivoEnglish] = useState()
+    const [archivoSpanish, setArchivoSpanish] = useState()
 
     const { handleSubmit, register, reset, watch } = useForm()
     const [objUpdate, setObjUpdate] = useState()
@@ -38,20 +40,27 @@ const TourAdmin = () => {
     }, [estado])
 
     const createTour = data => {
-        
+
         console.log(imgData, 'check')
         const formData = new FormData();
         formData.append('img', imgData);
+        formData.append('archivo_english', archivoEnglish);
+        formData.append('archivo_spanish', archivoSpanish);
         formData.append('titulo', data.titulo);
+        formData.append('lugares', data.titulo);
         formData.append('descripcion_spanish', data.descripcion_spanish);
         formData.append('descripcion_english', data.descripcion_english);
         formData.append('incluye_english', data.incluye_english);
         formData.append('incluye_spanish', data.incluye_spanish);
-        formData.append('lugare_id', data.lugare_id);
+        formData.append('no_incluye_english', data.no_incluye_english);
+        formData.append('no_incluye_spanish', data.no_incluye_spanish);
         formData.append('duracion', data.duracion);
 
         axios.post(URL, formData)
-            .then(res => console.log(res.data))
+            .then(res => {
+                console.log(res.data)
+                setEstado(true)
+            })
             .catch(err => console.log(err))
         // .finally(() => console.log(res.data))
     }
@@ -70,12 +79,16 @@ const TourAdmin = () => {
         console.log(imgData, 'check')
         const formData = new FormData();
         formData.append('img', imgData);
+        formData.append('archivo_english', archivoEnglish);
+        formData.append('archivo_spanish', archivoSpanish);
         formData.append('titulo', data.titulo);
+        formData.append('lugares', data.titulo);
         formData.append('descripcion_spanish', data.descripcion_spanish);
         formData.append('descripcion_english', data.descripcion_english);
         formData.append('incluye_english', data.incluye_english);
         formData.append('incluye_spanish', data.incluye_spanish);
-        formData.append('lugare_id', data.lugare_id);
+        formData.append('no_incluye_english', data.no_incluye_english);
+        formData.append('no_incluye_spanish', data.no_incluye_spanish);
         formData.append('duracion', data.duracion);
 
         axios.patch(`${URL}/${id}`, formData)
@@ -149,7 +162,7 @@ const TourAdmin = () => {
             sortable: true,
             cell: row => {
                 return (
-                    <div style={{margin: '10px'}}>
+                    <div style={{ margin: '10px' }}>
                         {
                             row?.titulo
                         }
@@ -172,20 +185,6 @@ const TourAdmin = () => {
             }
         },
         {
-            name: 'Descripcion English',
-
-            sortable: true,
-            cell: row => {
-                return (
-                    <div>
-                        {
-                            row?.descripcion_english.substring(0, 40) + "..."
-                        }
-                    </div>
-                )
-            }
-        },
-        {
             name: 'Incluye',
             sortable: true,
             cell: row => {
@@ -193,6 +192,19 @@ const TourAdmin = () => {
                     <div>
                         {
                             row?.incluye_spanish.substring(0, 40) + "..."
+                        }
+                    </div>
+                )
+            }
+        },
+        {
+            name: 'No Incluye',
+            sortable: true,
+            cell: row => {
+                return (
+                    <div>
+                        {
+                            row?.no_incluye_spanish.substring(0, 40) + "..."
                         }
                     </div>
                 )
@@ -244,6 +256,8 @@ const TourAdmin = () => {
                     imgData={imgData}
                     setPrueba={setPrueba}
                     prueba={prueba}
+                    setArchivoEnglish={setArchivoEnglish}
+                    setArchivoSpanish={setArchivoSpanish}
                 />
             </div>
         </>

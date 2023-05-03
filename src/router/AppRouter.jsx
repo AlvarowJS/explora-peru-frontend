@@ -39,6 +39,7 @@ import PromoIntra from '../Pages/Intranet/Agente/PromoIntra/PromoIntra'
 import PromoIntraCardInfo from '../Pages/Intranet/Agente/PromoIntra/PromoIntraCardInfo'
 import CircuitoIntraCardInfo from '../Pages/Intranet/Agente/CircuitoIntra/CircuitoIntraCardInfo'
 import CircuitosInfo from '../Pages/Circuitos/CircuitosInfo/CircuitosInfo'
+import PromocionAdmin from '../Pages/Intranet/Admin/PromocionAdmin/PromocionAdmin'
 
 
 
@@ -68,6 +69,7 @@ const AppRouter = () => {
       location.pathname === '/admin/usuarios' ||
       location.pathname === '/admin/tour' ||
       location.pathname === '/admin/circuitos' ||
+      location.pathname === '/admin/promocion' ||
       location.pathname === '/admin/noticias' ||
       location.pathname === '/admin/reclamacion' ||
       location.pathname === '/admin/mensajes' ||
@@ -99,6 +101,7 @@ const AppRouter = () => {
               <Route path='/admin/reclamacion' element={<ReclamacionAdmin />} />
               <Route path='/admin/mensajes' element={<ComunicacionAdmin />} />
               <Route path='/admin/tarifas' element={<TarifasAdmin />} />
+              <Route path='/admin/promocion' element={<PromocionAdmin />} />
 
 
               {/* AGENTE */}

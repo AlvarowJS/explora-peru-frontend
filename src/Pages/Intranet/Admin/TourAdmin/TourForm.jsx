@@ -5,10 +5,10 @@ import lugaresBD from './../../../../apis/lugares'
 
 const TourForm = ({
     modal, image, toggle, handleSubmit, watch,
-    setImgData, imgData,
+    setImgData, imgData, setArchivoEnglish, setArchivoSpanish,
     submit, register, reset,
 }) => {
-    
+
     const watchImg = watch('img');
     const [options, setOptions] = useState()
 
@@ -21,14 +21,14 @@ const TourForm = ({
 
 
     };
-    const crearLugar = () => {}
+    const crearLugar = () => { }
     useEffect(() => {
         lugaresBD.get()
             .then(res => setOptions(res.data))
             .catch(err => console.log(err))
     }, [])
 
-    
+
     // const subirArchivo = e => {
     //     setImgData(e)
     // }
@@ -45,6 +45,14 @@ const TourForm = ({
                         <input type="text" className="form-control" id="titulo"
                             {...register('titulo')}
                             placeholder="Ingresar el titulo del tour"
+                        />
+                    </div>
+
+                    <div className="form-group m-4">
+                        <label htmlFor="lugares">Lugares</label>
+                        <input type="text" className="form-control" id="lugares"
+                            {...register('lugares')}
+                            placeholder="Lima, Cuzco"
                         />
                     </div>
 
@@ -69,33 +77,29 @@ const TourForm = ({
                     </div>
 
                     <div className="form-group m-4">
+                        <label htmlFor="incluye_spanish">No Incluye Español</label>
+                        <textarea className="form-control" id="incluye_spanish" rows="3" {...register('no_incluye_spanish')}></textarea>
+                    </div>
+
+                    <div className="form-group m-4">
+                        <label htmlFor="incluye_english">No Incluye Ingles</label>
+                        <textarea className="form-control" id="incluye_english" rows="3" {...register('no_incluye_english')}></textarea>
+                    </div>
+
+                    <div className="form-group m-4">
                         <label htmlFor="duracion">Duración</label>
                         <input type="text" className="form-control" id="duracion"
                             {...register('duracion')}
-                            placeholder="Ingresar la duración"
+                            placeholder="Ingrese solo el número Ejm: 4.30 "
                         />
                     </div>
 
                     <div className="form-group m-4">
-                        <label htmlFor="lugar">Lugar</label>
-                        <select class="form-select" id="lugares" {...register("lugare_id")}>
-                            {
-                                options?.map(option => (
-                                    <option key={option.id} value={option.id}>{option.nombre}</option>
-                                ))
-                            }
-                        </select>
-                        <button className='btn btn-primary my-2' onClick={crearLugar()}>Crear Lugar</button>
-                    </div>
-
-                    <div className="form-group m-4">
                         <label htmlFor="img">Subir Imagen </label>
-                        {/* <input type='file' className="form-control" id="img" {...register('img')} /> */}
                         <input
                             type='file'
                             className='form-control'
                             id='img'
-                            // onChange={() => subirArchivo(e.target.files)}
                             {...register('img')}
                             onChange={handleFileChange}
 
@@ -103,8 +107,37 @@ const TourForm = ({
                         />
                         {watchImg && <img id='preview-img' src={`http://127.0.0.1:8000/storage/tours/${image}`} alt='preview' style={{ width: '200px', margin: '10px' }} />}
                     </div>
+                    <div className="form-group m-4">
+                        <label htmlFor="archivo_english">Subir Archivo en Ingles </label>
+                        <input
+                            type='file'
+                            className='form-control'
+                            id='archivo_english'
+                            {...register('archivo_english')}
+                            onChange={(e) => {
+                                setArchivoEnglish(e.target.files[0]);
+                            }}
+
+
+                        />
+                    </div>
+                    <div className="form-group m-4">
+                        <label htmlFor="archivo_spanish">Subir Archivo en Español </label>
+                        <input
+                            type='file'
+                            className='form-control'
+                            id='archivo_spanish'
+                            // onChange={() => subirArchivo(e.target.files)}
+                            {...register('archivo_spanish')}
+                            onChange={(e) => {
+                                setArchivoSpanish(e.target.files[0]);
+                            }}
+
+
+                        />
+                    </div>
                     <button className='btn btn-primary m-4'>Enviar</button>
-                    <button className='btn btn-secondary' onClick={toggle}>Cancelar</button>
+                    {/* <button className='btn btn-secondary' onClick={toggle}>Cancelar</button> */}
                 </form>
             </Modal.Body>
             <Modal.Footer>
