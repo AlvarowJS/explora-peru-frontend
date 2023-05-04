@@ -3,12 +3,12 @@ import './../style.css'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
 const URL = 'https://backend.peruexploring.pe/api/v1/noticias'
-
+const URLIMG = 'https://backend.peruexploring.pe/api/v1/noticias-img'
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import NoticiaForm from './NoticiaForm'
-import noticiasBD from '../../../../apis/Noticias'
+import noticiasBD from '../../../../apis/noticias'
 const MySwal = withReactContent(Swal)
 
 
@@ -42,10 +42,11 @@ const NoticiaAdmin = () => {
     const formData = new FormData();
     formData.append('img', imgData);
     formData.append('titulo', data.titulo);
-    formData.append('nota', data.duracion);
+    formData.append('nota', data.nota);
 
     axios.post(URL, formData)
       .then(res => {
+        setEstado(true)
       })
       .catch(err => console.log(err))
     // .finally(() => console.log(res.data))
@@ -58,13 +59,20 @@ const NoticiaAdmin = () => {
   }
 
   const updateNoticia = (id, data) => {
+
+    axios.patch(`${URL}/${id}`, data)
+    .then(res => {
+      setEstado(true)
+    })
+    .catch(err => console.log(err))
     const formData = new FormData();
     formData.append('img', imgData);
-    formData.append('titulo', data.titulo);
-    formData.append('nota', data.duracion);
+    // formData.append('titulo', data.titulo);
+    // formData.append('nota', data.duracion);
 
-    axios.patch(`${URL}/${id}`, formData)
+    axios.patch(`${URLIMG}/${id}`, formData)
       .then(res => {
+        setEstado(true)
       })
       .catch(err => console.log(err))
   }

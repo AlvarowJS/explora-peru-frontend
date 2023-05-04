@@ -27,7 +27,7 @@
     margin-top: 20px;
     z-index: 100;
     cursor: pointer;
-    color: white;
+    color:#FE5A09;
 }
 .header__navbar{
     width: min(100%, 300px);
@@ -54,6 +54,7 @@
 .navbar-open {
     transition: transform 400ms ease;
     transform: translateX(0);
+    color:#FE5A09;
 }
 .header__navbar ul li {
     padding: 20px 10px;

@@ -104,7 +104,7 @@ const Contactenos = ({ idioma, idiomaGlobal }) => {
       </div>
       <div className='sobrenosotros__contacto--info'>
         <div className='sobrenosotros__contacto--dato'>
-          <i className='bx bx-time-five'></i>
+          <i className='bx bx-time-five' style={{fontSize: "40px"}}></i>
           <div>
             <p>
               {idioma == 'spanish' || idiomaGlobal == 'spanish' ?
@@ -114,16 +114,21 @@ const Contactenos = ({ idioma, idiomaGlobal }) => {
           </div>
         </div>
         <div className='sobrenosotros__contacto--dato'>
-          <i className='bx bx-phone-call' ></i>
-          <p>+51 999 333 555</p>
+          <i className='bx bx-phone-call' style={{fontSize: "40px"}}></i>
+          Teléfono: (01) 7515733<br />
+          Reservas: +51 974581054<br />
+          Atención 24H: +51 924 696 906 <br />
+        </div>
+        <br />
+        <div className='sobrenosotros__contacto--dato'>
+          <i className='bx bx-envelope' style={{fontSize: "40px"}}></i>
+          reservas1@peruexploring.pe <br />
+          reservas2@peruexploring.pe
         </div>
         <div className='sobrenosotros__contacto--dato'>
-          <i className='bx bx-envelope' ></i>
-          <p>explora@gmail.com</p>
-        </div>
-        <div className='sobrenosotros__contacto--dato'>
-          <i className='bx bx-map' ></i>
-          <p>Lima, Perú</p>
+          <i className='bx bx-map' style={{fontSize: "40px"}}></i>
+          Calle San Manuel 174, Urb. Santa Luisa - Los Olivos <br />
+          Lima, Perú
         </div>
       </div>
       {/* <div className='sobrenosotros__contacto--info'>

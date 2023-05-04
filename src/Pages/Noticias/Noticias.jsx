@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import noticia from './../../assets/carril/mice.png'
 import './Noticias.css'
-import noticiasBD from '../../apis/Noticias'
+import noticiasBD from '../../apis/noticias'
 import NoticiaCard from '../../Components/Noticia/NoticiaCard'
 const Noticias = () => {
   const [noticias, setNoticias] = useState()

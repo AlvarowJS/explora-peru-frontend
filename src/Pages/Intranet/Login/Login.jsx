@@ -22,14 +22,14 @@ const Login = () => {
                 localStorage.setItem('role_name', res.data.role.name)
                 navigate('/home-intranet')
             })
-            .catch( err => {
+            .catch(err => {
                 localStorage.setItem('token', '')
                 localStorage.setItem('id_user', '')
                 localStorage.setItem('ruc', '')
                 localStorage.setItem('razon_social', '')
                 localStorage.setItem('role', '')
                 localStorage.setItem('role_name', '')
-                console.log(err) 
+                console.log(err)
                 setValidate(true)
             })
     }
@@ -41,6 +41,11 @@ const Login = () => {
                     <img src={portada} alt="Imagen de login" />
                 </div>
                 <div className="login-right">
+
+                    <Link to="/">
+                        <i className='bx bx-left-arrow-alt'></i>
+                        Volver al landing
+                    </Link>
                     <h2>
                         <b> Intranet</b>
                     </h2>
@@ -56,10 +61,10 @@ const Login = () => {
                         <button type="submit">Iniciar sesión</button>
                         {
                             validate == false ? null :
-                            <p style={{color: 'red'}}>Credenciales Incorrectas</p>
+                                <p style={{ color: 'red' }}>Credenciales Incorrectas</p>
 
                         }
-                    
+
                     </form>
                     <p className='login-right-create'>Quieres ser un Agente?<span> <Link to='/register'>Rellene este formulario de Inscripción</Link></span></p>
                 </div>

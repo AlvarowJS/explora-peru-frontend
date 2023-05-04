@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const NoticiaCard = ({ noticia }) => {
   const navigate = useNavigate()
   let img = noticia.img
-  img = `https://backend.peruexploring.pe/storage/noticias/${img}`
+  img = `https://backend.peruexploring.pe/storage/noticias/${noticia.titulo}/${img}`
 
   const verNotaById = (id) => {
     navigate(`/noticias/${id}`)

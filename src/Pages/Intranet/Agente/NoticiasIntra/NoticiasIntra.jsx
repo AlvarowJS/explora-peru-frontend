@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './../style.css'
 
-import noticiasBD from '../../../../apis/Noticias'
+import noticiasBD from '../../../../apis/noticias'
 import NoticiaCard from '../../../../Components/Noticia/NoticiaCard'
 import NoticiasIntraCard from './NoticiasIntraCard'
 

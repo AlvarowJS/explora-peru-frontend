@@ -36,7 +36,7 @@ const NoticiaForm = ({
 
                     <div className="form-group m-4">
                         <label htmlFor="nota">Nota</label>
-                        <textarea className="form-control" id="descripcion_spanish" rows="3" {...register('nota')}></textarea>
+                        <textarea className="form-control" id="nota" rows="3" {...register('nota')}></textarea>
                     </div>
 
 

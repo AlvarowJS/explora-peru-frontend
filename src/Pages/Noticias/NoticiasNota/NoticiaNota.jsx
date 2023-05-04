@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import noticiaImg from './../../../assets/carril/mice.png'
-import noticiasBD from '../../../apis/Noticias';
+import noticiasBD from '../../../apis/noticias';
 import './../Noticias.css'
 const NoticiaNota = () => {
     const [noticia, setNoticia] = useState()
@@ -12,7 +12,7 @@ const NoticiaNota = () => {
         noticiasBD.get(`/${id.id}`)
             .then(res => {
                 setNoticia(res.data)
-                setImgNew(`https://backend.peruexploring.pe/storage/noticias/${res.data.img}`)
+                setImgNew(`https://backend.peruexploring.pe/storage/noticias/${res?.data.titulo}/${res?.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])
