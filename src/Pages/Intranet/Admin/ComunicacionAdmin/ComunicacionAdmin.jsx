@@ -41,7 +41,8 @@ const ComunicacionAdmin = () => {
   const createcontactenos = data => {
 
     axios.post(URL, data)
-      .then(res => console.log(res.data))
+      .then(res => {
+      })
       .catch(err => console.log(err))
     // .finally(() => console.log(res.data))
   }
@@ -51,7 +52,6 @@ const ComunicacionAdmin = () => {
 
     axios.patch(`${URL}/${id}`, data)
       .then(res => {
-        console.log(res.data)
       })
       .catch(err => console.log(err))
   }
@@ -189,7 +189,7 @@ const ComunicacionAdmin = () => {
         return (
           <div className='local_buttons'>
             <button className='btn btn-warning mx-2' onClick={() => updatecontactenosById(row?.id)}>
-              <i class='bx bx-low-vision' ></i>
+              <i className='bx bx-low-vision' ></i>
             </button>
             <button className='btn btn-danger' onClick={() => deleteContactenosById(row?.id)}>
               <i className='bx bx-trash' ></i>

@@ -9,9 +9,7 @@ const Navbar = ({ setIdioma, idioma }) => {
     const clickMenuHam = () => {
         navbar.current.classList.toggle('navbar-open')
     }
-    // useEffect(() => {
-    //     console.log(idioma, "idioma?")
-    // }, [idioma])
+
     const handleChange = (event) => {
         setIdioma(event.target.value);
     }

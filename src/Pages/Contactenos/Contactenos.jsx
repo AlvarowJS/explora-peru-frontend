@@ -41,7 +41,6 @@ const Contactenos = ({ idioma, idiomaGlobal }) => {
         })
         axios.post(URL, data)
           .then(res => {
-            console.log(res.data)
             reset(defaultForm)
           })
           .catch(err => console.log(err))

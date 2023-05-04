@@ -10,7 +10,6 @@ const CircuitoIntraCardInfo = () => {
     useEffect(() => {
         circuitosBD.get(`/${id.id}`)
             .then(res => {
-                console.log(res.data)
                 setCircuito(res?.data)
                 setCircuitoImg(`https://backend.peruexploring.pe/storage/circuitos/${res?.data.titulo}/${res?.data.img}`)
             })

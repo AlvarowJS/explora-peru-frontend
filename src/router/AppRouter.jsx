@@ -82,7 +82,7 @@ const AppRouter = () => {
       location.pathname === '/noticia-intranet' ||
       location.pathname.match(/^\/noticia-intranet\/(.+)/) ||
       location.pathname === '/mice-intranet' ||
-      location.pathname === '/contacto-intranet' || 
+      location.pathname === '/contacto-intranet' ||
       location.pathname === '/tarifa-intranet' ||
       location.pathname === '/promo-intranet' ||
       location.pathname.match(/^\/promo-intranet\/(.+)/)
@@ -132,7 +132,7 @@ const AppRouter = () => {
             <Route path='/tours/:id' element={<ToursInfo idioma={idioma} />} />
             <Route path='/circuitos' element={<Circuitos />} />
             <Route path='/circuitos/:id' element={<CircuitosInfo />} />
-            <Route path='/mice' element={<Mice />} />            
+            <Route path='/mice' element={<Mice />} />
             <Route path='/noticias' element={<Noticias />} />
             <Route path='/noticias/:id' element={<NoticiaNota />} />
             <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma} />} />
@@ -141,16 +141,14 @@ const AppRouter = () => {
           </Routes>
           <Footer idioma={idioma} />
           <a href="https://wa.link/ix9xwp" className="btn-whatsapp" target="_blank">
-            <i class='bx bxl-whatsapp'></i>
+            <i className='bx bxl-whatsapp'></i>
           </a>
         </>
       );
     }
   }
 
-  useEffect(() => {
-    console.log(idioma, "idioma?")
-  }, [idioma])
+
   return (
     <>
       <BrowserRouter>
@@ -170,7 +168,7 @@ const AppRouter = () => {
         </Routes>
         <Footer idioma={idioma} />
         <a href="https://wa.link/ix9xwp" className="btn-whatsapp" target="_blank">
-          <i class='bx bxl-whatsapp'></i>
+          <i className='bx bxl-whatsapp'></i>
         </a> */}
 
       </BrowserRouter>

@@ -40,7 +40,8 @@ const ReclamacionAdmin = () => {
   const createReclamacion = data => {
 
     axios.post(URL, data)
-      .then(res => console.log(res.data))
+      .then(res => {
+      })
       .catch(err => console.log(err))
     // .finally(() => console.log(res.data))
   }
@@ -58,7 +59,7 @@ const ReclamacionAdmin = () => {
 
     axios.patch(`${URL}/${id}`, data)
       .then(res => {
-        console.log(res.data)
+
       })
       .catch(err => console.log(err))
   }
@@ -115,7 +116,6 @@ const ReclamacionAdmin = () => {
         })
         axios.delete(`${URL}/${id}/`)
           .then(res => {
-            console.log(res)
           })
           .catch(err => console.log(err))
       }
@@ -198,7 +198,7 @@ const ReclamacionAdmin = () => {
         return (
           <div className='local_buttons'>
             <button className='btn btn-warning mx-2' onClick={() => updateReclamacionById(row?.id)}>
-              <i class='bx bx-low-vision' ></i>
+              <i className='bx bx-low-vision' ></i>
             </button>
             <button className='btn btn-danger' onClick={() => deleteReclamacionById(row?.id)}>
               <i className='bx bx-trash' ></i>

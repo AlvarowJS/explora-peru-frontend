@@ -3,7 +3,6 @@ import book from './../../assets/carril/libro.png'
 import './Footer.css'
 import { Link } from 'react-router-dom'
 const Footer = ({ idioma }) => {
-    console.log(idioma, "footer")
     return (
         <footer className='footer'>
             <div className='footer__icon'>

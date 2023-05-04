@@ -27,7 +27,6 @@ const TarifasAdmin = () => {
     const updateTarifa = (id, data) => {
         axios.patch(`${URL}/${id}`, data)
             .then(res => {
-                console.log(res.data)
             })
             .catch(err => console.log(err))
     }
@@ -46,7 +45,8 @@ const TarifasAdmin = () => {
 
     const createTarifa = data => {
         axios.post(URL, data)
-            .then(res => console.log(res.data))
+            .then(res => {
+            })
             .catch(err => console.log(err))
         // .finally(() => console.log(res.data))
     }
@@ -90,7 +90,6 @@ const TarifasAdmin = () => {
                 })
                 axios.delete(`${URL}/${id}/`)
                     .then(res => {
-                        console.log(res)
                     })
                     .catch(err => console.log(err))
             }
@@ -129,7 +128,7 @@ const TarifasAdmin = () => {
                 return (
                     <div>
                         <button className='btn btn-success' onClick={() => descargarTarifa(row?.archivo)}>
-                            <i class='bx bx-file' style={{ fontSize: '30px' }}></i>
+                            <i className='bx bx-file' style={{ fontSize: '30px' }}></i>
                         </button>
 
                     </div >

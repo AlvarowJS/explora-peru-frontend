@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import './../style.css'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
-import noticiasBD from '../../../../apis/noticias'
 const URL = 'https://backend.peruexploring.pe/api/v1/noticias'
 
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import NoticiaForm from './NoticiaForm'
+import noticiasBD from '../../../../apis/Noticias'
 const MySwal = withReactContent(Swal)
 
 
@@ -45,7 +45,8 @@ const NoticiaAdmin = () => {
     formData.append('nota', data.duracion);
 
     axios.post(URL, formData)
-      .then(res => console.log(res.data))
+      .then(res => {
+      })
       .catch(err => console.log(err))
     // .finally(() => console.log(res.data))
   }
@@ -64,7 +65,6 @@ const NoticiaAdmin = () => {
 
     axios.patch(`${URL}/${id}`, formData)
       .then(res => {
-        console.log(res.data)
       })
       .catch(err => console.log(err))
   }
@@ -119,7 +119,6 @@ const NoticiaAdmin = () => {
         })
         axios.delete(`${URL}/${id}/`)
           .then(res => {
-            console.log(res)
           })
           .catch(err => console.log(err))
       }

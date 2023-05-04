@@ -62,7 +62,6 @@ const UsuariosAdmin = () => {
         axios.put(`${URLACTIVATE}/${id}`)
           .then(res => {
             setEstado(true)
-            console.log(res.data)
           })
           .catch(err => console.log(err))
       }
@@ -95,7 +94,6 @@ const UsuariosAdmin = () => {
         axios.put(`${URLDESACTIVATE}/${id}`)
           .then(res => {
             setEstado(true)
-            console.log(res.data)
           })
           .catch(err => console.log(err))
       }
@@ -126,7 +124,6 @@ const UsuariosAdmin = () => {
         })
         axios.delete(`${URLDELETE}/${id}/`)
           .then(res => {
-            console.log(res)
           })
           .catch(err => console.log(err))
       }

@@ -36,11 +36,11 @@ const Login = () => {
     return (
         <>
 
-            <div class="login-container">
-                <div class="login-left">
+            <div className="login-container">
+                <div className="login-left">
                     <img src={portada} alt="Imagen de login" />
                 </div>
-                <div class="login-right">
+                <div className="login-right">
                     <h2>
                         <b> Intranet</b>
                     </h2>

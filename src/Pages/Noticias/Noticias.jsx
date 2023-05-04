@@ -7,7 +7,7 @@ const Noticias = () => {
   const [noticias, setNoticias] = useState()
   useEffect(() => {
     noticiasBD.get()
-      .then(res => setNoticias(res.data))
+      .then(res => setNoticias(res?.data))
       .catch(err => console.log(err))
   }, [])
   console.log(noticias)

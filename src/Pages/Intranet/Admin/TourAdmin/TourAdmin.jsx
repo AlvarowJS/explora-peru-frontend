@@ -41,7 +41,6 @@ const TourAdmin = () => {
 
     const createTour = data => {
 
-        console.log(imgData, 'check')
         const formData = new FormData();
         formData.append('img', imgData);
         formData.append('archivo_english', archivoEnglish);
@@ -75,8 +74,6 @@ const TourAdmin = () => {
     }
 
     const updateTour = (id, data) => {
-        // console.log(prueba, 'check1')
-        console.log(imgData, 'check')
         const formData = new FormData();
         formData.append('img', imgData);
         formData.append('archivo_english', archivoEnglish);
@@ -150,7 +147,6 @@ const TourAdmin = () => {
                 })
                 axios.delete(`${URL}/${id}/`)
                     .then(res => {
-                        console.log(res)
                     })
                     .catch(err => console.log(err))
             }

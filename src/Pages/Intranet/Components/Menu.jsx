@@ -29,7 +29,7 @@ const Menu = () => {
     return (
         <SideNav
             onSelect={(selected) => {
-                console.log(selected)
+                (selected)
                 navigate('/' + selected)
             }}
             style={{
@@ -142,7 +142,7 @@ const Menu = () => {
                 </NavItem>
                 <NavItem eventKey="tarifa-intranet">
                     <NavIcon>
-                        <i class='bx bx-wallet' style={{ fontSize: '1.75em' }}></i>
+                        <i className='bx bx-wallet' style={{ fontSize: '1.75em' }}></i>
 
                     </NavIcon>
                     <NavText>

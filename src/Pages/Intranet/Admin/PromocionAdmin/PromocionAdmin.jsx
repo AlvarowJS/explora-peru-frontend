@@ -41,7 +41,6 @@ const PromocionAdmin = () => {
 
   const createPromo = data => {
 
-    console.log(imgData, 'check')
     const formData = new FormData();
     formData.append('img', imgData);
     formData.append('archivo_english', archivoEnglish);
@@ -88,7 +87,6 @@ const PromocionAdmin = () => {
 
     axios.patch(`${URL}/${id}`, formData)
       .then(res => {
-        console.log(res.data)
       })
       .catch(err => console.log(err))
   }
@@ -145,7 +143,6 @@ const PromocionAdmin = () => {
         })
         axios.delete(`${URL}/${id}/`)
           .then(res => {
-            console.log(res)
           })
           .catch(err => console.log(err))
       }

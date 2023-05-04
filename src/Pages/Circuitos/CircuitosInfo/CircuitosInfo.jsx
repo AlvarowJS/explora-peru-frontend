@@ -18,7 +18,6 @@ const CircuitosInfo = ({ idioma }) => {
             })
             .catch(err => console.log(err))
     }, [])
-    console.log(circuito, "as")
     return (
         <>
             <div className='tours'>

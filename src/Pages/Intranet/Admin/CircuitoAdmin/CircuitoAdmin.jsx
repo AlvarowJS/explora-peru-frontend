@@ -55,7 +55,6 @@ const CircuitoAdmin = () => {
 
     const createCircuito = data => {
 
-        console.log(imgData, 'check')
         const formData = new FormData();
         formData.append('img', imgData);
         formData.append('archivo_english', archivoEnglish);
@@ -68,7 +67,6 @@ const CircuitoAdmin = () => {
         formData.append('duracion', data.duracion);
         axios.post(URL, formData)
             .then(res => {
-                console.log(res.data)
                 setEstado(true)
             })
             .catch(err => console.log(err))
@@ -102,7 +100,6 @@ const CircuitoAdmin = () => {
 
         axios.patch(`${URL}/${id}`, formData)
             .then(res => {
-                console.log(res.data)
             })
             .catch(err => console.log(err))
     }
@@ -159,7 +156,6 @@ const CircuitoAdmin = () => {
                 })
                 axios.delete(`${URL}/${id}/`)
                     .then(res => {
-                        console.log(res)
                     })
                     .catch(err => console.log(err))
             }
@@ -179,7 +175,6 @@ const CircuitoAdmin = () => {
         formData.append('descripcion_english', data.descripcion_english);
         axios.post(URLDIAS, formData)
             .then(res => {
-                console.log(res.data)
                 setEstado(true)
             })
             .catch(err => console.log(err))
@@ -206,7 +201,6 @@ const CircuitoAdmin = () => {
         axios.patch(`${URLDIAS}/${id}`, data)
             .then(res => {
                 setEstado(true)
-                console.log(res.data)
             })
             .catch(err => console.log(err))
     }
@@ -245,7 +239,6 @@ const CircuitoAdmin = () => {
                 })
                 axios.delete(`${URLDIAS}/${id}/`)
                     .then(res => {
-                        console.log(res)
                     })
                     .catch(err => console.log(err))
             }

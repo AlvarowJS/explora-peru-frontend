@@ -46,7 +46,7 @@ const TarifasForm = ({
 
                     <div className="form-group m-4">
                         <label htmlFor="nombre_tarifa">Seleccionar al Usuario</label>
-                        <select class="form-select" id="user_id" {...register("user_id")}>
+                        <select className="form-select" id="user_id" {...register("user_id")}>
                             {
                                 options?.map(option => (
                                     <option key={option.id} value={option.id}>{option.razon_social}</option>

@@ -10,7 +10,6 @@ const NoticiaForm = ({
     const watchImg = watch('img');
     const [options, setOptions] = useState()
     const handleFileChange = (e) => {
-        console.log("hola?")
         setImgData(e.target.files[0])
 
         const file = e.target.files[0];

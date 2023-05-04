@@ -23,7 +23,6 @@ const Tours = ({ idioma }) => {
   const handleSelectChange = (event) => {
     setFilterSelect(event.target.value);
   }
-  console.log(filterSelect, "fil")
 
   return (
     <>
@@ -35,7 +34,7 @@ const Tours = ({ idioma }) => {
 
         <div className='tours__filters'>
           <div className='tours__filters--buscador'>
-            <input type="text" /><i class='bx bx-search-alt-2'></i>
+            <input type="text" /><i className='bx bx-search-alt-2'></i>
           </div>
           <div className='tours__filters--select'>
             <span>Buscar información en </span>

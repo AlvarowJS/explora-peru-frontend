@@ -18,7 +18,6 @@ const NoticiaNota = () => {
     }, [])
 
 
-    console.log(id.id, "Dasd")
     return (
         <>
             <div className='noticias'>

@@ -37,7 +37,6 @@ const ContactoIntra = () => {
         })
         axios.post(URL, data)
           .then(res => {
-            console.log(res.data)
             reset(defaultValuesForm)
           })
           .catch(err => console.log(err))
@@ -52,32 +51,32 @@ const ContactoIntra = () => {
       <h2>Contáctanos</h2>
       <p>¿Estas interesado en nuestros servicios? Escribenos</p>
       <form onSubmit={handleSubmit(submit)} className='reclamacion'>
-        <div class="row">
-          <div class="col-4">
+        <div className="row">
+          <div className="col-4">
             <label htmlFor="nombre">Nombre: </label>
-            <input type="text" class="form-control" id='nombre'
+            <input type="text" className="form-control" id='nombre'
               {...register('nombre')} required />
           </div>
 
 
         </div>
-        <div class="row">
-          <div class="col-8">
+        <div className="row">
+          <div className="col-8">
             <label htmlFor="email">Email:</label>
-            <input type="email" class="form-control" id='email'
+            <input type="email" className="form-control" id='email'
               {...register('email')} required />
           </div>
-          <div class="col-4">
+          <div className="col-4">
             <label htmlFor="celular">Celular:</label>
-            <input type="text" class="form-control"
+            <input type="text" className="form-control"
               {...register('celular')} />
           </div>
 
         </div>
-        <div class="row">
-          <div class="col-12">
+        <div className="row">
+          <div className="col-12">
             <label htmlFor="mensaje">Mensaje:</label>
-            <textarea type="text" class="form-control" id='mensaje'
+            <textarea type="text" className="form-control" id='mensaje'
               {...register('mensaje')} required >
             </textarea>
           </div>

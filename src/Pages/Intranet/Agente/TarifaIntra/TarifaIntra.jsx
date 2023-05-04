@@ -51,7 +51,7 @@ const TarifaIntra = () => {
                         style={{ backgroundColor: '#5B2491', borderColor: '#5B2491' }}
                         onClick={handleDescargarReserva}
                     >
-                        <i class='bx bxs-download' ></i>
+                        <i className='bx bxs-download' ></i>
                     </button>
                     <span> Descargar Políticas de Reserva</span>
                 </div>
@@ -61,7 +61,7 @@ const TarifaIntra = () => {
                         style={{ backgroundColor: '#5B2491', borderColor: '#5B2491' }}
                         onClick={handleDescargarTarifa}
                     >
-                        <i class='bx bxs-download' ></i>
+                        <i className='bx bxs-download' ></i>
                     </button>
                     <span> Descargar Tarifario</span>
                 </div>

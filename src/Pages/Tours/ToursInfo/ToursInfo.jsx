@@ -17,7 +17,6 @@ const ToursInfo = ({ idioma }) => {
             })
             .catch(err => console.log(err))
     }, [])
-    console.log(tour, "as")
     return (
         <>
             <div className='tours'>

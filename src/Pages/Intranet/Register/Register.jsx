@@ -27,7 +27,6 @@ const Register = () => {
 
                 axios.post(URL, data)
                     .then(res => {
-                        console.log(res.data)
                         reset(defaultForm)
                         MySwal.fire({
                             icon: 'success',
@@ -40,7 +39,6 @@ const Register = () => {
 
                     })
                     .catch(err => {
-                        console.log(err)
                         MySwal.fire({
                             icon: 'error',
                             title: 'Ocurrio un error',
