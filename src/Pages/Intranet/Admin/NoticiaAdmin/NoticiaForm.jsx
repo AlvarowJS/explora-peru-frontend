@@ -31,12 +31,13 @@ const NoticiaForm = ({
                         <input type="text" className="form-control" id="titulo"
                             {...register('titulo')}
                             placeholder="Ingresar el titulo del tour"
+                            required
                         />
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="nota">Nota</label>
-                        <textarea className="form-control" id="nota" rows="3" {...register('nota')}></textarea>
+                        <textarea className="form-control" id="nota" rows="3" {...register('nota')} required></textarea>
                     </div>
 
 
@@ -50,7 +51,7 @@ const NoticiaForm = ({
                             // onChange={() => subirArchivo(e.target.files)}
                             {...register('img')}
                             onChange={handleFileChange}
-
+                            required
 
                         />
                         {watchImg && <img id='preview-img' src={`https://backend.peruexploring.pe/storage/noticias/${image}`} alt='preview' style={{ width: '200px', margin: '10px' }} />}

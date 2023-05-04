@@ -39,7 +39,8 @@ const DiaForm = ({
                         <label htmlFor="horario">Horario Español</label>
                         <input type="text" className="form-control" id="horario"
                             {...register('horario')}
-                            placeholder="Lima, Cuzco"
+                            placeholder="Lima, Cuzco (8 OCTUBRE)"
+                            required
                         />
                     </div>
 
@@ -47,18 +48,19 @@ const DiaForm = ({
                         <label htmlFor="horario_english">Horario Ingles</label>
                         <input type="text" className="form-control" id="horario_english"
                             {...register('horario_english')}
-                            placeholder="Lima, Cuzco"
+                            placeholder="Lima, Cuzco (8 OCTUBRE)"
+                            required
                         />
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="descripcion">Descripcion Español</label>
-                        <textarea className="form-control" id="descripcion" rows="3" {...register('descripcion')}></textarea>
+                        <textarea className="form-control" id="descripcion" rows="3" {...register('descripcion')} required></textarea>
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="descripcion_english">Descripcion Ingles</label>
-                        <textarea className="form-control" id="descripcion_english" rows="3" {...register('descripcion_english')}></textarea>
+                        <textarea className="form-control" id="descripcion_english" rows="3" {...register('descripcion_english')} required></textarea>
                     </div>
                     <button className='btn btn-primary m-4'>Enviar</button>
                 </form>

@@ -35,6 +35,7 @@ const TourForm = ({
             <input type="text" className="form-control" id="titulo"
               {...register('titulo')}
               placeholder="Ingresar el titulo del tour"
+              required
             />
           </div>
 
@@ -43,37 +44,38 @@ const TourForm = ({
             <input type="text" className="form-control" id="lugares"
               {...register('lugares')}
               placeholder="Lima, Cuzco"
+              required
             />
           </div>
 
           <div className="form-group m-4">
             <label htmlFor="descripcion_spanish">Descripcion Español</label>
-            <textarea className="form-control" id="descripcion_spanish" rows="3" {...register('descripcion_spanish')}></textarea>
+            <textarea className="form-control" id="descripcion_spanish" rows="3" {...register('descripcion_spanish')} required></textarea>
           </div>
 
           <div className="form-group m-4">
             <label htmlFor="descripcion_english">Descripcion Ingles</label>
-            <textarea className="form-control" id="descripcion_english" rows="3" {...register('descripcion_english')}></textarea>
+            <textarea className="form-control" id="descripcion_english" rows="3" {...register('descripcion_english')} required></textarea>
           </div>
 
           <div className="form-group m-4">
             <label htmlFor="incluye_spanish">Incluye Español</label>
-            <textarea className="form-control" id="incluye_spanish" rows="3" {...register('incluye_spanish')}></textarea>
+            <textarea className="form-control" id="incluye_spanish" rows="3" {...register('incluye_spanish')} required></textarea>
           </div>
 
           <div className="form-group m-4">
             <label htmlFor="incluye_english">Incluye Ingles</label>
-            <textarea className="form-control" id="incluye_english" rows="3" {...register('incluye_english')}></textarea>
+            <textarea className="form-control" id="incluye_english" rows="3" {...register('incluye_english')} required></textarea>
           </div>
 
           <div className="form-group m-4">
             <label htmlFor="incluye_spanish">No Incluye Español</label>
-            <textarea className="form-control" id="incluye_spanish" rows="3" {...register('no_incluye_spanish')}></textarea>
+            <textarea className="form-control" id="incluye_spanish" rows="3" {...register('no_incluye_spanish')} required></textarea>
           </div>
 
           <div className="form-group m-4">
             <label htmlFor="incluye_english">No Incluye Ingles</label>
-            <textarea className="form-control" id="incluye_english" rows="3" {...register('no_incluye_english')}></textarea>
+            <textarea className="form-control" id="incluye_english" rows="3" {...register('no_incluye_english')} required></textarea>
           </div>
 
           <div className="form-group m-4">

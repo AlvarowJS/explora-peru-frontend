@@ -140,7 +140,7 @@ const AppRouter = () => {
 
           </Routes>
           <Footer idioma={idioma} />
-          <a href="https://wa.link/ix9xwp" className="btn-whatsapp" target="_blank">
+          <a href="https://wa.link/zu5485" className="btn-whatsapp" target="_blank">
             <i className='bx bxl-whatsapp'></i>
           </a>
         </>

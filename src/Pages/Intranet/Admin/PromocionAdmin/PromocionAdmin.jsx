@@ -145,7 +145,11 @@ const PromocionAdmin = () => {
             confirmButton: 'btn btn-success'
           }
         })
-        axios.delete(`${URL}/${id}/`)
+        axios.delete(`${URL}/${id}/`, {
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
           .then(res => {
           })
           .catch(err => console.log(err))

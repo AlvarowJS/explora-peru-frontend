@@ -39,28 +39,29 @@ const CircuitoForm = ({
                         <label htmlFor="titulo">Titulo</label>
                         <input type="text" className="form-control" id="titulo"
                             {...register('titulo')}
-                            placeholder="Ingresar el titulo del tour"
+                            placeholder="Ingresar el titulo del circuito"
+                            required
                         />
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="incluye_spanish">Incluye Español</label>
-                        <textarea className="form-control" id="incluye_spanish" rows="3" {...register('incluye_spanish')}></textarea>
+                        <textarea className="form-control" id="incluye_spanish" rows="3" {...register('incluye_spanish')} required></textarea>
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="incluye_english">Incluye Ingles</label>
-                        <textarea className="form-control" id="incluye_english" rows="3" {...register('incluye_english')}></textarea>
+                        <textarea className="form-control" id="incluye_english" rows="3" {...register('incluye_english')} required></textarea>
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="no_incluye_spanish">No Incluye Español</label>
-                        <textarea className="form-control" id="no_incluye_spanish" rows="3" {...register('no_incluye_spanish')}></textarea>
+                        <textarea className="form-control" id="no_incluye_spanish" rows="3" {...register('no_incluye_spanish')} required></textarea>
                     </div>
 
                     <div className="form-group m-4">
                         <label htmlFor="no_incluye_english">No Incluye Ingles</label>
-                        <textarea className="form-control" id="no_incluye_english" rows="3" {...register('no_incluye_english')}></textarea>
+                        <textarea className="form-control" id="no_incluye_english" rows="3" {...register('no_incluye_english')} required></textarea>
                     </div>
 
 
@@ -69,6 +70,7 @@ const CircuitoForm = ({
                         <input type="text" className="form-control" id="duracion"
                             {...register('duracion')}
                             placeholder="9 dias/ 8 noches"
+                            required
                         />
                     </div>
                 
@@ -83,7 +85,7 @@ const CircuitoForm = ({
                             // onChange={() => subirArchivo(e.target.files)}
                             {...register('img')}
                             onChange={handleFileChange}
-
+                            required
 
                         />
                         {/* {watchImg && <img id='preview-img' src={`https://backend.peruexploring.pe/storage/tours/${image}`} alt='preview' style={{ width: '200px', margin: '10px' }} />} */}
@@ -100,7 +102,7 @@ const CircuitoForm = ({
                             onChange={(e) => {
                                 setArchivoEnglish(e.target.files[0]);
                             }}
-
+                            required
 
                         />
                     </div>
@@ -116,6 +118,7 @@ const CircuitoForm = ({
                             onChange={(e) => {
                                 setArchivoSpanish(e.target.files[0]);
                             }}
+                            required
                         />
                     </div>
                     <button className='btn btn-primary m-4'>Enviar</button>

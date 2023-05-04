@@ -145,8 +145,13 @@ const TourAdmin = () => {
                         confirmButton: 'btn btn-success'
                     }
                 })
-                axios.delete(`${URL}/${id}/`)
+                axios.delete(`${URL}/${id}/`, {
+                    headers: {
+                        'Access-Control-Allow-Origin': '*'
+                    }
+                })
                     .then(res => {
+                        console.log(res.data)
                     })
                     .catch(err => console.log(err))
             }
