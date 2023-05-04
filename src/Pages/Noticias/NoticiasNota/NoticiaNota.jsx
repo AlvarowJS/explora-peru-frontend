@@ -12,7 +12,7 @@ const NoticiaNota = () => {
         noticiasBD.get(`/${id.id}`)
             .then(res => {
                 setNoticia(res.data)
-                setImgNew(`http://127.0.0.1:8000/storage/noticias/${res.data.img}`)
+                setImgNew(`https://backend.peruexploring.pe/storage/noticias/${res.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])

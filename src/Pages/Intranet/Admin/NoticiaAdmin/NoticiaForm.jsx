@@ -54,7 +54,7 @@ const NoticiaForm = ({
 
 
                         />
-                        {watchImg && <img id='preview-img' src={`http://127.0.0.1:8000/storage/noticias/${image}`} alt='preview' style={{ width: '200px', margin: '10px' }} />}
+                        {watchImg && <img id='preview-img' src={`https://backend.peruexploring.pe/storage/noticias/${image}`} alt='preview' style={{ width: '200px', margin: '10px' }} />}
                     </div>
                     <button className='btn btn-primary m-4'>Enviar</button>
                     <button className='btn btn-secondary' onClick={toggle}>Cancelar</button>

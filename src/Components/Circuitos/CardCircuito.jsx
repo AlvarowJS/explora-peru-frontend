@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const CardCircuito = ({ circuito }) => {
     const navigate = useNavigate()
     let img = circuito.img
-    img = `http://127.0.0.1:8000/storage/circuitos/${circuito.titulo}/${img}`
+    img = `https://backend.peruexploring.pe/storage/circuitos/${circuito.titulo}/${img}`
     const verTour = (id) => {
         navigate(`/circuitos/${id}`)
     }

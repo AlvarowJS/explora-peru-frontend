@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './../style.css'
 import './TarifaIntra.css'
 import axios from 'axios'
-const URL = 'http://127.0.0.1:8000/api/v1/tarifa-user'
+const URL = 'https://backend.peruexploring.pe/api/v1/tarifa-user'
 const TarifaIntra = () => {
     const [tarifas, setTarifas] = useState()
     const handleDescargarReserva = () => {
@@ -14,7 +14,7 @@ const TarifaIntra = () => {
             .then(res => {
                 setTarifas(res.data)
                 let tarifa = res.data[0].archivo
-                window.open(`http://127.0.0.1:8000/storage/tarifario/${tarifa}`, '_blank')
+                window.open(`https://backend.peruexploring.pe/storage/tarifario/${tarifa}`, '_blank')
             })
             .catch(err => console.log(err))
     };

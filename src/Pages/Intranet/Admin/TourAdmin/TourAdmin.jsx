@@ -3,7 +3,7 @@ import './../style.css'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
 import toursBD from '../../../../apis/tours'
-const URL = 'http://127.0.0.1:8000/api/v1/tours'
+const URL = 'https://backend.peruexploring.pe/api/v1/tours'
 
 import TourForm from './TourForm'
 import { useForm } from 'react-hook-form'

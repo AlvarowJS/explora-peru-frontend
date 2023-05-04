@@ -8,9 +8,9 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import usuarioBD from '../../../../apis/usuarios'
 const MySwal = withReactContent(Swal)
-const URLACTIVATE = 'http://127.0.0.1:8000/api/active-user'
-const URLDESACTIVATE = 'http://127.0.0.1:8000/api/desactivate-user'
-const URLDELETE = 'http://127.0.0.1:8000/api/delete-users'
+const URLACTIVATE = 'https://backend.peruexploring.pe/api/active-user'
+const URLDESACTIVATE = 'https://backend.peruexploring.pe/api/desactivate-user'
+const URLDELETE = 'https://backend.peruexploring.pe/api/delete-users'
 
 const UsuariosAdmin = () => {
   const [users, setUsers] = useState()

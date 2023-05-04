@@ -10,7 +10,7 @@ const NoticiaIntraCardInfo = () => {
         noticiasBD.get(`/${id.id}`)
             .then(res => {
                 setNoticia(res.data)
-                setNoticiaImg(`http://127.0.0.1:8000/storage/noticias/${res.data.img}`)
+                setNoticiaImg(`https://backend.peruexploring.pe/storage/noticias/${res.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])

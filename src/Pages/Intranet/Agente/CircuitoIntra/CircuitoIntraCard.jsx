@@ -4,7 +4,7 @@ import './Circuito.css'
 const CircuitoIntraCard = ({ circuito }) => {
     const navigate = useNavigate()
     let img = circuito.img
-    img = `http://127.0.0.1:8000/storage/circuitos/${circuito.titulo}/${img}`
+    img = `https://backend.peruexploring.pe/storage/circuitos/${circuito.titulo}/${img}`
     const verCircuito = (id) => {
         navigate(`/circuito-intranet/${id}`)
     }

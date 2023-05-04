@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const diasBD = axios.create({    
-    baseURL: 'http://127.0.0.1:8000/api/v1/dias'    
+    baseURL: 'https://backend.peruexploring.pe/api/v1/dias'    
 })
 
 export default diasBD

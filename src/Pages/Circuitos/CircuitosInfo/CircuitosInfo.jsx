@@ -14,7 +14,7 @@ const CircuitosInfo = ({ idioma }) => {
         circuitosBD.get(`/${id.id}`)
             .then(res => {
                 setCircuito(res.data)
-                setTourImg(`http://127.0.0.1:8000/storage/circuitos/${res.data.titulo}/${res.data.img}`)
+                setTourImg(`https://backend.peruexploring.pe/storage/circuitos/${res.data.titulo}/${res.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])

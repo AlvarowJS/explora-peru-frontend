@@ -4,7 +4,7 @@ import './Promo.css'
 const PromoIntraCard = ({ promo }) => {
     const navigate = useNavigate()
     let img = promo.img
-    img = `http://127.0.0.1:8000/storage/promos/${promo.titulo}/${img}`
+    img = `https://backend.peruexploring.pe/storage/promos/${promo.titulo}/${img}`
     const verTour = (id) => {
         navigate(`/promo-intranet/${id}`)
     }

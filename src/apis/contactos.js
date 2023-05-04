@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const contactenosBD = axios.create({    
-    baseURL: 'http://127.0.0.1:8000/api/v1/contactenos'    
+    baseURL: 'https://backend.peruexploring.pe/api/v1/contactenos'    
 })
 
 export default contactenosBD

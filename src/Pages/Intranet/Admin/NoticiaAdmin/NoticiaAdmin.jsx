@@ -3,7 +3,7 @@ import './../style.css'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
 import noticiasBD from '../../../../apis/noticias'
-const URL = 'http://127.0.0.1:8000/api/v1/noticias'
+const URL = 'https://backend.peruexploring.pe/api/v1/noticias'
 
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'

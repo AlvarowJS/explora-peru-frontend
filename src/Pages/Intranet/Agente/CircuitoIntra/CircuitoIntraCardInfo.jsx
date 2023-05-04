@@ -12,17 +12,17 @@ const CircuitoIntraCardInfo = () => {
             .then(res => {
                 console.log(res.data)
                 setCircuito(res?.data)
-                setCircuitoImg(`http://127.0.0.1:8000/storage/circuitos/${res?.data.titulo}/${res?.data.img}`)
+                setCircuitoImg(`https://backend.peruexploring.pe/storage/circuitos/${res?.data.titulo}/${res?.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])
 
     const descargarItinerarioEspaniol = () => {
 
-        window.open(`http://127.0.0.1:8000/storage/circuitos/${circuito.titulo}/${circuito.archivo_spanish}`, '_blank')
+        window.open(`https://backend.peruexploring.pe/storage/circuitos/${circuito.titulo}/${circuito.archivo_spanish}`, '_blank')
     }
     const descargarItinerarioEnglish = () => {
-        window.open(`http://127.0.0.1:8000/storage/circuitos/${circuito.titulo}/${circuito.archivo_english}`, '_blank')
+        window.open(`https://backend.peruexploring.pe/storage/circuitos/${circuito.titulo}/${circuito.archivo_english}`, '_blank')
     }
     return (
         <div className='container'>

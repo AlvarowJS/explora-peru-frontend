@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const tarifaBD = axios.create({    
-    baseURL: 'http://127.0.0.1:8000/api/v1/tarifa'    
+    baseURL: 'https://backend.peruexploring.pe/api/v1/tarifa'    
 })
 
 export default tarifaBD

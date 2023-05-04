@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './../style.css'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
-const URL = 'http://127.0.0.1:8000/api/v1/promos'
+const URL = 'https://backend.peruexploring.pe/api/v1/promos'
 
 import { useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
