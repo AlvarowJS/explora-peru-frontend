@@ -7,7 +7,10 @@ const Noticias = () => {
   const [noticias, setNoticias] = useState()
   useEffect(() => {
     noticiasBD.get()
-      .then(res => setNoticias(res?.data))
+      .then(res => {
+        console.log(res?.data)
+        setNoticias(res?.data)
+      })
       .catch(err => console.log(err))
   }, [])
   console.log(noticias)
@@ -25,7 +28,7 @@ const Noticias = () => {
               noticia={noticia}
             />
           ))}
-  
+
         </div>
       </aside>
     </div>

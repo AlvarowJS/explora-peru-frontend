@@ -10,6 +10,7 @@ const MySwal = withReactContent(Swal)
 const URL = 'https://backend.peruexploring.pe/api/register'
 const Register = () => {
 
+
     const submit = data => {
         return MySwal.fire({
             title: '¿Estás seguro de sus datos?',
@@ -24,10 +25,11 @@ const Register = () => {
             buttonsStyling: false
         }).then(function (result) {
             if (result.value) {
-
                 axios.post(URL, data)
                     .then(res => {
-                        reset(defaultForm)
+                        console.log(res?.data)
+                        // reset(defaultForm)
+                        
                         MySwal.fire({
                             icon: 'success',
                             title: 'Mensaje Enviado!',
@@ -39,6 +41,7 @@ const Register = () => {
 
                     })
                     .catch(err => {
+                        console.log(err)
                         MySwal.fire({
                             icon: 'error',
                             title: 'Ocurrio un error',
@@ -68,31 +71,31 @@ const Register = () => {
                     <p>Se uno de nuestros agentes y accede a precios especiales</p>
                     <form onSubmit={handleSubmit(submit)}>
 
-                        <label for="razon_social">Razón Social:</label>
+                        <label htmlFor="razon_social">Razón Social:</label>
                         <input type="text" id="razon_social" name="razon_social"
                             {...register('razon_social')} />
 
 
                         <div className="input-group">
                             <div>
-                                <label for="telefono">Telefono o celular:</label>
+                                <label htmlFor="telefono">Telefono o celular:</label>
                                 <input type="text" id="telefono" name="telefono"
                                     {...register('telefono')} />
                             </div>
                             <div>
-                                <label for="ruc">RUC</label>
+                                <label htmlFor="ruc">RUC</label>
                                 <input type="text" id="ruc" name="ruc"
                                     {...register('ruc')} />
                             </div>
                         </div>
                         <div className="input-group">
                             <div>
-                                <label for="direccion">Dirección:</label>
+                                <label htmlFor="direccion">Dirección:</label>
                                 <input type="text" id="direccion" name="direccion"
                                     {...register('direccion')} />
                             </div>
                             <div>
-                                <label for="email">Correo Electronico</label>
+                                <label htmlFor="email">Correo Electronico</label>
                                 <input type="email" id="email" name="email"
                                     {...register('email')}
                                 />

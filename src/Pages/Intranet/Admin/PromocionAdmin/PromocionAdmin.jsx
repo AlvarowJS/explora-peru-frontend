@@ -56,7 +56,9 @@ const PromocionAdmin = () => {
     formData.append('duracion', data.duracion);
 
     axios.post(URL, formData)
-      .then(res => console.log(res.data))
+      .then(res => {
+        setEstado(true)
+      })
       .catch(err => console.log(err))
     // .finally(() => console.log(res.data))
   }
@@ -71,22 +73,23 @@ const PromocionAdmin = () => {
   }
 
   const updatePromo = (id, data) => {
-    const formData = new FormData();
-    formData.append('img', imgData);
-    formData.append('archivo_english', archivoEnglish);
-    formData.append('archivo_spanish', archivoSpanish);
-    formData.append('titulo', data.titulo);
-    formData.append('lugares', data.lugares);
-    formData.append('descripcion_spanish', data.descripcion_spanish);
-    formData.append('descripcion_english', data.descripcion_english);
-    formData.append('incluye_english', data.incluye_english);
-    formData.append('incluye_spanish', data.incluye_spanish);
-    formData.append('no_incluye_english', data.no_incluye_english);
-    formData.append('no_incluye_spanish', data.no_incluye_spanish);
-    formData.append('duracion', data.duracion);
+    // const formData = new FormData();
+    // formData.append('img', imgData);
+    // formData.append('archivo_english', archivoEnglish);
+    // formData.append('archivo_spanish', archivoSpanish);
+    // formData.append('titulo', data.titulo);
+    // formData.append('lugares', data.lugares);
+    // formData.append('descripcion_spanish', data.descripcion_spanish);
+    // formData.append('descripcion_english', data.descripcion_english);
+    // formData.append('incluye_english', data.incluye_english);
+    // formData.append('incluye_spanish', data.incluye_spanish);
+    // formData.append('no_incluye_english', data.no_incluye_english);
+    // formData.append('no_incluye_spanish', data.no_incluye_spanish);
+    // formData.append('duracion', data.duracion);
 
-    axios.patch(`${URL}/${id}`, formData)
+    axios.patch(`${URL}/${id}`, data)
       .then(res => {
+        setEstado(true)
       })
       .catch(err => console.log(err))
   }
@@ -97,6 +100,7 @@ const PromocionAdmin = () => {
     promosBD.get(`/${id}`)
       .then(res => {
         setObjUpdate(res?.data)
+        setEstado(true)
         const object = res?.data
         reset(object)
       })
