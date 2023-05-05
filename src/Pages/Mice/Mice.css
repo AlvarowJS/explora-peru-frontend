@@ -31,8 +31,9 @@
     font-size: 20px;
 }
 .mice__descripcion img {
-    width: 1000px;
-    padding: 20px 200px;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px 100px;
     
 }
 .mice__incentivo h4{
@@ -40,7 +41,7 @@
     background-color: #FE5A09;
     width: 60%;
     font-size: 36px;
-    padding: 10px 0px 10px 100px;
+    padding: 10px 0px 10px 10px;
 }
 
 .mice__incentivo p{
