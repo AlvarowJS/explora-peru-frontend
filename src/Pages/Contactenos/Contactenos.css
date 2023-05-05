@@ -1,8 +1,10 @@
 .sobrenosotros__contacto {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
     padding-top: 100px;
+    flex-direction: column;
 }
 
 .sobrenosotros__contacto--info {
@@ -11,6 +13,7 @@
     color: white;
     padding-top: 55px;
     width: 100%;
+    padding-bottom: 30px;
 
 }
 
@@ -41,6 +44,7 @@
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    padding-right: 20px;
 }
 
 .sobrenosotros__contacto--input input {
@@ -70,25 +74,56 @@
     background-color: #FE5A09;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1200px) {
+    .sobrenosotros__contacto {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 40px;
+        /* flex-wrap: wrap; */
+        padding-top: 100px;
+    }
+    .sobrenosotros__contacto--input input {
+        width: 350px;
+        border: none;
+        background-color: #D9D9D9;
+        height: 23px;
+        outline: none;
+        margin-left: 30px;
+        padding-left: 70px;
+        
+    }
+    .sobrenosotros__contacto--input textarea {
+        width: 350px;
+        border: none;
+        background-color: #D9D9D9;
+        height: 93px;
+        outline: none;
+        margin-left: 30px;
+        padding-left: 70px;
+        
+    }
+
     .sobrenosotros__contacto--info {
         background-color: #FE5A09;
         color: white;  
         padding-top: 55px;
         /* padding-right: auto; */
+        max-width: 700px;
+        padding-bottom: 30px;
         width: 100%;
         padding-right: 400px;
         /* width: 100%;         */
     }
 
 }
-@media screen and (min-width: 890px) {
+/* @media screen and (min-width: 1500px) {
+    
     .sobrenosotros__contacto--info {
         background-color: #FE5A09;
         color: white;
         padding-top: 55px;
-        /* padding-right: auto; */
         width: auto;
         
     }
-}
+} */

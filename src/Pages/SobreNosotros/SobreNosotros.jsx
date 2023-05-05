@@ -14,7 +14,8 @@ import Responsable from '../../Components/Responsable/Responsable'
 const SobreNosotros = ({ idioma, setIdioma }) => {
   const navigate = useNavigate()
   const login = () => {
-    return navigate('/login')
+    // return navigate('/login')
+    return window.open('https://agentes.peruexploring.pe/', '_blank')
   }
   return (
     <>

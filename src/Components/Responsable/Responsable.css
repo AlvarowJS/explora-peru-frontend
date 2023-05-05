@@ -42,6 +42,9 @@
 .responsable__cards--text {
     /* color: white; */
     text-align: center;
+    font-weight: bold;
+    /* -webkit-text-stroke: 0.4px black;
+    text-stroke: 0.4px black; */
 }
 
 .responsable__cards--text p {

@@ -6,13 +6,21 @@ const Navbar = ({ setIdioma, idioma }) => {
 
     // const [idioma, setIdioma] = useState('spanish')
     const navbar = useRef()
-    const clickMenuHam = () => {
+    const clickMenuHam = () => {        
         navbar.current.classList.toggle('navbar-open')
     }
 
     const handleChange = (event) => {
         setIdioma(event.target.value);
     }
+    const redireccion = () => {
+        window.open('https://agentes.peruexploring.pe/', '_blank')
+    }
+    // Seleccionar elementos
+    const body = document.querySelector('.circuitos__body');    
+
+  
+
     return (
         <>
             <header className='header'>
@@ -72,9 +80,9 @@ const Navbar = ({ setIdioma, idioma }) => {
                         <option value="spanish" selected>Español</option>
                         <option value="english">English</option>
                     </select>
-                    <NavLink to='login'>
-                        <i className='bx bxs-group header__login' ></i>
-                    </NavLink>
+                    {/* <NavLink to='login'> */}
+                    <i className='bx bxs-group header__login' onClick={redireccion}></i>
+                    {/* </NavLink> */}
                 </div>
 
             </header>

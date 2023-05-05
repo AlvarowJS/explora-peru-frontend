@@ -13,7 +13,7 @@
     /* background-color: red; */
     font-size: 28px;
     margin-left: 76px;
-    margin-right: 222px;
+    margin-right: 32px;
     margin-top: 66px;
     /* margin-bottom: 437px; */
 }
@@ -34,9 +34,9 @@
 
 .sobrenosotros__titleb {
     position: absolute;
-    top: 150px;
+    top: 220px;
     left: 75%;
-    transform: translateX(-50%);
+    transform: translateX(-100%);
     z-index: 11;
     color: white;
     background-color: #FE5A09;
@@ -120,8 +120,21 @@
         font-size: 18px;
         margin-left: 176px;
         /* margin-right: 622px; */
-        margin-top: 136px;
+        margin-top: 116px;
         /* margin-bottom: 437px; */
+    }
+    .sobrenosotros__titleb {
+        position: absolute;
+        top: 400px;
+        left: 15%;
+        transform: translateX(-50%);
+        z-index: 11;
+        color: white;
+        background-color: #FE5A09;
+        margin-left: 85px;
+        border: none;
+        font-size: 18px;
+        padding: 10px 30px;
     }
 
     .sobrenosotros__img {
@@ -171,7 +184,7 @@
         /* background-color: red; */
         font-size: 48px;
         margin-left: 176px;
-        margin-right: 422px;
+        margin-right: 222px;
         margin-top: 136px;
         margin-bottom: 437px;
     }
@@ -179,7 +192,7 @@
     .sobrenosotros__titlep {
         display: block;
         position: absolute;
-        top: 170px;
+        top: 220px;
         z-index: 10;
         color: white;
         /* background-color: green; */
@@ -192,12 +205,13 @@
 
     .sobrenosotros__titleb {
         position: absolute;
-        top: 400px;
+        top: 500px;
         left: 15%;
         transform: translateX(-50%);
         z-index: 11;
         color: white;
         background-color: #FE5A09;
+        margin-left: 85px;
         border: none;
         font-size: 18px;
         padding: 10px 30px;
