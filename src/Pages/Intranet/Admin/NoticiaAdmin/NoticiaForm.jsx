@@ -27,7 +27,7 @@ const NoticiaForm = ({
             <Modal.Body>
                 <form onSubmit={handleSubmit(submit)}>
                     <div className="form-group m-4">
-                        <label htmlFor="titulo">Titulo</label>
+                        <label htmlFor="titulo">Título</label>
                         <input type="text" className="form-control" id="titulo"
                             {...register('titulo')}
                             placeholder="Ingresar el titulo de la noticia"
@@ -40,7 +40,7 @@ const NoticiaForm = ({
                         <textarea className="form-control" id="nota" rows="3" {...register('nota')} required></textarea>
                     </div>
                     <div className="form-group m-4">
-                        <label htmlFor="titulo">Titulo Ingles</label>
+                        <label htmlFor="titulo">Título Ingles</label>
                         <input type="text" className="form-control" id="titulo_ingles"
                             {...register('titulo_ingles')}
                             placeholder="Ingresar el titulo de la noticia en ingles"
