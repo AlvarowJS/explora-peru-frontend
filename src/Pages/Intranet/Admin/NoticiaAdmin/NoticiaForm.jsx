@@ -40,7 +40,7 @@ const NoticiaForm = ({
                         <textarea className="form-control" id="nota" rows="3" {...register('nota')} required></textarea>
                     </div>
                     <div className="form-group m-4">
-                        <label htmlFor="titulo">Titulo</label>
+                        <label htmlFor="titulo">Titulo Ingles</label>
                         <input type="text" className="form-control" id="titulo_ingles"
                             {...register('titulo_ingles')}
                             placeholder="Ingresar el titulo de la noticia en ingles"
@@ -49,7 +49,7 @@ const NoticiaForm = ({
                     </div>
 
                     <div className="form-group m-4">
-                        <label htmlFor="nota_ingles">Nota</label>
+                        <label htmlFor="nota_ingles">Nota Ingles</label>
                         <textarea className="form-control" id="nota_ingles" rows="3" {...register('nota_ingles')} required></textarea>
                     </div>
 
