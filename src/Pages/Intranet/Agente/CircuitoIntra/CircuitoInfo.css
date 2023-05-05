@@ -32,3 +32,28 @@
     margin-bottom: 0px;
     margin-top: 0px;
 }
+@media (max-width: 768px) {
+    .circuitoinfo{
+        display: flex;
+        flex-direction: column;
+    }
+    .circuitoinfo__img{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .circuitoinfo__img img{
+        /* max-width: 800px;
+        width: 100%; */
+        height: 400px;
+        padding-right: 20px;
+    }
+    .circuitoinfo__img button{
+    
+        margin-right: 20px;
+    }
+    .circuitoinfo__info p{
+    
+        margin: 20px 0px;
+    }
+}
