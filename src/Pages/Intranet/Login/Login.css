@@ -81,7 +81,7 @@
     background-color: #0069d9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .login-container {
         grid-template-columns: 1fr;
         padding: 30px;
@@ -91,7 +91,17 @@
         display: none;
     }
 
-    .login-right {
+    /* .login-right {
         width: 100%;
+
+    } */
+    .login-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        padding: 20px 10px;
+        width: 100%;
+
     }
 }
