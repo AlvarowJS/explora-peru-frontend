@@ -62,21 +62,22 @@ const NoticiaAdmin = () => {
 
   const updateNoticia = (id, data) => {
 
-    axios.patch(`${URL}/${id}`, data)
-    .then(res => {
-      setEstado(true)
-    })
-    .catch(err => console.log(err))
+    // axios.patch(`${URL}/${id}`, data)
+    // .then(res => {
+    //   setEstado(true)
+    // })
+    // .catch(err => console.log(err))
+    console.log(data)
     const formData = new FormData();
     formData.append('img', imgData);
     // formData.append('titulo', data.titulo);
     // formData.append('nota', data.duracion);
 
-    axios.patch(`${URLIMG}/${id}`, formData)
-      .then(res => {
-        setEstado(true)
-      })
-      .catch(err => console.log(err))
+    // axios.patch(`${URLIMG}/${id}`, formData)
+    //   .then(res => {
+    //     setEstado(true)
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   const updateNoticiaById = (id) => {

@@ -75,7 +75,7 @@ const Contactenos = () => {
                             <textarea className='contacto__datos--mensaje' type="text" {...register('mensaje')} />
                         </div>
                     </div>
-                    <button className='contacto__datos--boton'>Enviar</button>
+                    <button className='contacto__datos--boton' style={{color: "white"}}>Enviar</button>
                 </form>
             </div>
         </div >

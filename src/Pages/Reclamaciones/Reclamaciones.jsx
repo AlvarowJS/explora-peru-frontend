@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
 
-const URL = 'https://backend.peruexploring.pe/api/v1/libros'
+const URL = 'http://127.0.0.1:8000/api/v1/libros'
 const Reclamaciones = () => {
     let fechaActual = new Date();
     let dia = fechaActual.getDate();
@@ -70,37 +70,38 @@ const Reclamaciones = () => {
 
                 <h1>Libro de Reclamaciones</h1>
                 <br />
-                <p>PERU EXPLORA RUC: </p>
-                <p>DIRECCION: </p>
+                <p>PERU EXPLORING OPERADORES TURISTICOS E.I.R.L - RUC: 20608098977</p>
+                <p>DIRECCIÓN: Calle San Manuel 174, Urb. Santa Luisa - Los Olivos
+Lima, Perú</p>
                 <p>Fecha: {today}</p>
 
                 <form onSubmit={handleSubmit(submit)} className='reclamacion'>
                     <h3>1. INFORMACIÓN DEL CONSUMIDOR RECLAMANTE</h3>
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-md-4">
                             <label htmlFor="nombre_completo">NOMBRE COMPLETO (*):</label>
                             <input type="text" className="form-control"
                                 {...register('nombre_completo')} required
                             />
                         </div>
-                        <div className="col-4">
+                        <div className="col-md-4">
                             <label htmlFor="dni">DNI / CE (*):</label>
                             <input type="text" className="form-control" id='dni'
                                 {...register('dni')} required />
                         </div>
-                        <div className="col-4">
+                        <div className="col-md-4">
                             <label htmlFor="telefono">TELEFÓNO:</label>
                             <input type="text" className="form-control" id='telefono'
                                 {...register('telefono')} />
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-md-8">
                             <label htmlFor="email">EMAIL (*):</label>
                             <input type="email" className="form-control" id='email'
                                 {...register('email')} required />
                         </div>
-                        <div className="col-4">
+                        <div className="col-md-4">
                             <label htmlFor="padre">PADRE O MADRE : (MENORES DE EDAD):</label>
                             <input type="text" className="form-control"
                                 {...register('padre')} />
@@ -108,12 +109,12 @@ const Reclamaciones = () => {
 
                     </div>
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-md-8">
                             <label htmlFor="domicilio">DOMICILIO (*):</label>
                             <input type="text" className="form-control" id='domicilio'
                                 {...register('domicilio')} required />
                         </div>
-                        <div className="col-4">
+                        <div className="col-md-4">
                             <label htmlFor="pais">PAÍS:</label>
                             <input type="text" className="form-control" id='pais'
                                 {...register('pais')} />
@@ -122,7 +123,7 @@ const Reclamaciones = () => {
                     </div>
                     <h3>2. IDENTIFICACIÓN DEL BIEN CONTRATADO</h3>
                     <div className="row">
-                        <div className="col-8">
+                        <div className="col-md-8">
                             <label htmlFor="relacion">BIEN / SERVICIO:</label>
                             <select type="text" className="form-control"
                                 {...register('relacion')} >
@@ -130,12 +131,12 @@ const Reclamaciones = () => {
                                 <option value='servicio'>Servicio</option>
                             </select>
                         </div>
-                        <div className="col-2">
+                        <div className="col-md-2">
                             <label htmlFor="monto_reclamado">MONTO RECLAMADO:</label>
                             <input type="text" className="form-control"
                                 {...register('monto_reclamado')} />
                         </div>
-                        <div className="col-2">
+                        <div className="col-md-2">
                             <label htmlFor="moneda_tipo">MONEDA:</label>
                             <select type="text" className="form-control"
                                 {...register('moneda_tipo')}>
@@ -145,7 +146,7 @@ const Reclamaciones = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-md-12">
                             <label htmlFor="descripcion">DESCRIPCIÓN(*)</label>
                             <input type="text" className="form-control"
                                 {...register('descripcion')} required />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import portada from './../../../assets/carril/aboutinfo_3.jpeg'
 import './../Circuitos.css'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import toursBD from '../../../apis/tours';
 import circuitosBD from '../../../apis/circuitos';
 
@@ -24,6 +24,10 @@ const CircuitosInfo = ({ idioma }) => {
                 <img src={portada} alt="" className='tours__img--info' />
             </div>
             <aside className='tours__id'>
+                <Link to="/circuitos" style={{}}>
+                    <i className='bx bx-left-arrow-alt' style={{ marginTop: "20px" }}></i>
+                    Volver a los circuitos
+                </Link>
                 <h2>{circuito?.titulo}</h2>
                 <div className='tours__id--card'>
                     <article>
@@ -38,9 +42,9 @@ const CircuitosInfo = ({ idioma }) => {
                         <b>
                             {
                                 idioma == 'spanish' ?
-                                'Incluye' : 'Includes'
+                                    'Incluye' : 'Includes'
                             }
-                            
+
                         </b>
                         <p>
                             {
@@ -64,11 +68,11 @@ const CircuitosInfo = ({ idioma }) => {
                         <b>
                             {
                                 idioma == 'spanish' ?
-                                'Duración' : 'Duration'
+                                    'Duración' : 'Duration'
                             }
                         </b>
                         <p>
-                            
+
                             {circuito?.duracion} horas
                         </p>
                     </article>
