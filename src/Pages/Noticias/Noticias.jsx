@@ -3,7 +3,7 @@ import noticia from './../../assets/carril/mice.png'
 import './Noticias.css'
 import noticiasBD from '../../apis/noticias'
 import NoticiaCard from '../../Components/Noticia/NoticiaCard'
-const Noticias = () => {
+const Noticias = ({idiomaGlobal}) => {
   const [noticias, setNoticias] = useState()
   useEffect(() => {
     noticiasBD.get()
@@ -20,7 +20,11 @@ const Noticias = () => {
         <img className='noticias__img' src={noticia} alt="" />
       </div>
       <aside className='noticias__cuerpo'>
-        <h2>Noticias</h2>
+        {
+          idiomaGlobal == 'spanish' ? <h2>Noticias</h2>
+          : <h2>News</h2>
+        }
+        
         <div className='noticias__cards'>
           {noticias?.map(noticia => (
             <NoticiaCard

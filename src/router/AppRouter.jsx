@@ -133,8 +133,8 @@ const AppRouter = () => {
             <Route path='/circuitos' element={<Circuitos />} />
             <Route path='/circuitos/:id' element={<CircuitosInfo />} />
             <Route path='/mice' element={<Mice />} />
-            <Route path='/noticias' element={<Noticias />} />
-            <Route path='/noticias/:id' element={<NoticiaNota />} />
+            <Route path='/noticias' element={<Noticias idiomaGlobal={idioma}/>} />
+            <Route path='/noticias/:id' element={<NoticiaNota idiomaGlobal={idioma}/>} />
             <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma} />} />
             <Route path='/reclamaciones' element={<Reclamaciones idiomaGlobal={idioma} />} />
 

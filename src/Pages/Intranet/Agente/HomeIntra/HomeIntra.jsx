@@ -32,9 +32,9 @@ const HomeIntra = () => {
               <p>Celular: +51 932513171</p>
             </div>
             <div className='homeintra__top-rightcontactocard'>
-              <p>Meliza Castro</p>
-              <p>reservas1@peruexploring.pe</p>
-              <p>Celular: +51 932513171</p>
+              <p>Mayte Dávila</p>
+              <p>reservas2@peruexploring.pe</p>
+              <p>Celular: +51 974581054</p>
             </div>
           </div>
         </div>

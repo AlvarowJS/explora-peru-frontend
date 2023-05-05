@@ -203,7 +203,7 @@ const TarifasAdmin = () => {
         <div className='container'>
             <button onClick={toggle} className='btn btn-success m-2'>Registrar Tarifa</button>
             <DataTable
-                title="Administrar Usuarios"
+                title="Administrar Tarifas"
                 columns={columns}
                 data={tarifas}
                 pagination

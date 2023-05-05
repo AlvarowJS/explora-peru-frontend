@@ -30,7 +30,7 @@ const NoticiaForm = ({
                         <label htmlFor="titulo">Titulo</label>
                         <input type="text" className="form-control" id="titulo"
                             {...register('titulo')}
-                            placeholder="Ingresar el titulo del tour"
+                            placeholder="Ingresar el titulo de la noticia"
                             required
                         />
                     </div>
@@ -38,6 +38,19 @@ const NoticiaForm = ({
                     <div className="form-group m-4">
                         <label htmlFor="nota">Nota</label>
                         <textarea className="form-control" id="nota" rows="3" {...register('nota')} required></textarea>
+                    </div>
+                    <div className="form-group m-4">
+                        <label htmlFor="titulo">Titulo</label>
+                        <input type="text" className="form-control" id="titulo_ingles"
+                            {...register('titulo_ingles')}
+                            placeholder="Ingresar el titulo de la noticia en ingles"
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group m-4">
+                        <label htmlFor="nota_ingles">Nota</label>
+                        <textarea className="form-control" id="nota_ingles" rows="3" {...register('nota_ingles')} required></textarea>
                     </div>
 
 

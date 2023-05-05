@@ -43,6 +43,8 @@ const NoticiaAdmin = () => {
     formData.append('img', imgData);
     formData.append('titulo', data.titulo);
     formData.append('nota', data.nota);
+    formData.append('titulo_ingles', data.titulo_ingles);
+    formData.append('nota_ingles', data.nota_ingles);
 
     axios.post(URL, formData)
       .then(res => {
