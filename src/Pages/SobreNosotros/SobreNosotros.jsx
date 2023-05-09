@@ -31,7 +31,7 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
           idioma == 'spanish' ?
             <p className='sobrenosotros__titlep'>Estamos abiertos a nuevas agencias asociadas</p>
             :
-            <p>We are open to new partner agencies</p>
+            <p className='sobrenosotros__titlep'>We are open to new partner agencies</p>
         }
 
         {
