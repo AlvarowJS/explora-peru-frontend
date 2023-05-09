@@ -12,7 +12,7 @@ const NoticiaNota = ({idiomaGlobal}) => {
         noticiasBD.get(`/${id.id}`)
             .then(res => {
                 setNoticia(res.data)
-                setImgNew(`https://auxbackend.peruexploring.pe/storage/noticias/${res?.data.titulo}/${res?.data.img}`)
+                setImgNew(`https://backend.peruexploring.pe/public/storage/noticias/${res?.data.titulo}/${res?.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])

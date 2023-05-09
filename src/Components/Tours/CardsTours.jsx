@@ -6,7 +6,7 @@ const CardsTours = ({ tour, idioma }) => {
     const navigate = useNavigate()
 
     let img = tour.img
-    img = `https://auxbackend.peruexploring.pe/storage/tours/${tour.titulo}/${img}`
+    img = `https://backend.peruexploring.pe/public/storage/tours/${tour.titulo}/${img}`
     const verTour = (id) => {
         navigate(`/tours/${id}`)
     }

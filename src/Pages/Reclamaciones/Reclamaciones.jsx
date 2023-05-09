@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
 
-const URL = 'https://auxbackend.peruexploring.pe/api/v1/libros'
+const URL = 'https://backend.peruexploring.pe/public/api/v1/libros'
 const Reclamaciones = () => {
     let fechaActual = new Date();
     let dia = fechaActual.getDate();

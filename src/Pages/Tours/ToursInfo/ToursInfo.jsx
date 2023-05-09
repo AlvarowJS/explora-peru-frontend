@@ -13,7 +13,7 @@ const ToursInfo = ({ idioma }) => {
         toursBD.get(`/${id.id}`)
             .then(res => {
                 setTour(res.data)
-                setTourImg(`https://auxbackend.peruexploring.pe/storage/tours/${res.data.titulo}/${res.data.img}`)
+                setTourImg(`https://backend.peruexploring.pe/public/storage/tours/${res.data.titulo}/${res.data.img}`)
             })
             .catch(err => console.log(err))
     }, [])
