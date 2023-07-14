@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import noticia from './../../assets/carril/mice.png'
-import './Noticias.css'
+import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, IconButton, Input, InputAdornment, InputLabel, OutlinedInput, TextField, TextareaAutosize, Typography } from '@mui/material'
 import noticiasBD from '../../apis/noticias'
 import NoticiaCard from '../../Components/Noticia/NoticiaCard'
-const Noticias = ({idiomaGlobal}) => {
+const Noticias = ({ idiomaGlobal }) => {
   const [noticias, setNoticias] = useState()
   useEffect(() => {
     noticiasBD.get()
@@ -15,27 +15,42 @@ const Noticias = ({idiomaGlobal}) => {
   }, [])
   console.log(noticias)
   return (
-    <div>
-      <div className='noticias'>
-        <img className='noticias__img' src={noticia} alt="" />
-      </div>
-      <aside className='noticias__cuerpo'>
-        {
-          idiomaGlobal == 'spanish' ? <h2>Noticias</h2>
-          : <h2>News</h2>
-        }
-        
-        <div className='noticias__cards'>
-          {noticias?.map(noticia => (
-            <NoticiaCard
-              key={noticia.id}
-              noticia={noticia}
-            />
-          ))}
+    <>
+      <Box position="relative" width="100%">
+        <CardMedia
+          component="img"
+          height="350"
+          image="/noto_noticias.png"
+          alt="portada mice"
 
-        </div>
-      </aside>
-    </div>
+        />
+        {/* <Box position="absolute" top="25%" left="40%" textAlign="center" color="white"> */}
+        <Box
+          position="absolute"
+          top="50%" left="50%"
+          textAlign="center"
+          sx={{
+            transform: 'translate(-50%, -50%)',
+          }}
+          color="white" >
+
+          <Typography variant="h1" sx={{ fontSize: 40 }}>Noticias</Typography>
+          <Typography variant="h4" sx={{ fontSize: 30, marginTop: 4, marginBottom: 5 }}>
+            No te pierdas las últimas noticias sobre nosotros y el turismo en el Perú
+          </Typography>
+
+        </Box>
+      </Box>
+
+      <Grid container spacing={4} marginY={5}>
+        {
+          noticias?.map((noticia) => (
+            <NoticiaCard key={noticia.id} noticia={noticia} />
+          ))
+        }
+
+      </Grid>
+    </>
   )
 }
 

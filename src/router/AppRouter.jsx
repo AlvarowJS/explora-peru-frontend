@@ -40,14 +40,15 @@ import PromoIntraCardInfo from '../Pages/Intranet/Agente/PromoIntra/PromoIntraCa
 import CircuitoIntraCardInfo from '../Pages/Intranet/Agente/CircuitoIntra/CircuitoIntraCardInfo'
 import CircuitosInfo from '../Pages/Circuitos/CircuitosInfo/CircuitosInfo'
 import PromocionAdmin from '../Pages/Intranet/Admin/PromocionAdmin/PromocionAdmin'
+import SideMenu from '../Components/SideMenu'
 
 
 
 const AppRouter = () => {
 
-  const [idioma, setIdioma] = useState('spanish')
+  const [idioma, setIdioma] = useState(false)
   const token = localStorage.getItem("token")
-
+  const [menu, setMenu] = useState(false)
   function NavbarRoutes() {
     const location = useLocation();
 
@@ -125,18 +126,29 @@ const AppRouter = () => {
     else {
       return (
         <>
-          <Navbar idioma={idioma} setIdioma={setIdioma} />
+          <Navbar
+            idioma={idioma}
+            setIdioma={setIdioma}
+            menu={menu}
+            setMenu={setMenu}
+          />
+          <SideMenu
+            menu={menu}
+            setMenu={setMenu}
+            idioma={idioma}
+            setIdioma={setIdioma}
+          />
           <Routes>
             <Route path='/' element={<SobreNosotros idioma={idioma} setIdioma={setIdioma} />} />
             <Route path='/tours' element={<Tours idioma={idioma} />} />
             <Route path='/tours/:id' element={<ToursInfo idioma={idioma} />} />
-            <Route path='/circuitos' element={<Circuitos />} />
-            <Route path='/circuitos/:id' element={<CircuitosInfo />} />
-            <Route path='/mice' element={<Mice />} />
-            <Route path='/noticias' element={<Noticias idiomaGlobal={idioma}/>} />
-            <Route path='/noticias/:id' element={<NoticiaNota idiomaGlobal={idioma}/>} />
-            <Route path='/contactenos' element={<Contactenos idiomaGlobal={idioma} />} />
-            <Route path='/reclamaciones' element={<Reclamaciones idiomaGlobal={idioma} />} />
+            <Route path='/circuitos' element={<Circuitos idioma={idioma}/>} />
+            <Route path='/circuitos/:id' element={<CircuitosInfo idioma={idioma}/>} />
+            <Route path='/mice' element={<Mice idioma={idioma} />} />
+            <Route path='/noticias' element={<Noticias idioma={idioma} />} />
+            <Route path='/noticias/:id' element={<NoticiaNota idioma={idioma} />} />
+            <Route path='/contactenos' element={<Contactenos idioma={idioma} />} />
+            <Route path='/reclamaciones' element={<Reclamaciones idioma={idioma} />} />
 
           </Routes>
           <Footer idioma={idioma} />

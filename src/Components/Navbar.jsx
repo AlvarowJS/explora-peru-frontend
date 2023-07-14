@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
+import { Link, AppBar, Box, Button, Switch, Toolbar, Typography } from '@mui/material'
+import PersonIcon from '@mui/icons-material/Person';
+import MenuIcon from '@mui/icons-material/Menu';
 import logo from './../assets/logo/logo.png'
-const Navbar = ({ setIdioma, idioma }) => {
+const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
 
+
+    const handleSwitchChange = (event) => {
+        setIdioma(event.target.checked);
+    };
     // const [idioma, setIdioma] = useState('spanish')
     const navbar = useRef()
-    const clickMenuHam = () => {        
+    const clickMenuHam = () => {
         navbar.current.classList.toggle('navbar-open')
     }
 
@@ -17,75 +24,98 @@ const Navbar = ({ setIdioma, idioma }) => {
         window.open('https://agentes.peruexploring.pe/', '_blank')
     }
     // Seleccionar elementos
-    const body = document.querySelector('.circuitos__body');    
+    const body = document.querySelector('.circuitos__body');
 
-  
+    // Remake
+    const intranet = () => {
+        window.open('https://agentes.peruexploring.pe/', '_blank');
+    }
+    const handleMenuToggle = () => {
+        setMenu(!menu);
+    };
 
     return (
         <>
-            <header className='header'>
-                <Link to="/">
-                    <img className='header__logo' src={logo} alt="" />
-                </Link>
-                <div onClick={clickMenuHam} className='header__menuham'>
-                    <i className='bx bx-menu'></i>
-                </div>
-                <nav ref={navbar} className='header__navbar'>
-                    <ul>
-                        <NavLink to='/'>
-                            <li>
-
-                                {
-                                    idioma == 'spanish' ? 'Sobre Nosotros' : 'About us'
-                                }
-                            </li>
+            <AppBar>
+                <Toolbar>
+                    <NavLink to='/' >
+                        <img
+                            src="/logo.png"
+                            alt="logo Peru Exploring"
+                            width={90}
+                            height={60}
+                        />
+                        {/* <Typography variant='h6'>Perú Exploring</Typography> */}
+                    </NavLink>
+                    <Box flex={1} />
+                    <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' } }}>
+                        <NavLink to='/' >
+                            <Link>
+                                <Button>
+                                    {idioma ? 'About us' : 'Sobre nosotros'}
+                                </Button>
+                            </Link>
                         </NavLink>
 
-                        <NavLink to='/tours'>
-                            <li>
-
-                                Tours
-                            </li>
+                        <NavLink to='/tours' >
+                            <Link>
+                                <Button>Tours</Button>
+                            </Link>
                         </NavLink>
 
-                        <NavLink to='/circuitos'>
-                            <li>
-
-                                {idioma == 'spanish' ? 'Circuitos' : 'Circuits'}
-                            </li>
-                        </NavLink>
-                        <NavLink to='/mice'>
-
-                            <li>
-                                MICE
-                            </li>
-                        </NavLink>
-                        <NavLink to='/noticias'>
-
-                            <li>
-                                {idioma == 'spanish' ? 'Noticias' : 'News'}
-                            </li>
-                        </NavLink>
-                        <NavLink to='contactenos'>
-
-                            <li>
-                                {idioma == 'spanish' ? 'Contactanos' : 'Contact us'}
-                            </li>
+                        <NavLink to='/circuitos' >
+                            <Link>
+                                <Button>
+                                    {idioma ? 'circuits' : 'Circuitos'}
+                                </Button>
+                            </Link>
                         </NavLink>
 
-                    </ul>
-                </nav>
-                <div>
-                    <select className='header__languaje' value={idioma} onChange={handleChange}>
-                        <option value="spanish" selected>Español</option>
-                        <option value="english">English</option>
-                    </select>
-                    {/* <NavLink to='login'> */}
-                    <i className='bx bxs-group header__login' onClick={redireccion}></i>
-                    {/* </NavLink> */}
-                </div>
+                        <NavLink to='/mice' >
+                            <Link>
+                                <Button>MICE</Button>
+                            </Link>
+                        </NavLink>
 
-            </header>
+                        <NavLink to='/noticias' >
+                            <Link>
+                                <Button>
+                                    {idioma ? 'News' : 'Noticias'}
+                                </Button>
+                            </Link>
+                        </NavLink>
+                        <NavLink to='/contactenos' >
+                            <Link>
+                                <Button>
+                                    {idioma ? 'Contact Us' : 'Contáctenos'}
+                                </Button>
+                            </Link>
+                        </NavLink>
+                    </Box>
+
+                    <Box flex={1} />
+                    <Box flex={1} />
+                    <Box sx={{ color: 'white', fontFamily: 'Roboto', marginRight: 2 }}>
+                        Es
+                        <Switch
+                            color='primary'
+                            checked={idioma}
+                            onChange={handleSwitchChange}
+                        />
+                        En
+                    </Box>
+                    <Box>
+                        <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white', fontSize: 30, cursor: 'pointer' }} />
+                    </Box>
+                    <Box>
+                        <PersonIcon onClick={intranet} sx={{ color: 'white', fontSize: 30, cursor: 'pointer' }} />
+                    </Box>
+
+
+                </Toolbar>
+
+
+            </AppBar>
         </>
     )
 }

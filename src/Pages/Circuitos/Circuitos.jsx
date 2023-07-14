@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import portada from './../../assets/carril/about_3.png'
-import './Circuitos.css'
 import circuitosBD from '../../apis/circuitos'
 import Contactenos from '../../Components/Contactanos/Contactenos'
 import CardCircuito from '../../Components/Circuitos/CardCircuito'
 import lugaresBD from '../../apis/lugares'
+import { Search } from '@mui/icons-material'
+import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, IconButton, Input, InputAdornment, InputLabel, OutlinedInput, TextField, TextareaAutosize, Typography } from '@mui/material'
+
 const Circuitos = ({ idioma }) => {
   const [filterSelect, setFilterSelect] = useState()
   const [filter, setFilter] = useState()
@@ -42,49 +43,108 @@ const Circuitos = ({ idioma }) => {
   }
   return (
     <>
-      <div className='circuitos'>
-        <img src={portada} alt="" className='circuitos__img' />
-      </div>
-      <div className='circuitos__body'>
-        <h2>Circuitos</h2>
+      <Box position="relative" width="100%">
+        <CardMedia
+          component="img"
+          height="350"
+          image="/portada_tour.png"
+          alt="portada"
 
-        <div className='circuitos__filters'>
-          <div className='circuitos__filters--buscador'>
-            <input type="text" onChange={() => buscarCircuito()} /><i className='bx bx-search-alt-2'></i>
-          </div>
-          <div className='circuitos__filters--select'>
-            <span>Buscar información en </span>
-            <select onChange={handleSelectChange}>
-              {
-                lugars && lugars.map(lugar => (
-                  <option value={lugar?.nombre}>{lugar?.nombre}</option>
-                ))
-              }
-            </select>
+        />
+        {/* <Box position="absolute" top="25%" left="40%" textAlign="center" color="white"> */}
+        <Box
+          position="absolute"
+          top="50%" left="50%"
+          textAlign="center"
+          sx={{
+            transform: 'translate(-50%, -50%)',
+          }}
+          color="white" >
+
+          <Typography variant="h1" sx={{ fontSize: 40 }}>
+            {idioma ? 'Circuits' : 'Circuitos'}
+          </Typography>
+          <Typography variant="h4" sx={{ fontSize: 30, marginTop: 4, marginBottom: 5 }}>
+            {idioma ? 'Choose your next adventure' : 'Escoge tu próxima aventura'}
+          </Typography>
+
+
+        </Box>
+      </Box>
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginX: 3, marginY: 5, gap: 5 }} >
+        <div style={{ position: 'relative', cursor: 'pointer', width: '300px', maxHeight: '300px' }}
+          onClick={() => setFilterSelect('ica')}
+        >
+          <img
+            src="/ica_filtro.png"
+            alt="logo Peru Exploring"
+            objectFit="cover"
+            style={{ borderRadius: 10, width: '100%', height: 'auto' }}
+          />
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white' }}>
+            <Typography variant="h1">ICA</Typography>
           </div>
         </div>
-        <div className='circuitos__catalogo'>
-          {
-            filter ?
-              filter?.map(circuito => (
-                <CardCircuito
-                  key={circuito.id}
-                  circuito={circuito}
-                  idioma={idioma}
-                />
-              ))
-              :
-              circuitos?.map(circuito => (
-                <CardCircuito
-                  key={circuito.id}
-                  circuito={circuito}
-                  idioma={idioma}
-                />
-              ))
-          }
+
+
+        <div style={{ position: 'relative', cursor: 'pointer', width: '300px', maxHeight: '300px' }}
+          onClick={() => setFilterSelect('lima')}
+        >
+          <img
+            src="/lima_filtro.png"
+            alt="logo Peru Exploring"
+            style={{ borderRadius: 10, width: '100%', height: 'auto' }}
+            objectFit="cover"
+          />
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white' }}>
+            <Typography variant="h1">LIMA</Typography>
+          </div>
         </div>
-        <Contactenos />
-      </div>
+
+
+        <div style={{ position: 'relative', cursor: 'pointer', width: '300px', maxHeight: '300px' }}
+          onClick={() => setFilterSelect('cuzco')}
+        >
+          <img
+            src="/cuzco_filtro.png"
+            alt="logo Peru Exploring"
+            style={{ borderRadius: 10, width: '100%', height: 'auto' }}
+            objectFit="cover"
+          />
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: 'white' }}>
+            <Typography variant="h1">CUZCO</Typography>
+          </div>
+        </div>
+
+      </Box>
+
+      <Box display="flex" justifyContent="center" >
+        <div style={{ backgroundColor: 'gray', borderRadius: 30 }}>
+          <input type="text" style={{ border: 'none', paddingLeft: 60, outline: 'none', backgroundColor: 'gray', marginLeft: 10, color: 'white' }}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <Button style={{ backgroundColor: 'purple', color: 'white', paddingLeft: 30, paddingRight: 20, border: 'none', margin: 0 }}>
+            <Search />
+          </Button>
+        </div>
+      </Box>
+      <Box
+        sx={{ marginX: { xs: 5, sm: 10, md: 5, lg: 30, xl: 60 } }}
+        // margin={20}
+        marginY={4}
+      >
+        {
+          filter ?
+            filter?.map((circuito) => (
+              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma}/>
+            ))
+            :
+            circuitos?.map((circuito) => (
+              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma}/>
+            ))
+        }
+      </Box>
     </>
   )
 }

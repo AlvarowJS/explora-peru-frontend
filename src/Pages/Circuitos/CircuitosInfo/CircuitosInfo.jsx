@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import portada from './../../../assets/carril/aboutinfo_3.jpeg'
 import './../Circuitos.css'
 import { Link, useParams } from 'react-router-dom'
 import toursBD from '../../../apis/tours';
 import circuitosBD from '../../../apis/circuitos';
-
+import { Button, Grid, Typography } from '@mui/material';
 const CircuitosInfo = ({ idioma }) => {
 
     const id = useParams();
@@ -20,68 +19,72 @@ const CircuitosInfo = ({ idioma }) => {
     }, [])
     return (
         <>
-            <div className='tours'>
-                <img src={portada} alt="" className='tours__img--info' />
-            </div>
-            <aside className='tours__id'>
-                <Link to="/circuitos" style={{}}>
-                    <i className='bx bx-left-arrow-alt' style={{ marginTop: "20px" }}></i>
-                    Volver a los circuitos
-                </Link>
-                <h2>{circuito?.titulo}</h2>
-                <div className='tours__id--card'>
-                    <article>
-                        <p>
-                            {
-                                idioma == 'spanish' ?
-                                    circuito?.descripcion_spanish
-                                    :
-                                    circuito?.descripcion_english
-                            }
-                        </p>
-                        <b>
-                            {
-                                idioma == 'spanish' ?
-                                    'Incluye' : 'Includes'
-                            }
+            <Grid container spacing={4} marginY={10} padding={3}>
+                <Grid item md={6}>
+                    <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '600px', borderRadius: '10px', overflow: 'hidden' }}>
+                        <img
+                            src={`https://backend.peruexploring.pe/public/storage/circuitos/${circuito?.titulo}/${circuito?.img}`}
+                            alt="circuito Peru Exploring"
+                            objectFit="cover"
+                            style={{ width: '100%', height: '600px', objectFit: 'cover' }}
 
-                        </b>
-                        <p>
-                            {
-                                idioma == 'spanish' ?
-                                    circuito?.incluye_spanish.split('\n').map((item, index) => (
-                                        <div key={index}>
-                                            {item}
-                                            <br />
-                                        </div>
-                                    ))
-                                    :
-                                    circuito?.incluye_english.split('\n').map((item, index) => (
-                                        <div key={index}>
-                                            {item}
-                                            <br />
-                                        </div>
-                                    ))
+                        />
+                    </div>
+                </Grid>
+                <Grid item md={6}>
 
-                            }
-                        </p>
-                        <b>
-                            {
-                                idioma == 'spanish' ?
-                                    'Duración' : 'Duration'
-                            }
-                        </b>
-                        <p>
+                    <Typography variant="h1" sx={{ fontSize: 40, color: 'darkorange' }}>
+                        {circuito?.titulo}
+                    </Typography>
 
-                            {circuito?.duracion} horas
-                        </p>
-                    </article>
-                    <aside>
-                        <img src={tourImg} alt="" />
-                    </aside>
-                </div>
-            </aside>
+                    <Typography variant="h1" sx={{ fontSize: 20, color: 'darkorange' }}>
+                        {idioma ? 'Includes' : 'Incluye'}
+                    </Typography>
 
+
+                    <Typography style={{ whiteSpace: 'pre-line' }}>
+                        {idioma ? circuito?.incluye_english : circuito?.incluye_spanish}
+                    </Typography>
+
+                    <Typography variant="h1" sx={{ fontSize: 20, color: 'darkorange' }}>
+                        {idioma ? 'Not included' : 'No incluye'}
+                    </Typography>
+
+
+                    <Typography style={{ whiteSpace: 'pre-line' }}>
+                        {idioma ? circuito?.no_incluye_english : circuito?.no_incluye_spanish}
+                    </Typography>
+
+                    <Typography variant="h1" sx={{ fontSize: 20, color: 'darkorange' }}>
+                        {idioma ? 'Duration' : 'Duración'}
+                    </Typography>
+
+
+                    <Typography style={{ whiteSpace: 'pre-line' }}>
+                        {circuito?.duracion}
+                    </Typography>
+                    {/* <Grid container>
+                        <Grid>
+                            <Button sx={{
+                                backgroundColor: '#E89241',
+                                color: 'white',
+                                '&:hover': {
+                                    backgroundColor: 'darkorange',
+                                },
+                            }}>Descargar Itinerario en Español</Button>
+                        </Grid>
+                        <Grid>
+                            <Button sx={{
+                                backgroundColor: '#E89241',
+                                color: 'white',
+                                '&:hover': {
+                                    backgroundColor: 'darkorange',
+                                },
+                            }}>Download Itinerary in English</Button>
+                        </Grid>
+                    </Grid> */}
+                </Grid>
+            </Grid>
 
         </>
     )

@@ -3,6 +3,7 @@ import portada from './../../../assets/carril/aboutinfo_3.jpeg'
 import './../Tours.css'
 import { Link, useParams } from 'react-router-dom'
 import toursBD from '../../../apis/tours';
+import { Button, Grid, Typography } from '@mui/material';
 
 const ToursInfo = ({ idioma }) => {
 
@@ -19,68 +20,44 @@ const ToursInfo = ({ idioma }) => {
     }, [])
     return (
         <>
-            <div className='tours'>
-                <img src={portada} alt="" className='tours__img--info' />
-            </div>
-            <aside className='tours__id'>
-                <Link to="/tours" style={{}}>
-                    <i className='bx bx-left-arrow-alt' style={{marginTop: "20px"}}></i>
-                    Volver a los tours
-                </Link>
-                <h2>{tour?.titulo}</h2>
-                <div className='tours__id--card'>
-                    <article>
-                        <p>
-                            {
-                                idioma == 'spanish' ?
-                                    tour?.descripcion_spanish
-                                    :
-                                    tour?.descripcion_english
-                            }
-                        </p>
-                        <b>
-                            {
-                                idioma == 'spanish' ?
-                                    'Incluye' : 'Includes'
-                            }
+            <Grid container spacing={4} marginY={10} padding={3}>
+                <Grid item md={6}>
+                    <div style={{ position: 'relative', cursor: 'pointer', width: '100%', height: '600px', borderRadius: '10px', overflow: 'hidden' }}>
+                        <img
+                            src={`https://backend.peruexploring.pe/public/storage/tours/${tour?.titulo}/${tour?.img}`}
+                            alt="logo Peru Exploring"
+                            objectFit="cover"
+                            style={{ width: '100%', height: '600px', objectFit: 'cover' }}
+                        />
+                    </div>
+                </Grid>
+                <Grid item md={6}>
 
-                        </b>
-                        <p>
-                            {
-                                idioma == 'spanish' ?
-                                    tour?.incluye_spanish.split('\n').map((item, index) => (
-                                        <div key={index}>
-                                            {item}
-                                            <br />
-                                        </div>
-                                    ))
-                                    :
-                                    tour?.incluye_english.split('\n').map((item, index) => (
-                                        <div key={index}>
-                                            {item}
-                                            <br />
-                                        </div>
-                                    ))
+                    <Typography variant="h1" sx={{ fontSize: 40, color: 'darkorange' }}>
+                        {tour?.titulo}
+                    </Typography>
+                    <Typography>
+                        {idioma ? tour?.descripcion_english : tour?.descripcion_spanish}
+                    </Typography>
 
-                            }
-                        </p>
-                        <b>
-                            {
-                                idioma == 'spanish' ?
-                                    'Duración' : 'Duration'
-                            }
-                        </b>
-                        <p>
+                    <Typography variant="h1" sx={{ fontSize: 20, color: 'darkorange' }}>
+                        {idioma ? 'Includes' : 'Incluye'}
+                    </Typography>
 
-                            {tour?.duracion} horas
-                        </p>
-                    </article>
-                    <aside>
-                        <img src={tourImg} alt="" />
-                    </aside>
-                </div>
-            </aside>
+                    <Typography style={{ whiteSpace: 'pre-line' }}>
+                        {idioma ? tour?.incluye_english : tour?.incluye_spanish}
+                    </Typography>
 
+                    <Typography variant="h1" sx={{ fontSize: 20, color: 'darkorange' }}>
+                        {idioma ? 'Duration' : 'Duración'}
+                    </Typography>
+
+
+                    <Typography>
+                        {tour?.duracion}
+                    </Typography>
+                </Grid>
+            </Grid>
 
         </>
     )
