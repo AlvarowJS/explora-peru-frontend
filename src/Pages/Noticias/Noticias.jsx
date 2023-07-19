@@ -47,8 +47,7 @@ const Noticias = ({ idiomaGlobal }) => {
           noticias?.map((noticia) => (
             <>
             <NoticiaCard key={noticia.id} noticia={noticia} />
-            <NoticiaCard key={noticia.id} noticia={noticia} />
-            <NoticiaCard key={noticia.id} noticia={noticia} />
+       
             </>
           ))
         }

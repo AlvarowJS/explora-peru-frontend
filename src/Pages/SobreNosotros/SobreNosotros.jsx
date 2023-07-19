@@ -330,35 +330,35 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
             </form>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={{ backgroundColor: '#2C2A64', borderRadius: 10, padding: 10, color: 'white' }}>
+            <Box sx={{ paddingX: { xl: 30, lg: 10, md: 10, xs: 10 }, paddingY: { xl: 10, lg: 10, md: 10, xs: 10 }, backgroundColor: '#2C2A64', borderRadius: 10, color: 'white' }}>
 
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <AccessTimeIcon sx={{ marginRight: 2, fontSize: 32 }} />
+                <AccessTimeIcon sx={{ marginRight: 2, fontSize: 60 }} />
                 <Box>
-                  <Typography>Lunes a Viernes: 8:00 a.m - 6:00 p.m</Typography>
-                  <Typography>Sábado: 8:00 a.m - 1:00 p.m</Typography>
+                  <Typography sx={{ fontSize: 20 }}>Lunes a Viernes: 8:00 a.m - 6:00 p.m</Typography>
+                  <Typography sx={{ fontSize: 20 }}>Sábado: 8:00 a.m - 1:00 p.m</Typography>
                 </Box>
               </Box>
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <MailOutlineIcon sx={{ marginRight: 2, fontSize: 32 }} />
+                <MailOutlineIcon sx={{ marginRight: 2, fontSize: 60 }} />
                 <Box>
-                  <Typography>reservas1@peruexploring.pe</Typography>
-                  <Typography>reservas2@peruexploring.pe</Typography>
+                  <Typography sx={{ fontSize: 20 }}>reservas1@peruexploring.pe</Typography>
+                  <Typography sx={{ fontSize: 20 }}>reservas2@peruexploring.pe</Typography>
                 </Box>
               </Box>
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <CallIcon sx={{ marginRight: 2, fontSize: 32 }} />
+                <CallIcon sx={{ marginRight: 2, fontSize: 60 }} />
                 <Box>
-                  <Typography>Reservas 1: +51 932 513 171 </Typography>
-                  <Typography>Reservas 2: +51 974 581 054</Typography>
-                  <Typography>Atención 24Hrs: +51 922 060 213</Typography>
+                  <Typography sx={{ fontSize: 20 }}>Reservas 1: +51 932 513 171 </Typography>
+                  <Typography sx={{ fontSize: 20 }}>Reservas 2: +51 974 581 054</Typography>
+                  <Typography sx={{ fontSize: 20 }}>Atención 24Hrs: +51 922 060 213</Typography>
                 </Box>
               </Box>
               <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <LocationOnIcon sx={{ marginRight: 2, fontSize: 32 }} />
+                <LocationOnIcon sx={{ marginRight: 2, fontSize: 60 }} />
                 <Box>
-                  <Typography>Calle San Manuel 174, Urb. Santa </Typography>
-                  <Typography>Luisa - Los Olivos (Lima, Perú)</Typography>
+                  <Typography sx={{ fontSize: 20 }}>Calle San Manuel 174, Urb. Santa </Typography>
+                  <Typography sx={{ fontSize: 20 }}>Luisa - Los Olivos (Lima, Perú)</Typography>
                 </Box>
               </Box>
             </Box>

@@ -40,26 +40,26 @@ const Mice = ({ idioma }) => {
         <Typography variant='h1' component='h1' sx={{ color: '#E89241' }}>MICE</Typography>
       </Box>
 
-      <Grid container spacing={4} paddingX={2}>
-        <Grid item xs={12} md={6} lg={6}>
-          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
+      <Grid container>
+        <Grid item xs={12} md={6} lg={6} xl={6} sx={{marginX: 20}}>
+          {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
             <img
               src='/sinimagen.png'
               alt='mice imagen'
-              objectFit="cover"
-              style={{ width: '100%', height: '300px', objectFit: 'cover' }}
+              // objectFit="cover"
+              style={{ width: '100%', height: '300px', objectFit: 'cover',marginTop: '10px',borderRadius: '20px', overflow: 'hidden' }}
             />
-          </div>
-          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
+          {/* </div> */}
+          {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
             <img
               src='/sinimagen.png'
               alt='mice imagen'
-              objectFit="cover"
-              style={{ width: '100%', height: '300px', objectFit: 'cover' }}
+              // objectFit="cover"
+              style={{ width: '100%', height: '300px', objectFit: 'cover',marginTop: '10px',borderRadius: '20px', overflow: 'hidden' }}
             />
-          </div>
+          {/* </div> */}
         </Grid>
-        <Grid item xs={12} md={6} lg={6} >
+        <Grid item xs={12} md={6} lg={6} xl={6} >
           <Typography variant="h1" sx={{ fontSize: 20, color: '#E89241' }}>
             {idioma ? 'Design your own experience with us!' : 'Diseña tu propia experiencia junto a nosotros!'}
             {idioma ? 'Special events, customized trips, incentive groups and meetings.' : 'Eventos especiales, viajes a medida, grupos de incentivos y reuniones.'}
