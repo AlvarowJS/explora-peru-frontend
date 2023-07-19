@@ -41,37 +41,41 @@ const Mice = ({ idioma }) => {
       </Box>
 
       <Grid container>
-        <Grid item xs={12} md={6} lg={6} xl={6} sx={{marginX: 20}}>
-          {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
-            <img
-              src='/sinimagen.png'
-              alt='mice imagen'
-              // objectFit="cover"
-              style={{ width: '100%', height: '300px', objectFit: 'cover',marginTop: '10px',borderRadius: '20px', overflow: 'hidden' }}
-            />
-          {/* </div> */}
-          {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
-            <img
-              src='/sinimagen.png'
-              alt='mice imagen'
-              // objectFit="cover"
-              style={{ width: '100%', height: '300px', objectFit: 'cover',marginTop: '10px',borderRadius: '20px', overflow: 'hidden' }}
-            />
-          {/* </div> */}
-        </Grid>
         <Grid item xs={12} md={6} lg={6} xl={6} >
-          <Typography variant="h1" sx={{ fontSize: 20, color: '#E89241' }}>
-            {idioma ? 'Design your own experience with us!' : 'Diseña tu propia experiencia junto a nosotros!'}
-            {idioma ? 'Special events, customized trips, incentive groups and meetings.' : 'Eventos especiales, viajes a medida, grupos de incentivos y reuniones.'}
+          <Box marginX={15}>
+            {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
+            <img
+              src='/sinimagen.png'
+              alt='mice imagen'
+              // objectFit="cover"
+              style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', borderRadius: '20px' }}
+            />
+            {/* </div> */}
+            {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
+            <img
+              src='/sinimagen.png'
+              alt='mice imagen'
+              // objectFit="cover"
+              style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', borderRadius: '20px' }}
+            />
+            {/* </div> */}
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6} lg={6} xl={6}>
+          <Box marginRight={15}>
+            <Typography variant="h1" sx={{ fontSize: 20, color: '#E89241' }}>
+              {idioma ? 'Design your own experience with us!' : 'Diseña tu propia experiencia junto a nosotros!'}
+              {idioma ? 'Special events, customized trips, incentive groups and meetings.' : 'Eventos especiales, viajes a medida, grupos de incentivos y reuniones.'}
 
-          </Typography>
-          <Typography variant="h4" sx={{ fontSize: 20 }}>
-            {idioma ? '• Our MICE division is always creating unique experiences and meeting the needs of our clients.' : '•Nuestra división MICE siempre está creando experiencias únicas y satisfaciendo las necesidades de nuestros clientes.'}<br /><br />
-            {idioma ? '• Our Team will work on each project offering personalized and detailed information to maximize your experience.' : '• Nuestro Equipo trabajará en cada proyecto ofreciendo información personalizada y detallada para maximizar su experiencia.'}<br /><br />
-            {idioma ? '• When it comes to creating a unique experience in Peru, variety and innovation are the key to everything.' : '• Cuando se trata de crear una experiencia única en Perú, la variedad y la innovación son la clave de todo.'}<br /><br />
-            {idioma ? '• Peru, land of hidden treasures with great geographical, cultural, historical, and gastronomic variety.' : '• Perú, tierra de tesoros escondidos con gran variedad geográfica, cultural, histórica y gastronómica.'}<br /><br />
-            {idioma ? '• An incentive trip will not only be a trip to a new destination like Peru, but it will end up being a unique experience in a lifetime.' : '• Un viaje de incentivo no solo será un viaje a un nuevo destino como Perú, sino que terminará siendo una experiencia única en la vida.'}
-          </Typography>
+            </Typography>
+            <Typography variant="h4" sx={{ fontSize: 20 }}>
+              {idioma ? '• Our MICE division is always creating unique experiences and meeting the needs of our clients.' : '•Nuestra división MICE siempre está creando experiencias únicas y satisfaciendo las necesidades de nuestros clientes.'}<br /><br />
+              {idioma ? '• Our Team will work on each project offering personalized and detailed information to maximize your experience.' : '• Nuestro Equipo trabajará en cada proyecto ofreciendo información personalizada y detallada para maximizar su experiencia.'}<br /><br />
+              {idioma ? '• When it comes to creating a unique experience in Peru, variety and innovation are the key to everything.' : '• Cuando se trata de crear una experiencia única en Perú, la variedad y la innovación son la clave de todo.'}<br /><br />
+              {idioma ? '• Peru, land of hidden treasures with great geographical, cultural, historical, and gastronomic variety.' : '• Perú, tierra de tesoros escondidos con gran variedad geográfica, cultural, histórica y gastronómica.'}<br /><br />
+              {idioma ? '• An incentive trip will not only be a trip to a new destination like Peru, but it will end up being a unique experience in a lifetime.' : '• Un viaje de incentivo no solo será un viaje a un nuevo destino como Perú, sino que terminará siendo una experiencia única en la vida.'}
+            </Typography>
+          </Box>
         </Grid>
       </Grid>
 
