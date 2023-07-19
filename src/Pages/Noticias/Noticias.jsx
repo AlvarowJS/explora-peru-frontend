@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import noticia from './../../assets/carril/mice.png'
 import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, IconButton, Input, InputAdornment, InputLabel, OutlinedInput, TextField, TextareaAutosize, Typography } from '@mui/material'
 import noticiasBD from '../../apis/noticias'
 import NoticiaCard from '../../Components/Noticia/NoticiaCard'
@@ -13,7 +12,6 @@ const Noticias = ({ idiomaGlobal }) => {
       })
       .catch(err => console.log(err))
   }, [])
-  console.log(noticias)
   return (
     <>
       <Box position="relative" width="100%">
@@ -27,11 +25,13 @@ const Noticias = ({ idiomaGlobal }) => {
         {/* <Box position="absolute" top="25%" left="40%" textAlign="center" color="white"> */}
         <Box
           position="absolute"
-          top="50%" left="50%"
+          top="40%" 
+          // left="50%"
+          sx={{ left: { sm: '10%', md: '10%', lg: '20%' } }}
           textAlign="center"
-          sx={{
-            transform: 'translate(-50%, -50%)',
-          }}
+          // sx={{
+          //   transform: 'translate(-50%, -50%)',
+          // }}
           color="white" >
 
           <Typography variant="h1" sx={{ fontSize: 40 }}>Noticias</Typography>
@@ -45,7 +45,11 @@ const Noticias = ({ idiomaGlobal }) => {
       <Grid container spacing={4} marginY={5}>
         {
           noticias?.map((noticia) => (
+            <>
             <NoticiaCard key={noticia.id} noticia={noticia} />
+            <NoticiaCard key={noticia.id} noticia={noticia} />
+            <NoticiaCard key={noticia.id} noticia={noticia} />
+            </>
           ))
         }
 

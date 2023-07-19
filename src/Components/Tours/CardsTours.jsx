@@ -3,7 +3,6 @@ import { Box, Button, Card, CardMedia, Grid, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 const CardsTours = ({ tour, idioma }) => {
     const navigate = useNavigate()
-    console.log(idioma, "ssss")
     let img = tour.img
     img = `https://backend.peruexploring.pe/public/storage/tours/${tour.titulo}/${img}`
 

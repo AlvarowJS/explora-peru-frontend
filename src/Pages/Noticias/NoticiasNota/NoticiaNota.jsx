@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import noticiaImg from './../../../assets/carril/mice.png'
 import noticiasBD from '../../../apis/noticias';
 import { Box, Button, Card, CardMedia, Grid, Typography } from '@mui/material'
 import './../Noticias.css'
@@ -26,7 +25,7 @@ const NoticiaNota = ({ idiomaGlobal }) => {
                             src={`https://backend.peruexploring.pe/public/storage/noticias/${noticia?.titulo}/${noticia?.img}`}
                             alt={noticia?.titulo}
                             objectFit="cover"
-                            style={{width: 200, height: '100vh', objectFit: 'cover', borderRadius: 10}}
+                            style={{width: '100%', height: '700px', objectFit: 'cover', borderRadius: 10}}
                         />
                 </Grid>
                 <Grid item md={6}>

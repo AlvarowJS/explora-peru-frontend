@@ -1,6 +1,5 @@
 import React from 'react'
 import './../../Pages/Tours/Tours.css'
-import tour from './../../assets/carril/tours.png'
 import { useNavigate } from 'react-router-dom'
 import { Box, Button, Card, CardMedia, Grid, Typography } from '@mui/material'
 const CardCircuito = ({ circuito, idioma }) => {

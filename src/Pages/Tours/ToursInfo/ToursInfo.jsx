@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import portada from './../../../assets/carril/aboutinfo_3.jpeg'
 import './../Tours.css'
 import { Link, useParams } from 'react-router-dom'
 import toursBD from '../../../apis/tours';

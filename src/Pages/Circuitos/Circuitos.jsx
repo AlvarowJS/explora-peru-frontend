@@ -54,11 +54,11 @@ const Circuitos = ({ idioma }) => {
         {/* <Box position="absolute" top="25%" left="40%" textAlign="center" color="white"> */}
         <Box
           position="absolute"
-          top="50%" left="50%"
           textAlign="center"
-          sx={{
-            transform: 'translate(-50%, -50%)',
-          }}
+
+          top="40%"
+          // left="40%"
+          sx={{ left: {xs: '10%', sm: '30%', md: '30%', lg: '40%' } }}
           color="white" >
 
           <Typography variant="h1" sx={{ fontSize: 40 }}>
@@ -137,11 +137,11 @@ const Circuitos = ({ idioma }) => {
         {
           filter ?
             filter?.map((circuito) => (
-              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma}/>
+              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma} />
             ))
             :
             circuitos?.map((circuito) => (
-              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma}/>
+              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma} />
             ))
         }
       </Box>

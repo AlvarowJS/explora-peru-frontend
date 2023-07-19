@@ -49,11 +49,10 @@ const Tours = ({ idioma }) => {
         {/* <Box position="absolute" top="25%" left="40%" textAlign="center" color="white"> */}
         <Box
           position="absolute"
-          top="50%" left="50%"
           textAlign="center"
-          sx={{
-            transform: 'translate(-50%, -50%)',
-          }}
+          top="40%"
+          // left="40%"
+          sx={{ left: { xs: '10%', sm: '30%', md: '30%', lg: '40%' } }}
           color="white" >
 
           <Typography variant="h1" sx={{ fontSize: 40 }}>Tours</Typography>
@@ -130,11 +129,11 @@ const Tours = ({ idioma }) => {
         {
           filter ?
             filter?.map((tour) => (
-              <CardsTours key={tour.id} tour={tour} idioma={idioma}/>
+              <CardsTours key={tour.id} tour={tour} idioma={idioma} />
             ))
             :
             tours?.map((tour) => (
-              <CardsTours key={tour.id} tour={tour} idioma={idioma}/>
+              <CardsTours key={tour.id} tour={tour} idioma={idioma} />
             ))
         }
       </Box>
