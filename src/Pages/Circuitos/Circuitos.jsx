@@ -58,7 +58,7 @@ const Circuitos = ({ idioma }) => {
 
           top="40%"
           // left="40%"
-          sx={{ left: {xs: '10%', sm: '30%', md: '30%', lg: '40%' } }}
+          sx={{ left: { xs: '10%', sm: '30%', md: '30%', lg: '40%' } }}
           color="white" >
 
           <Typography variant="h1" sx={{ fontSize: 40 }}>
@@ -119,32 +119,29 @@ const Circuitos = ({ idioma }) => {
 
       </Box>
 
-      <Box display="flex" justifyContent="center" >
+      <Box display="flex" justifyContent="center" marginBottom={10}>
         <div style={{ backgroundColor: 'gray', borderRadius: 30 }}>
           <input type="text" style={{ border: 'none', paddingLeft: 60, outline: 'none', backgroundColor: 'gray', marginLeft: 10, color: 'white' }}
             onChange={(e) => setSearch(e.target.value)}
+            placeholder='Buscar por circuito'
           />
-          <Button style={{ backgroundColor: 'purple', color: 'white', paddingLeft: 30, paddingRight: 20, border: 'none', margin: 0 }}>
+          <Button style={{ backgroundColor: '#28274D', color: 'white', paddingLeft: 30, paddingRight: 20, border: 'none', margin: 0 }}>
             <Search />
           </Button>
         </div>
       </Box>
-      <Box
-        sx={{ marginX: { xs: 5, sm: 10, md: 5, lg: 30, xl: 60 } }}
-        // margin={20}
-        marginY={4}
-      >
-        {
-          filter ?
-            filter?.map((circuito) => (
-              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma} />
-            ))
-            :
-            circuitos?.map((circuito) => (
-              <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma} />
-            ))
-        }
-      </Box>
+
+      {
+        filter ?
+          filter?.map((circuito) => (
+            <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma} />
+          ))
+          :
+          circuitos?.map((circuito) => (
+            <CardCircuito key={circuito.id} circuito={circuito} idioma={idioma} />
+          ))
+      }
+
     </>
   )
 }

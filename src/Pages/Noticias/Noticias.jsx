@@ -42,7 +42,7 @@ const Noticias = ({ idiomaGlobal }) => {
         </Box>
       </Box>
 
-      <Grid container spacing={4} marginY={5}>
+      <Grid container spacing={4} marginY={5} paddingX={10}>
         {
           noticias?.map((noticia) => (
             <>

@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Button, Card, CardMedia, FormControl, FormGroup, FormHelperText, Grid, IconButton, Input, InputAdornment, InputLabel, OutlinedInput, TextField, TextareaAutosize, Typography } from '@mui/material'
+import { ArrowBack, ArrowForward, ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 const Mice = ({ idioma }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = ['/sinimagen.png', '/foto_mice.png', '/sinimagen.png'];
+  const handlePrevImage = () => {
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <>
       <Box position="relative" width="100%">
@@ -42,27 +53,25 @@ const Mice = ({ idioma }) => {
 
       <Grid container>
         <Grid item xs={12} md={6} lg={6} xl={6} >
-          <Box marginX={15}>
+          <Box marginBottom={5} sx={{ marginX: { xs: 5, md: 5, lg: 10, xl: 15 }, marginRight: { xl: 3 } }}>
             {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
             <img
               src='/sinimagen.png'
               alt='mice imagen'
-              // objectFit="cover"
-              style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', borderRadius: '20px' }}
+              style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', borderRadius: '50px' }}
             />
             {/* </div> */}
             {/* <div style={{ marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}> */}
             <img
               src='/sinimagen.png'
               alt='mice imagen'
-              // objectFit="cover"
-              style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', borderRadius: '20px' }}
+              style={{ width: '100%', height: '300px', objectFit: 'cover', marginTop: '10px', borderRadius: '50px' }}
             />
             {/* </div> */}
           </Box>
         </Grid>
         <Grid item xs={12} md={6} lg={6} xl={6}>
-          <Box marginRight={15}>
+          <Box marginRight={15} sx={{ marginLeft: { xs: 10, md: 2 } }}>
             <Typography variant="h1" sx={{ fontSize: 20, color: '#E89241' }}>
               {idioma ? 'Design your own experience with us!' : 'Diseña tu propia experiencia junto a nosotros!'}
               {idioma ? 'Special events, customized trips, incentive groups and meetings.' : 'Eventos especiales, viajes a medida, grupos de incentivos y reuniones.'}
@@ -90,30 +99,50 @@ const Mice = ({ idioma }) => {
 
       </Box>
       <Grid container>
-        <Grid item md={1}></Grid>
-        <Grid item md={10}>
+        {/* <Grid item md={1}></Grid> */}
+        <Box marginTop={2} sx={{ marginX: { xs: 5, md: 10 } }}>
           <Typography variant="h4" sx={{ fontSize: 20 }}>
             {idioma
               ? 'Incentive trips are a great way to build customer loyalty and motivate sales teams. For many years, this has been carried out, and each time a special attraction, something different and unique is sought after. We specialize in creativity, exclusivity, and dynamism, offering adventure, outdoor activities, cultural themes, gastronomy, and luxury. The final result is the success of the objectives we set for ourselves.'
               : 'Los viajes de Incentivos son una buena manera de fidelizar clientes y/o motivar a equipos de ventas. Desde muchos años esto se lleva a cabo, cada vez se busca un atractivo especial, algo diferente y único. Así mismo nosotros nos especializamos en creatividad, exclusividad y dinamismo, aventura, actividades al aire libre, temas culturales, gastronomía y lujo. El resultado final es el éxito de los objetivos que nos trazamos.'}
           </Typography>
-        </Grid>
-        <Grid item md={1}></Grid>
+        </Box>
+        {/* <Grid item md={1}></Grid> */}
       </Grid>
+
+      {/* Slider de imagenes */}
       <Grid container>
-        <Grid item md={3}></Grid>
-        <Grid item md={6}>
-          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '400px', borderRadius: '20px', overflow: 'hidden' }}>
-            <img
+        <Grid item md={3} xs={2}>
+          <IconButton onClick={handlePrevImage} sx={{ backgroundColor: '#28274D', color: 'white', top: '45%', left: { xs: '10%', sm: '40%', md: '75%', lg: '75%', xl: '85%' } }}>
+            <ChevronLeft sx={{ fontSize: 40 }} />
+          </IconButton>
+        </Grid>
+        <Grid item md={6} xs={8}>
+          <Box marginY={3}>
+            {/* <img
               src='/sinimagen.png'
               alt='mice imagen'
               objectFit="cover"
-              style={{ width: '100%', height: '400px', objectFit: 'cover' }}
+              style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '50px' }}
+            /> */}
+
+
+            <img
+              src={images[currentImage]}
+              alt={`mice imagen ${currentImage + 1}`}
+              style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '50px' }}
             />
-          </div>
+
+          </Box>
         </Grid>
-        <Grid item md={3}></Grid>
+        <Grid item md={3} xs={2}>
+          <IconButton onClick={handleNextImage} sx={{ backgroundColor: '#28274D', color: 'white', top: '45%', left: 10 }}>
+            <ChevronRight sx={{ fontSize: 40 }} />
+          </IconButton>
+        </Grid>
       </Grid>
+
+      {/* Fin de sliders */}
 
       <Box sx={{ display: 'flex', marginTop: 8, gap: 3 }}>
         <Box sx={{ width: 120, height: 40, backgroundColor: '#E89241	' }}>
@@ -124,17 +153,17 @@ const Mice = ({ idioma }) => {
         </Typography>
       </Box>
       <Grid container>
-        <Grid item md={1}></Grid>
-        <Grid item md={10}>
+        {/* <Grid item md={1}></Grid> */}
+        <Box item md={10} sx={{ marginX: { xs: 5, md: 10 } }}>
           <Typography marginY={3} variant="h4" sx={{ fontSize: 20 }}>
             {idioma
               ? 'Each of our trips is a unique and dazzling experience. Combine regions such as the coast, the highlands, and the jungle, wonderful regions full of history and culture with personalized and high-quality services. We offer the best selection of hotels in the region, the best restaurants where gastronomic fusion and culinary presentation make them unique and irresistible.'
               : 'Cada uno de nuestros viajes son experiencias únicas y deslumbrantes. Combina regiones como la costa, la sierra y la selva, regiones maravillosas y llenas de historia, cultura con servicios personalizados de gran calidad con la mejor selección de hoteles de la región, los mejores restaurantes donde la fusión gastronómica, la presentación culinaria los hacen únicos e irresistibles.'}
           </Typography>
-        </Grid>
-        <Grid item md={1}></Grid>
+        </Box>
+        {/* <Grid item md={1}></Grid> */}
       </Grid>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} paddingX={5}>
         <Grid item md={2}></Grid>
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
@@ -169,18 +198,18 @@ const Mice = ({ idioma }) => {
       </Box>
 
       <Grid container>
-        <Grid item md={1}></Grid>
-        <Grid item md={10}>
+        {/* <Grid item md={1}></Grid> */}
+        <Grid item md={10} sx={{ marginX: { xs: 5, md: 10 } }}>
           <Typography marginY={3} variant="h4" sx={{ fontSize: 20 }}>
             {idioma
               ? 'We are specialists in coordination and execution, always looking for the best place to welcome participants, complemented by audiovisual services, food, accommodations, transportation, cocktails, opening dinners in historic places or museums. We take care of every detail.'
               : 'Somos los especialistas en la coordinación y ejecución siempre buscando el mejor lugar acorde para poder acoger a los participantes, complementándolo con todos los servicios de audiovisual, alimentación, alojamientos, transporte, cocteles, cenas de apertura en lugares históricos o museos. Nos encargamos de todos los detalles.'}
           </Typography>
         </Grid>
-        <Grid item md={1}></Grid>
+        {/* <Grid item md={1}></Grid> */}
       </Grid>
 
-      <Grid container spacing={4} paddingX={2}>
+      <Grid container spacing={4} paddingX={10}>
         <Grid item xs={12} md={4}>
           <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
             <img
@@ -222,9 +251,9 @@ const Mice = ({ idioma }) => {
         </Typography>
       </Box>
 
-      <Grid container spacing={4} paddingX={2}>
+      <Grid container spacing={4} paddingX={10} paddingBottom={10}>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '50px', overflow: 'hidden' }}>
             <img
               src='/sinimagen.png'
               alt='mice imagen'
@@ -241,7 +270,7 @@ const Mice = ({ idioma }) => {
           </Typography>
         </Grid>
         <Grid item xs={12} md={4}>
-          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '20px', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', marginTop: '10px', marginBottom: 30, width: '100%', height: '300px', borderRadius: '50px', overflow: 'hidden' }}>
             <img
               src='/sinimagen.png'
               alt='mice imagen'

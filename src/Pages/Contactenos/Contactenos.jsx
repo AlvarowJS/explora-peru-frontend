@@ -52,74 +52,74 @@ const Contactenos = ({ idioma, idiomaGlobal }) => {
 
   return (
     <>
-      <Grid container spacing={4} padding={10}>
-        <Grid item xs={12} md={6}>
-          <Box
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={12} md={6} lg={6} sx={{ display: { xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }, marginBottom: 3 }}>
+          {/* <Box
             style={{
               cursor: 'pointer', width: '100%',
               height: '500px', '@media (max-width: 600px)': {
                 display: 'none',
               },
             }}
-          >
-            <img
-              src="/contacto.png"
-              alt="foto contacto"
-              objectFit="cover"
-              style={{
-                width: '100%', height: '500px', objectFit: 'cover'
-              }}
-            />
-          </Box>
+          > */}
+          <img
+            src="/contacto.png"
+            alt="foto contacto"
+            style={{
+              width: '100%', height: '100%', objectFit: 'cover'
+            }}
+          />
+          {/* </Box> */}
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography variant='h1' fontSize={50}>
-            {idioma ? 'Contact us' : 'Contáctanos'}
-          </Typography>
-          <Typography>
-            {idioma ? 'Are you interested in our services? Contact us' : '¿Estás interesado en nuestros servicios? Escríbenos'}
-          </Typography>
+        <Grid item xs={12} sm={12} md={6} lg={6} >
+          <Box sx={{ marginX: { xs: 5, sm: 15, md: 5, lg: 5 }, marginY: { xs: 20, md: 10, lg: 10, xl: 30 } }}>
+            <Typography variant='h1' fontSize={50} >
+              {idioma ? 'Contact us' : 'Contáctanos'}
+            </Typography>
+            <Typography>
+              {idioma ? 'Are you interested in our services? Contact us' : '¿Estás interesado en nuestros servicios? Escríbenos'}
+            </Typography>
 
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Box sx={{ paddingTop: 4, display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: '1rem', alignItems: 'center', gap: 2 }}>
-              <InputLabel htmlFor="nombre">
-                {idioma ? 'Name' : 'Nombre'}:
-              </InputLabel>
-              <FormControl>
-                <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('nombre')} />
-              </FormControl>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Box sx={{ paddingTop: 4, paddingLeft: 5, display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: '1rem', alignItems: 'center', gap: 2 }}>
+                <InputLabel htmlFor="nombre">
+                  {idioma ? 'Name' : 'Nombre'}:
+                </InputLabel>
+                <FormControl>
+                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('nombre')} />
+                </FormControl>
 
-              <InputLabel htmlFor="email">
-                {idioma ? 'E-mail' : 'Correo electrónico'}:
-              </InputLabel>
-              <FormControl>
-                <OutlinedInput id="email" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('email')} />
-              </FormControl>
+                <InputLabel htmlFor="email">
+                  {idioma ? 'E-mail' : 'Correo electrónico'}:
+                </InputLabel>
+                <FormControl>
+                  <OutlinedInput id="email" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('email')} />
+                </FormControl>
 
-              <InputLabel htmlFor="celular">
-                {idioma ? 'Phone' : 'Celular'}:
-              </InputLabel>
-              <FormControl>
-                <OutlinedInput id="celular" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('celular')} />
-              </FormControl>
+                <InputLabel htmlFor="celular">
+                  {idioma ? 'Phone' : 'Celular'}:
+                </InputLabel>
+                <FormControl>
+                  <OutlinedInput id="celular" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('celular')} />
+                </FormControl>
 
-              <InputLabel htmlFor="mensaje">
-                {idioma ? 'Message' : 'Mensaje'}:
-              </InputLabel>
-              <FormControl>
-                <TextField
-                  multiline
-                  rows={3}
-                  variant="outlined"
-                  {...register('mensaje')}
-                />
-              </FormControl>
-            </Box>
-            <Button type="submit" style={{ color: 'white', backgroundColor: '#E89241', width: '100%' }}>
-              {idioma ? 'Send' : 'Enviar'}
-            </Button>
-          </form>
-
+                <InputLabel htmlFor="mensaje">
+                  {idioma ? 'Message' : 'Mensaje'}:
+                </InputLabel>
+                <FormControl>
+                  <TextField
+                    multiline
+                    rows={3}
+                    variant="outlined"
+                    {...register('mensaje')}
+                  />
+                </FormControl>
+              </Box>
+              <Button type="submit" style={{ color: 'white', backgroundColor: '#E89241', width: '100%' }}>
+                {idioma ? 'Send' : 'Enviar'}
+              </Button>
+            </form>
+          </Box>
         </Grid>
 
       </Grid>

@@ -111,32 +111,29 @@ const Tours = ({ idioma }) => {
 
       </Box>
 
-      <Box display="flex" justifyContent="center" >
+      <Box display="flex" justifyContent="center" marginBottom={10}>
         <div style={{ backgroundColor: 'gray', borderRadius: 30 }}>
           <input type="text" style={{ border: 'none', paddingLeft: 60, outline: 'none', backgroundColor: 'gray', marginLeft: 10, color: 'white' }}
             onChange={(e) => setSearch(e.target.value)}
+            placeholder='Buscar por tour'
           />
-          <Button style={{ backgroundColor: 'purple', color: 'white', paddingLeft: 30, paddingRight: 20, border: 'none', margin: 0 }}>
+          <Button style={{ backgroundColor: '#28274D', color: 'white', paddingLeft: 30, paddingRight: 20, border: 'none', margin: 0 }}>
             <Search />
           </Button>
         </div>
       </Box>
-      <Box
-        sx={{ marginX: { xs: 5, sm: 10, md: 5, lg: 30, xl: 60 } }}
-        // margin={20}
-        marginY={4}
-      >
-        {
-          filter ?
-            filter?.map((tour) => (
-              <CardsTours key={tour.id} tour={tour} idioma={idioma} />
-            ))
-            :
-            tours?.map((tour) => (
-              <CardsTours key={tour.id} tour={tour} idioma={idioma} />
-            ))
-        }
-      </Box>
+      {/* <Box> */}
+      {
+        filter ?
+          filter?.map((tour) => (
+            <CardsTours key={tour.id} tour={tour} idioma={idioma} />
+          ))
+          :
+          tours?.map((tour) => (
+            <CardsTours key={tour.id} tour={tour} idioma={idioma} />
+          ))
+      }
+      {/* </Box> */}
     </>
 
   )

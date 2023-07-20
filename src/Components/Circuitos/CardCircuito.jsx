@@ -10,19 +10,18 @@ const CardCircuito = ({ circuito, idioma }) => {
         navigate(`/circuitos/${id}`)
     }
     return (
-        <Grid container key={circuito.id} paddingY={4}>
-            <Grid item container xs={12} sm={12} md={4} lg={4} >
+        <Grid container key={circuito.id} paddingBottom={4} spacing={3} paddingX={10}>
+            <Grid item container xs={12} sm={12} md={4} lg={2} >
                 {/* <div style={{ borderRadius: '20px', overflow: 'hidden' }}> */}
                 <img
-                    src={`https://backend.peruexploring.pe/public/storage/circuitos/${circuito.titulo}/${circuito.img}`}
-                    width={200}
-                    height={150}
+                    src={`https://backend.peruexploring.pe/public/storage/circuitos/${circuito.titulo}/${circuito.img}`}                 
                     alt={circuito.titulo == undefined ? "imagen" : circuito.titulo}
-                    style={{ borderRadius: '20px' }}
+                    style={{ borderRadius: '20px', width: '100%', height: 180,objectFit: 'cover' }}
+                    objectFit="cover"
                 />
                 {/* </div> */}
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={6}>
+            <Grid item xs={12} sm={12} md={6} lg={8}>
                 <Typography variant='h4' component='h4' sx={{ color: '#E89241', fontSize: 20 }}>{circuito.titulo}</Typography>
                 <div
                     style={{

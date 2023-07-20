@@ -20,7 +20,7 @@ const NoticiaCard = ({ noticia, idiomaGlobal }) => {
           src={`https://backend.peruexploring.pe/public/storage/noticias/${noticia.titulo}/${noticia.img}`}
           alt="logo Peru Exploring"
           objectFit="cover"
-          style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: '20px' }}
+          style={{ width: '100%', height: 300, objectFit: 'cover', borderRadius: '50px' }}
         />
       </div>
       <Box paddingX={5}>
@@ -29,7 +29,7 @@ const NoticiaCard = ({ noticia, idiomaGlobal }) => {
         <Button style={{ color: 'white', backgroundColor: '#E89241' }}
           onClick={() => { verNotaById(noticia.id) }}
         >
-          Mas información
+          Ver noticia
         </Button>
       </Box>
 
