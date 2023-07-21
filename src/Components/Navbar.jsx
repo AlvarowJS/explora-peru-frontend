@@ -48,10 +48,10 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
                         {/* <Typography variant='h6'>Perú Exploring</Typography> */}
                     </NavLink>
                     <Box flex={1} />
-                    <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'block' } }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' } }}>
                         <NavLink to='/' >
                             <Link>
-                                <Button sx={{ width: 155 }}>
+                                <Button sx={{ width: 155}}>
                                     {idioma ? 'About us' : 'Sobre nosotros'}
                                 </Button>
                             </Link>
