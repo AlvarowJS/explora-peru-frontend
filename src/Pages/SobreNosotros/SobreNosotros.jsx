@@ -136,35 +136,26 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
       </Box>
 
       <Box sx={{ margin: '60px 100px 20px 100px' }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <CardMedia
-              component="img"
-              height="140"
-              width="140"
-              image="/portada_home.png"
+            <img
+              src="/sinimagen.png"
               alt="portada"
-              sx={{ borderRadius: 5 }}
+              style={{ borderRadius: 40, width: '100%', height: 300, objectFit: 'cover' }}
             />
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardMedia
-              component="img"
-              height="140"
-              width="140"
-              image="/portada_home.png"
+            <img
+              src="/sinimagen.png"
               alt="portada"
-              sx={{ borderRadius: 5 }}
+              style={{ borderRadius: 40, width: '100%', height: 300, objectFit: 'cover' }}
             />
           </Grid>
           <Grid item xs={12} md={4}>
-            <CardMedia
-              component="img"
-              height="140"
-              width="140"
-              image="/portada_home.png"
+            <img
+              src="/sinimagen.png"
               alt="portada"
-              sx={{ borderRadius: 5 }}
+              style={{ borderRadius: 40, width: '100%', height: 300, objectFit: 'cover' }}
             />
           </Grid>
         </Grid>

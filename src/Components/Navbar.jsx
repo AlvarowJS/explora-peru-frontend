@@ -51,7 +51,7 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
                     <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' } }}>
                         <NavLink to='/' >
                             <Link>
-                                <Button sx={{ width: 155}}>
+                                <Button sx={{ width: { xl: 155, lg: 130 }, fontSize: { xl: 15, lg: 15 } }}>
                                     {idioma ? 'About us' : 'Sobre nosotros'}
                                 </Button>
                             </Link>
@@ -59,7 +59,7 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
 
                         <NavLink to='/tours' >
                             <Link>
-                                <Button sx={{ width: 155 }}>
+                                <Button sx={{ width: { xl: 155, lg: 130 }, fontSize: { xl: 15, lg: 15 } }}>
                                     Tours
                                 </Button>
                             </Link>
@@ -67,7 +67,7 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
 
                         <NavLink to='/circuitos' >
                             <Link>
-                                <Button sx={{ width: 155 }}>
+                                <Button sx={{ width: { xl: 155, lg: 130 }, fontSize: { xl: 15, lg: 15 } }}>
                                     {idioma ? 'circuits' : 'Circuitos'}
                                 </Button>
                             </Link>
@@ -75,7 +75,7 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
 
                         <NavLink to='/mice' >
                             <Link>
-                                <Button sx={{ width: 155 }}>
+                                <Button sx={{ width: { xl: 155, lg: 130 }, fontSize: { xl: 15, lg: 15 } }}>
                                     MICE
                                 </Button>
                             </Link>
@@ -83,14 +83,14 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
 
                         <NavLink to='/noticias' >
                             <Link>
-                            <Button sx={{ width: 155}}>
+                                <Button sx={{ width: { xl: 155, lg: 130 }, fontSize: { xl: 15, lg: 15 } }}>
                                     {idioma ? 'News' : 'Noticias'}
                                 </Button>
                             </Link>
                         </NavLink>
                         <NavLink to='/contactenos' >
                             <Link>
-                            <Button sx={{ width: 155}}>
+                                <Button sx={{ width: { xl: 155, lg: 130 }, fontSize: { xl: 15, lg: 15 } }}>
                                     {idioma ? 'Contact Us' : 'Contáctenos'}
                                 </Button>
                             </Link>
@@ -108,12 +108,12 @@ const Navbar = ({ setIdioma, idioma, setMenu, menu }) => {
                         />
                         En
                     </Box>
-                    <Box>
-                        <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white',marginLeft: 3, fontSize: 30, cursor: 'pointer' }} />
+                    <Box sx={{ display: {xl: 'none', lg: 'none', md: 'block'} }}>
+                        <MenuIcon onClick={handleMenuToggle} sx={{ color: 'white', marginLeft: 3, fontSize: 30, cursor: 'pointer' }} />
                     </Box>
-                    
+
                     <Box>
-                        <PersonIcon onClick={intranet} sx={{ color: 'white', marginLeft: 3,fontSize: 30, cursor: 'pointer' }} />
+                        <PersonIcon onClick={intranet} sx={{ color: 'white', marginLeft: 3, fontSize: 30, cursor: 'pointer' }} />
                     </Box>
 
 
