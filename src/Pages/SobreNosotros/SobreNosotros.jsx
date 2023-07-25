@@ -176,7 +176,7 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
           sx={{
 
             width: '100%',
-            height: '440px',
+            height: '500px',
             '@media (max-width: 800px)': {
               height: '800px',
             },
@@ -189,7 +189,8 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
           <Grid container spacing={4}>
             <Grid item xs={12} md={1} lg={3}></Grid>
             <Grid item xs={12} md={5} lg={3}>
-              <Grid container spacing={0}>
+              <Grid container spacing={0} sx={{alignItems: 'center'}}>
+
                 <Grid item xs={12} md={6}>
                   <img
                     width={150}
@@ -223,8 +224,8 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
               </Grid>
             </Grid>
 
-            <Grid item xs={12} md={5} lg={3}>
-              <Grid container spacing={2}>
+            <Grid item xs={12} md={5} lg={3} >
+              <Grid container spacing={2} sx={{alignItems: 'center'}}>
 
                 <Grid item xs={12} md={6}>
                   <img
@@ -270,7 +271,7 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
 
       <Box sx={{ marginTop: 10, padding: 4 }}>
         <Grid container spacing={2}>
-          <Grid item sx={{ paddingRight: 15, }} xs={12} md={6} >
+          <Grid item sx={{ paddingRight: 4, }} xs={12} md={6} >
             <Typography variant='h1' fontSize={50}>
               {idioma ? 'Contact us' : 'Contáctanos'}
 
@@ -288,14 +289,14 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
                   <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px', }} {...register('nombre')} />
                 </FormControl>
 
-                <InputLabel htmlFor="nombre">E-mail:</InputLabel>
+                <InputLabel htmlFor="email">E-mail:</InputLabel>
                 <FormControl>
-                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('email')} />
+                  <OutlinedInput id="email" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('email')} />
                 </FormControl>
 
-                <InputLabel htmlFor="nombre">{idioma ? 'Phone' : 'Celular'} :</InputLabel>
+                <InputLabel htmlFor="celular">{idioma ? 'Phone' : 'Celular'} :</InputLabel>
                 <FormControl>
-                  <OutlinedInput id="nombre" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('celular')} />
+                  <OutlinedInput id="celular" type="text" sx={{ borderRadius: '29px', height: '35px' }} {...register('celular')} />
                 </FormControl>
 
                 <InputLabel htmlFor="nombre">
@@ -321,35 +322,35 @@ const SobreNosotros = ({ idioma, setIdioma }) => {
             </form>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={{ paddingX: { xl: 30, lg: 10, md: 10, xs: 10 }, paddingY: { xl: 10, lg: 10, md: 10, xs: 10 }, backgroundColor: '#2C2A64', borderRadius: 10, color: 'white' }}>
+            <Box sx={{ paddingX: { xl: 30, lg: 10, md: 10, xs: 5 }, paddingY: { xl: 10, lg: 10, md: 10, xs: 5 }, backgroundColor: '#2C2A64', borderRadius: 10, color: 'white' }}>
 
-              <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <AccessTimeIcon sx={{ marginRight: 2, fontSize: 60 }} />
+              <Box sx={{ marginBottom: 3, display: 'flex', alignItems: 'center' }}>
+                <AccessTimeIcon sx={{ marginRight: 2, fontSize: { xs: 30, sm: 50, md: 60} }} />
                 <Box>
-                  <Typography sx={{ fontSize: 20 }}>Lunes a Viernes: 8:00 a.m - 6:00 p.m</Typography>
-                  <Typography sx={{ fontSize: 20 }}>Sábado: 8:00 a.m - 1:00 p.m</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Lunes a Viernes: 8:00 a.m - 6:00 p.m</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Sábado: 8:00 a.m - 1:00 p.m</Typography>
                 </Box>
               </Box>
-              <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <MailOutlineIcon sx={{ marginRight: 2, fontSize: 60 }} />
+              <Box sx={{ marginBottom: 3, display: 'flex', alignItems: 'center'  }}>
+                <MailOutlineIcon sx={{ marginRight: 2, fontSize: { xs: 30, sm: 50, md: 60} }} />
                 <Box>
-                  <Typography sx={{ fontSize: 20 }}>reservas1@peruexploring.pe</Typography>
-                  <Typography sx={{ fontSize: 20 }}>reservas2@peruexploring.pe</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>reservas1@peruexploring.pe</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>reservas2@peruexploring.pe</Typography>
                 </Box>
               </Box>
-              <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <CallIcon sx={{ marginRight: 2, fontSize: 60 }} />
+              <Box sx={{ marginBottom: 3, display: 'flex', alignItems: 'center'  }}>
+                <CallIcon sx={{ marginRight: 2, fontSize: { xs: 30, sm: 50, md: 60} }} />
                 <Box>
-                  <Typography sx={{ fontSize: 20 }}>Reservas 1: +51 932 513 171 </Typography>
-                  <Typography sx={{ fontSize: 20 }}>Reservas 2: +51 974 581 054</Typography>
-                  <Typography sx={{ fontSize: 20 }}>Atención 24Hrs: +51 922 060 213</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Reservas 1: +51 932 513 171 </Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Reservas 2: +51 974 581 054</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Atención 24Hrs: +51 922 060 213</Typography>
                 </Box>
               </Box>
-              <Box sx={{ marginBottom: 3, display: 'flex' }}>
-                <LocationOnIcon sx={{ marginRight: 2, fontSize: 60 }} />
+              <Box sx={{ marginBottom: 3, display: 'flex',alignItems: 'center'  }}>
+                <LocationOnIcon sx={{ marginRight: 2, fontSize: { xs: 30, sm: 50, md: 60} }} />
                 <Box>
-                  <Typography sx={{ fontSize: 20 }}>Calle San Manuel 174, Urb. Santa </Typography>
-                  <Typography sx={{ fontSize: 20 }}>Luisa - Los Olivos (Lima, Perú)</Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Calle San Manuel 174, Urb. Santa </Typography>
+                  <Typography sx={{ fontSize: { xs: 12, sm: 20} }}>Luisa - Los Olivos (Lima, Perú)</Typography>
                 </Box>
               </Box>
             </Box>
